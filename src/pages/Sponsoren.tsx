@@ -2,11 +2,17 @@ import { ExternalLink } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { PageHero } from "@/components/site/PageHero";
 import sponsorsHero from "@/assets/page-sponsors-hero.jpg";
+import logoDonDomino from "@/assets/sponsors/don-domino.png";
+import logoSportservice from "@/assets/sponsors/sportservice-veenendaal.png";
+import logoHorecaDeVallei from "@/assets/sponsors/horeca-de-vallei.png";
+import logoGebroedersVanEijk from "@/assets/sponsors/gebroeders-van-eijk.png";
+import logoHevesh5 from "@/assets/sponsors/hevesh5.png";
 
 interface Sponsor {
   id: string;
   name: string;
   tagline: string;
+  logo: string;
   paragraphs: string[];
   links: { label: string; href: string }[];
 }
