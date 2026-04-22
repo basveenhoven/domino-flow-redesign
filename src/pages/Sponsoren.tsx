@@ -146,31 +146,44 @@ const Sponsoren = () => {
               id={s.id}
               className={`scroll-mt-28 py-12 ${i > 0 ? "border-t border-border" : ""}`}
             >
-              <div className="mb-6">
-                <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-3 block">Sponsor</span>
-                <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">{s.name}</h2>
-                <p className="font-display text-lg text-gradient mt-2">{s.tagline}</p>
-              </div>
+              <div className="grid md:grid-cols-[200px_1fr] gap-8 items-start">
+                <div className="rounded-2xl bg-surface border border-border p-6 grid place-items-center min-h-[160px]">
+                  <img
+                    src={s.logo}
+                    alt={`${s.name} logo`}
+                    loading="lazy"
+                    className="max-h-32 w-auto object-contain"
+                  />
+                </div>
 
-              <div className="space-y-4 mb-6">
-                {s.paragraphs.map((p, idx) => (
-                  <p key={idx} className="text-muted-foreground leading-relaxed">{p}</p>
-                ))}
-              </div>
+                <div>
+                  <div className="mb-6">
+                    <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-3 block">Sponsor</span>
+                    <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">{s.name}</h2>
+                    <p className="font-display text-lg text-gradient mt-2">{s.tagline}</p>
+                  </div>
 
-              <div className="flex flex-wrap gap-3">
-                {s.links.map((l) => (
-                  <a
-                    key={l.href}
-                    href={l.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full border border-border hover:border-primary hover:text-primary transition-colors"
-                  >
-                    {l.label}
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
-                ))}
+                  <div className="space-y-4 mb-6">
+                    {s.paragraphs.map((p, idx) => (
+                      <p key={idx} className="text-muted-foreground leading-relaxed">{p}</p>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    {s.links.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full border border-border hover:border-primary hover:text-primary transition-colors"
+                      >
+                        {l.label}
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </article>
           ))}
