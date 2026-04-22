@@ -22,6 +22,7 @@ const sponsors: Sponsor[] = [
     id: "dondomino",
     name: "Don Domino",
     tagline: "Eindeloos bouwplezier met domino!",
+    logo: logoDonDomino,
     paragraphs: [
       "De beste kwaliteit domino stenen gewoon geproduceerd in Europa. Hoewel Don Domino een relatief nieuwe producent is met de eerste productie die in 2020 op de markt kwam, staat het nu bij velen al op de eerste plaats wanneer er wordt gedacht over het kopen van nieuwe domino stenen.",
       "Daarom zijn wij ook super trots dat we Don Domino als hoofdsponsor van het WDC 2026 evenement mogen verwelkomen. Niet alleen krijgen we tienduizenden kersverse dominostenen van super goede kwaliteit te leen, maar ook zijn wij als domino professionals in een vroeg stadium van de ontwikkeling van de stenen gevraagd naar onze mening en feedback op de kwaliteit.",
@@ -40,6 +41,7 @@ const sponsors: Sponsor[] = [
     id: "sportservice-veenendaal",
     name: "Sport service Veenendaal",
     tagline: "Sport is meer dan bewegen!",
+    logo: logoSportservice,
     paragraphs: [
       "Of je nu gezellig een dagje wilt gaan zwemmen met je hele familie of mee wilt doen aan een georganiseerde toertocht, Sport service Veenendaal is van alle markten thuis. Met het ultieme doel om iedereen van jong tot oud te laten sporten en bewegen is het aanbod en de mogelijkheden dan ook eindeloos.",
       "Sinds 2019 is DDT te gast in een van de locaties van Sportservice Veenendaal. Dit jaar zijn we te gast in Sporthal West. Tijdens onze rustdag zullen we zeker een duik nemen in het zwembad.",
@@ -57,6 +59,7 @@ const sponsors: Sponsor[] = [
     id: "horeca-de-vallei",
     name: "Horeca de Vallei",
     tagline: "Een sportieve ontmoetingsplek!",
+    logo: logoHorecaDeVallei,
     paragraphs: [
       "Horeca de Vallei heeft zich afgelopen jaar geprofileerd meer te zijn dan alleen een sportcafé voor koffie en een snelle snack. In 2020 is het helemaal opgeknapt en heeft een sfeervolle uitstraling gekregen.",
       "Elk jaar hebben wij weer het geluk dat we in Horeca de Vallei mogen dineren. De kok doet elke avond weer zijn uiterste best om een gezonde en voedzame maaltijd neer te zetten voor wat lijkt een uitgehongerde groep bouwers.",
@@ -68,6 +71,7 @@ const sponsors: Sponsor[] = [
     id: "gebroeders-van-eijk",
     name: "Gebroeders van Eijk",
     tagline: "Service en Flexibiliteit!",
+    logo: logoGebroedersVanEijk,
     paragraphs: [
       "Gebroeders van Eijk is een familiebedrijf dat is opgericht in 1908. Het transportbedrijf is inmiddels uitgegroeid tot 120 medewerkers die gemiddeld 250 zendingen per dag verzorgen.",
       "Dit jaar worden de domino stenen van DDT van de opslaglocatie in Noord-Brabant met de vrachtwagen naar Veenendaal gebracht. De 12 pallets wegen bijna 5,5 ton, dus we zijn heel blij dat dit zware werk door een ervaren bedrijf wordt gedaan.",
@@ -82,6 +86,7 @@ const sponsors: Sponsor[] = [
     id: "hevesh5",
     name: "Hevesh5",
     tagline: "De domino kunstenaar die de wereld veroverde!",
+    logo: logoHevesh5,
     paragraphs: [
       "Hevesh5, ook wel bekend als Lily Hevesh, is een ware sensatie in de wereld van domino. Ze heeft de harten van miljoenen mensen veroverd met haar indrukwekkende domino creaties die ze deelt op haar populaire YouTube kanaal.",
       "Hevesh5 is meer dan alleen een artiest; ze is een ware inspiratiebron. Ze begon haar domino avontuur op jonge leeftijd en heeft sindsdien een indrukwekkende carrière opgebouwd. Ze heeft samengewerkt met grote namen en heeft deelgenomen aan talloze evenementen over de hele wereld.",
