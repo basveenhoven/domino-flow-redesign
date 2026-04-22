@@ -103,24 +103,21 @@ const Over = () => {
             <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">{t("about.editions")}</span>
             <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">{t("about.editionsTitle")}</h2>
           </div>
-          <div className="max-w-5xl mx-auto relative">
+          <div className="max-w-6xl mx-auto relative">
+            {/* Mobile line on the left, desktop line in the center */}
             <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-px bg-border lg:-translate-x-1/2" />
-            {editions.map((m, i) => (
-              <div
-                key={m.year}
-                className={`relative grid gap-8 lg:gap-0 lg:grid-cols-2 mb-16 last:mb-0 items-center ${
-                  i % 2 === 0 ? "" : "lg:[&>*:first-child]:order-2"
-                }`}
-              >
-                <div className="absolute left-4 lg:left-1/2 top-2 h-3 w-3 rounded-full bg-primary lg:-translate-x-1/2 ring-4 ring-surface z-10" />
 
-                <div className={`pl-12 lg:pl-0 ${i % 2 === 0 ? "lg:pr-12" : "lg:pl-12"}`}>
-                  <div className="font-display text-4xl font-bold text-gradient mb-2">{m.year}</div>
-                  <h3 className="font-display text-2xl font-semibold mb-4">{m.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{m.body}</p>
-                </div>
-
-                <div className={`pl-12 lg:pl-0 ${i % 2 === 0 ? "lg:pl-12" : "lg:pr-12"}`}>
+            <div className="space-y-16 lg:space-y-24">
+              {editions.map((m, i) => {
+                const textOnLeft = i % 2 === 0;
+                const TextBlock = (
+                  <div className={textOnLeft ? "lg:text-right" : "lg:text-left"}>
+                    <div className="font-display text-4xl font-bold text-gradient mb-2">{m.year}</div>
+                    <h3 className="font-display text-2xl font-semibold mb-4">{m.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{m.body}</p>
+                  </div>
+                );
+                const VideoBlock = (
                   <div className="relative aspect-video rounded-2xl overflow-hidden border border-border bg-background shadow-lg">
                     <iframe
                       className="absolute inset-0 w-full h-full"
@@ -131,9 +128,37 @@ const Over = () => {
                       allowFullScreen
                     />
                   </div>
-                </div>
-              </div>
-            ))}
+                );
+
+                return (
+                  <div key={m.year} className="relative">
+                    {/* Center dot */}
+                    <div className="absolute left-4 lg:left-1/2 top-3 h-3 w-3 rounded-full bg-primary lg:-translate-x-1/2 ring-4 ring-surface z-10" />
+
+                    {/* Mobile: stacked, all to the right of the line */}
+                    <div className="lg:hidden pl-12 space-y-5">
+                      {TextBlock}
+                      {VideoBlock}
+                    </div>
+
+                    {/* Desktop: 2-column grid, alternating sides */}
+                    <div className="hidden lg:grid grid-cols-2 gap-16 items-center">
+                      {textOnLeft ? (
+                        <>
+                          <div className="pr-4">{TextBlock}</div>
+                          <div className="pl-4">{VideoBlock}</div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="pr-4">{VideoBlock}</div>
+                          <div className="pl-4">{TextBlock}</div>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
