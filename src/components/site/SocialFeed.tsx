@@ -30,7 +30,7 @@ export const SocialFeed = () => {
             className="rounded-full border-border hover:border-primary/60 self-start md:self-auto"
           >
             {/* TODO: link to actual Instagram */}
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/dutch_domino_team/" target="_blank" rel="noreferrer">
               <Instagram className="mr-2 h-4 w-4" />
               Volgen op Instagram
             </a>
@@ -41,7 +41,7 @@ export const SocialFeed = () => {
           {posts.map((p, i) => (
             <a
               key={i}
-              href="https://instagram.com"
+              href="https://www.instagram.com/dutch_domino_team/"
               target="_blank"
               rel="noreferrer"
               className={`group relative overflow-hidden rounded-2xl border border-border bg-surface ${

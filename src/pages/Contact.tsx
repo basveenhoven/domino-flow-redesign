@@ -11,9 +11,9 @@ const channels = [
 ];
 
 const socials = [
-  { Icon: Facebook, label: "Facebook", href: "https://facebook.com" },
-  { Icon: Instagram, label: "Instagram", href: "https://instagram.com" },
-  { Icon: Youtube, label: "YouTube", href: "https://youtube.com" },
+  { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/dutchdominoteam" },
+  { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/dutch_domino_team/" },
+  { Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/c/DutchDominoTeam" },
 ];
 
 const Contact = () => {

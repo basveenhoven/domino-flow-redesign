@@ -1,5 +1,5 @@
+import { Calendar, Clock, MapPin, Ticket, Camera, Volume2, ArrowRight, Car, Bus, Train } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Calendar, Clock, MapPin, Ticket, Users, Sparkles, Trophy, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { PageLayout } from "@/components/site/PageLayout";
@@ -8,42 +8,40 @@ import wdcHero from "@/assets/page-wdc-hero.jpg";
 import wdcEvent from "@/assets/wdc-event.jpg";
 
 const facts = [
-  { Icon: Calendar, label: "Datum", value: "14 november 2026" },
-  { Icon: MapPin, label: "Locatie", value: "Amsterdam RAI" },
-  { Icon: Clock, label: "Duur", value: "Hele dag" },
-  { Icon: Users, label: "Bezoekers", value: "5.000+" },
+  { Icon: Calendar, label: "Bouwperiode", value: "7 — 23 augustus 2026" },
+  { Icon: Clock, label: "Falldown", value: "Vrijdag 21 aug, 19:00" },
+  { Icon: MapPin, label: "Locatie", value: "Sporthal West, Veenendaal" },
+  { Icon: Ticket, label: "Toegang", value: "€10 per kaart" },
 ];
 
 const program = [
-  { time: "10:00", title: "Doors open", body: "Bezoekers kunnen het bouwteam aan het werk zien tijdens de finale opbouw." },
-  { time: "12:00", title: "Workshops & demo's", body: "Doe mee aan mini-workshops of bekijk technische demo's van het team." },
-  { time: "15:00", title: "Sponsor presentaties", body: "Onze partners delen het podium en hun rol binnen het project." },
-  { time: "19:00", title: "Showtime", body: "De officiële opening van de show — live commentary van het team." },
-  { time: "20:30", title: "De Falldown", body: "Het magische moment waarop alles samenvalt. Live gestreamd wereldwijd." },
-  { time: "22:00", title: "After-event", body: "Netwerkborrel met sponsoren, fans en het complete collectief." },
+  { time: "18:00", title: "Deuren open voor publiek", body: "Welkom in Sporthal West." },
+  { time: "19:00", title: "Deuren sluiten en aanvang show", body: "De show begint — neem alvast je plek in." },
+  { time: "± 20:00", title: "Einde show", body: "Aansluitend napraten met de bouwers in het sportcafé met live muziek. Hier wordt ook het aantal gevallen stenen onthuld." },
+  { time: "21:00", title: "Einde van het evenement", body: "Bedankt voor je komst!" },
 ];
 
-const highlights = [
-  { Icon: Sparkles, title: "1.250.000 stenen", body: "Onze grootste opstelling ooit." },
-  { Icon: Trophy, title: "Wereldrecord poging", body: "Deze editie gaan we voor een officieel Guinness World Record." },
-  { Icon: Users, title: "30+ bouwers", body: "Het complete collectief plus internationale gastbouwers." },
+const huisregels = [
+  "Betreed alsjeblieft niet onze domino-vloer.",
+  "Zet alsjeblieft je mobiele telefoon op trilstand of helemaal uit.",
+  "Filmen is verboden.",
+  "Foto's maken mag, maar zonder flits.",
+  "Probeer niet te schreeuwen tijdens het vallen, zodat je het heerlijke geluid van de domino-stenen kunt horen.",
 ];
 
-const faqs = [
-  { q: "Hoe lang duurt de opbouw?", a: "Het bouwteam werkt ruim 6 weken voorafgaand aan het evenement op locatie. Bezoekers kunnen tijdens de laatste week het werk live volgen." },
-  { q: "Is er parkeergelegenheid?", a: "Ja, op de locatie is ruime parkeergelegenheid. We raden echter aan om met het openbaar vervoer te komen — Amsterdam RAI is uitstekend bereikbaar." },
-  { q: "Zijn er toegankelijke plaatsen?", a: "Absoluut. We hebben gereserveerde plekken voor rolstoelgebruikers en speciale toegang tot alle voorzieningen. Geef dit aan bij je reservering." },
-  { q: "Wat als de show wordt afgelast?", a: "Je tickets blijven geldig voor de eerstvolgende editie of je kunt kosteloos je geld terug krijgen." },
-  { q: "Mag ik foto's en video's maken?", a: "Persoonlijke foto's zijn van harte welkom. Voor professionele opnames vragen we vooraf accreditatie aan te vragen via contact." },
+const vervoer = [
+  { Icon: Car, title: "Auto", body: "Je kan parkeren op de parkeerplaats bij de hal (Sportlaan 3, 3905 AD Veenendaal). De parkeerplaats biedt voldoende gratis parkeerplekken. Let op: er kunnen ook andere evenementen in het sportcomplex plaatsvinden." },
+  { Icon: Bus, title: "Bus", body: "De dichtstbijzijnde bushalte is halte Rembrandtpark. Vanaf hier is het ongeveer 10 minuten lopen naar de sporthal." },
+  { Icon: Train, title: "Trein", body: "Het dichtstbijzijnde treinstation is station Veenendaal West. Vanaf hier is het ongeveer 12 minuten lopen naar de sporthal." },
 ];
 
 const Wdc2026 = () => {
   return (
     <PageLayout>
       <PageHero
-        eyebrow="WDC 2026"
-        title={<>De grootste <span className="text-gradient">falldown</span> ooit.</>}
-        subtitle="Op 14 november 2026 transformeren we de Amsterdam RAI in een spectaculair domino-kunstwerk van meer dan 1.250.000 stenen. Wees erbij wanneer geschiedenis wordt geschreven."
+        eyebrow="WDC 2026 — Bucketlist"
+        title={<>WDC 2026 — <span className="text-gradient">Bucketlist</span></>}
+        subtitle="Dit jaar zet het Dutch Domino Team maar liefst 750.000 dominostenen op tijdens World Domino Collective (WDC) 2026 onder het thema Bucketlist. In de diverse subthema's staan persoonlijke dromen van onze bouwers centraal."
         image={wdcHero}
         crumbs={[{ label: "Home", href: "/" }, { label: "WDC 2026" }]}
       />
@@ -59,7 +57,7 @@ const Wdc2026 = () => {
                 </div>
                 <div>
                   <div className="text-[10px] font-medium tracking-[0.2em] uppercase text-muted-foreground">{label}</div>
-                  <div className="font-display font-semibold">{value}</div>
+                  <div className="font-display font-semibold text-sm">{value}</div>
                 </div>
               </div>
             ))}
@@ -67,32 +65,30 @@ const Wdc2026 = () => {
         </div>
       </section>
 
-      {/* Highlights */}
+      {/* About edition */}
       <section className="py-20 lg:py-28">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Editie 2026</span>
               <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6">
-                Een editie zoals <span className="text-gradient">nooit tevoren</span>
+                Persoonlijke dromen, <span className="text-gradient">in domino</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Na het succes van WDC 2025 gaan we groter, hoger en gedurfder. Met meer dan 1.250.000
-                stenen, 30+ bouwers en een wereldrecord-poging wordt deze editie een mijlpaal in
-                onze geschiedenis.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Deze bucketlist-items worden door middel van gedetailleerde designs omgezet naar een
+                dominovloer met meer dan 750.000 dominostenen.
               </p>
-              <div className="space-y-4">
-                {highlights.map(({ Icon, title, body }) => (
-                  <div key={title} className="flex gap-4 p-4 rounded-2xl border border-border">
-                    <div className="h-10 w-10 rounded-lg bg-primary/15 grid place-items-center text-primary shrink-0">
-                      <Icon className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <div className="font-display font-semibold mb-1">{title}</div>
-                      <p className="text-sm text-muted-foreground">{body}</p>
-                    </div>
-                  </div>
-                ))}
+              <p className="text-muted-foreground leading-relaxed">
+                Volg ons op onze sociale media voor meer informatie over de projecten en updates!
+              </p>
+              <div className="flex flex-wrap gap-3 mt-6">
+                <a href="https://www.youtube.com/dutchdominoteam" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">YouTube</a>
+                <span className="text-muted-foreground">•</span>
+                <a href="https://www.facebook.com/dutchdominoteam/" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">Facebook</a>
+                <span className="text-muted-foreground">•</span>
+                <a href="https://www.instagram.com/dutch_domino_team/" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">Instagram</a>
+                <span className="text-muted-foreground">•</span>
+                <a href="https://www.dutchdominoteam.nl/" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">dutchdominoteam.nl</a>
               </div>
             </div>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border">
@@ -103,17 +99,46 @@ const Wdc2026 = () => {
         </div>
       </section>
 
+      {/* Reserveren CTA */}
+      <section className="pb-8">
+        <div className="container">
+          <div className="max-w-4xl mx-auto rounded-3xl p-10 lg:p-14 text-center relative overflow-hidden border border-primary/30" style={{ background: "linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(var(--accent-blue) / 0.1))" }}>
+            <div className="absolute inset-0 opacity-40" style={{ background: "var(--gradient-glow)" }} />
+            <div className="relative">
+              <Ticket className="h-10 w-10 mx-auto text-primary mb-6" />
+              <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                Reserveren
+              </h2>
+              <p className="text-muted-foreground mb-2 max-w-xl mx-auto">
+                Op dit moment is de kaartverkoop nog niet gestart.
+              </p>
+              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                Wees er snel bij — er zijn beperkte toegangstickets te verkrijgen, op = op. De bestelde
+                kaarten dienen bij de ingang contant of met pin te worden afgerekend en kosten <strong className="text-foreground">€10 per stuk</strong>.
+              </p>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-8 h-12 group">
+                <Link to="/reserveren">
+                  Naar reserveringsformulier
+                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Program */}
-      <section className="py-20 lg:py-28 bg-surface">
+      <section className="py-20 lg:py-28">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Programma</span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Tijdlijn van de dag</h2>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Programma van de falldowndag</h2>
+            <p className="text-muted-foreground mt-4">Vrijdag 21 augustus 2026</p>
           </div>
           <div className="max-w-3xl mx-auto space-y-3">
             {program.map((p) => (
-              <div key={p.time} className="magnetic-card grid grid-cols-[100px_1fr] md:grid-cols-[140px_1fr] gap-4 md:gap-6 items-start p-6 rounded-2xl border border-border bg-background">
-                <div className="font-display text-2xl md:text-3xl font-bold text-gradient">{p.time}</div>
+              <div key={p.time} className="magnetic-card grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-4 md:gap-6 items-start p-6 rounded-2xl border border-border bg-surface">
+                <div className="font-display text-xl md:text-2xl font-bold text-gradient">{p.time}</div>
                 <div>
                   <h3 className="font-display text-lg font-semibold mb-1">{p.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
@@ -124,45 +149,49 @@ const Wdc2026 = () => {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 lg:py-28">
+      {/* Huisregels */}
+      <section className="py-20 lg:py-28 bg-surface">
         <div className="container max-w-3xl">
           <div className="text-center mb-12">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">FAQ</span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Veelgestelde vragen</h2>
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Huisregels</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Tijdens de falldown</h2>
+            <p className="text-muted-foreground mt-4">
+              Om alles zo goed mogelijk te laten verlopen hebben wij een aantal huishoudelijke regels opgesteld:
+            </p>
           </div>
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((f, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="rounded-2xl border border-border bg-surface px-6 data-[state=open]:bg-surface-elevated">
-                <AccordionTrigger className="font-display font-semibold text-left hover:no-underline">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">{f.a}</AccordionContent>
-              </AccordionItem>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {huisregels.map((r, i) => (
+              <div key={i} className="flex items-start gap-3 p-5 rounded-2xl border border-border bg-background">
+                <div className="h-8 w-8 rounded-lg bg-primary/15 grid place-items-center text-primary shrink-0">
+                  {i === 1 ? <Volume2 className="h-4 w-4" /> : i >= 2 && i <= 3 ? <Camera className="h-4 w-4" /> : <span className="text-xs font-bold">{i + 1}</span>}
+                </div>
+                <p className="text-sm text-foreground/85 leading-relaxed">{r}</p>
+              </div>
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="pb-24">
-        <div className="container">
-          <div className="max-w-4xl mx-auto rounded-3xl p-10 lg:p-16 text-center relative overflow-hidden border border-primary/30" style={{ background: "linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(var(--accent-blue) / 0.1))" }}>
-            <div className="absolute inset-0 opacity-40" style={{ background: "var(--gradient-glow)" }} />
-            <div className="relative">
-              <Ticket className="h-10 w-10 mx-auto text-primary mb-6" />
-              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                Reserveer je plek voor <span className="text-gradient">WDC 2026</span>
-              </h2>
-              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                Tickets zijn beperkt beschikbaar. Mis dit unieke evenement niet.
-              </p>
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-8 h-12 group">
-                <Link to="/reserveren">
-                  Reserveer nu
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
+      {/* Vervoer / FAQ */}
+      <section className="py-20 lg:py-28">
+        <div className="container max-w-3xl">
+          <div className="text-center mb-12">
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Bereikbaarheid</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Welk vervoer kun je gebruiken?</h2>
           </div>
+          <Accordion type="single" collapsible className="space-y-3">
+            {vervoer.map((v, i) => (
+              <AccordionItem key={i} value={`v-${i}`} className="rounded-2xl border border-border bg-surface px-6">
+                <AccordionTrigger className="font-display font-semibold text-left hover:no-underline">
+                  <span className="flex items-center gap-3">
+                    <v.Icon className="h-4 w-4 text-primary" />
+                    {v.title}
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">{v.body}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
     </PageLayout>

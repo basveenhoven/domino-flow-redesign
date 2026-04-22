@@ -1,61 +1,91 @@
-import { Link } from "react-router-dom";
-import { ArrowRight, Check, Crown, Sparkles, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { PageHero } from "@/components/site/PageHero";
 import sponsorsHero from "@/assets/page-sponsors-hero.jpg";
 
-// TODO: replace with actual sponsor data
-const currentSponsors = [
-  { name: "Domino Day Productions", tier: "Hoofdpartner", tagline: "Hoofdpartner WDC 2026" },
-  { name: "Bouwgroep Nederland", tier: "Premium", tagline: "Locatiepartner" },
-  { name: "Studio Aurora", tier: "Premium", tagline: "Media & broadcasting" },
-  { name: "Logistiek Plus", tier: "Standaard", tagline: "Materialen & transport" },
-  { name: "Festival Catering Co.", tier: "Standaard", tagline: "Hospitality partner" },
-  { name: "Blue Light Events", tier: "Standaard", tagline: "Licht & geluid" },
-  { name: "Stadshallen NL", tier: "Standaard", tagline: "Faciliteiten" },
-  { name: "Print&Co", tier: "Standaard", tagline: "Drukwerk & merchandise" },
-];
+interface Sponsor {
+  id: string;
+  name: string;
+  tagline: string;
+  paragraphs: string[];
+  links: { label: string; href: string }[];
+}
 
-const tiers = [
+const sponsors: Sponsor[] = [
   {
-    Icon: Crown,
-    name: "Hoofdpartner",
-    price: "Op aanvraag",
-    description: "De meest exclusieve samenwerking met maximale zichtbaarheid.",
-    perks: [
-      "Naamsvermelding in evenement-titel",
-      "Hoofdpodium branding tijdens show",
-      "Exclusieve VIP-loge (20 personen)",
-      "Logo op alle communicatie en merchandise",
-      "Eigen domino-element binnen de opstelling",
-      "Persoonlijk content-team",
+    id: "dondomino",
+    name: "Don Domino",
+    tagline: "Eindeloos bouwplezier met domino!",
+    paragraphs: [
+      "De beste kwaliteit domino stenen gewoon geproduceerd in Europa. Hoewel Don Domino een relatief nieuwe producent is met de eerste productie die in 2020 op de markt kwam, staat het nu bij velen al op de eerste plaats wanneer er wordt gedacht over het kopen van nieuwe domino stenen.",
+      "Daarom zijn wij ook super trots dat we Don Domino als hoofdsponsor van het WDC 2026 evenement mogen verwelkomen. Niet alleen krijgen we tienduizenden kersverse dominostenen van super goede kwaliteit te leen, maar ook zijn wij als domino professionals in een vroeg stadium van de ontwikkeling van de stenen gevraagd naar onze mening en feedback op de kwaliteit.",
+      "Inmiddels biedt Don Domino al meer dan 30 verschillende kleuren aan en blijven ons verbazen door alsmaar nieuwe kleuren aan te bieden. Op de website van Don Domino staat DDT als partner vermeld en kun je onze onbevooroordeelde mening horen over de kwaliteit van de stenen.",
+      "Bent u op zoek naar kwalitatief zeer goede stenen voor een goede prijs dan bent u bij Don Domino aan het juiste adres. Of het nu voor uzelf of voor uw familie is, neem eens een kijkje op de website en de social media kanalen van Don Domino.",
     ],
-    featured: true,
-  },
-  {
-    Icon: Sparkles,
-    name: "Premium",
-    price: "vanaf €15.000",
-    description: "Sterke zichtbaarheid voor merken die opvallen.",
-    perks: [
-      "Logo op website en hoofdcommunicatie",
-      "10 VIP-tickets",
-      "Branded zone op locatie",
-      "Vermelding in aftermovie",
-      "Social media shout-outs",
+    links: [
+      { label: "dondomino.eu/nl", href: "http://www.dondomino.eu/nl" },
+      { label: "Partners", href: "http://www.dondomino.eu/nl/partners" },
+      { label: "Facebook", href: "http://www.facebook.com/dondomino.eu" },
+      { label: "YouTube", href: "http://www.youtube.com/channel/UC0I7xwyoxpdVoRZCogXqILA" },
+      { label: "Instagram", href: "http://www.instagram.com/dondomino.eu" },
     ],
   },
   {
-    Icon: Star,
-    name: "Standaard",
-    price: "vanaf €5.000",
-    description: "De perfecte instap voor lokale en groeiende merken.",
-    perks: [
-      "Logo op sponsorpagina",
-      "4 reguliere tickets",
-      "Vermelding tijdens event",
-      "Bedankjes via social media",
+    id: "sportservice-veenendaal",
+    name: "Sport service Veenendaal",
+    tagline: "Sport is meer dan bewegen!",
+    paragraphs: [
+      "Of je nu gezellig een dagje wilt gaan zwemmen met je hele familie of mee wilt doen aan een georganiseerde toertocht, Sport service Veenendaal is van alle markten thuis. Met het ultieme doel om iedereen van jong tot oud te laten sporten en bewegen is het aanbod en de mogelijkheden dan ook eindeloos.",
+      "Sinds 2019 is DDT te gast in een van de locaties van Sportservice Veenendaal. Dit jaar zijn we te gast in Sporthal West. Tijdens onze rustdag zullen we zeker een duik nemen in het zwembad.",
+      "Om dit jaar honderdduizenden stenen te kunnen zetten wordt de vloer van de sporthal super schoon opgeleverd zodat we geen korreltje zand onder de stenen hebben wat het geheel vroegtijdig kan laten vallen. Sport service Veenendaal is super gastvrij en denkt met ons mee om elk jaar het evenement nog grootser te maken.",
+      "Langs de 12 gymzalen en 3 sporthallen heeft Sport service Veenendaal een groot zwemcomplex waar schoolzwemmen, wedstrijdzwemmen en aquasporten wordt georganiseerd. Ook is er een groot binnenbad en buitenbad waar in de zomer honderden kinderen en gezinnen kunnen genieten van een verfrissende plons, verschillende glijbanen, minigolf, en meer.",
+    ],
+    links: [
+      { label: "sportserviceveenendaal.nl", href: "http://www.sportserviceveenendaal.nl/" },
+      { label: "Facebook", href: "http://www.facebook.com/sportveenendaal" },
+      { label: "Zwembad de Vallei", href: "http://www.facebook.com/zwembaddevallei" },
+      { label: "Instagram", href: "http://www.instagram.com/sportservice_veenendaal" },
+    ],
+  },
+  {
+    id: "horeca-de-vallei",
+    name: "Horeca de Vallei",
+    tagline: "Een sportieve ontmoetingsplek!",
+    paragraphs: [
+      "Horeca de Vallei heeft zich afgelopen jaar geprofileerd meer te zijn dan alleen een sportcafé voor koffie en een snelle snack. In 2020 is het helemaal opgeknapt en heeft een sfeervolle uitstraling gekregen.",
+      "Elk jaar hebben wij weer het geluk dat we in Horeca de Vallei mogen dineren. De kok doet elke avond weer zijn uiterste best om een gezonde en voedzame maaltijd neer te zetten voor wat lijkt een uitgehongerde groep bouwers.",
+      "Bent u benieuwd naar het ruime aanbod van een kop koffie of een snelle snack tot een 3-gangen menu in een sfeervol restaurant, neem dan eens een kijkje op de website en kom gerust een keer langs in de gastvrije horeca van de Vallei.",
+    ],
+    links: [{ label: "sportcafe-de-vallei", href: "http://www.sportserviceveenendaal.nl/sportcafe-de-vallei" }],
+  },
+  {
+    id: "gebroeders-van-eijk",
+    name: "Gebroeders van Eijk",
+    tagline: "Service en Flexibiliteit!",
+    paragraphs: [
+      "Gebroeders van Eijk is een familiebedrijf dat is opgericht in 1908. Het transportbedrijf is inmiddels uitgegroeid tot 120 medewerkers die gemiddeld 250 zendingen per dag verzorgen.",
+      "Dit jaar worden de domino stenen van DDT van de opslaglocatie in Noord-Brabant met de vrachtwagen naar Veenendaal gebracht. De 12 pallets wegen bijna 5,5 ton, dus we zijn heel blij dat dit zware werk door een ervaren bedrijf wordt gedaan.",
+      "Heeft u een zending in de Benelux die gedaan moet worden, groot of klein, het familiebedrijf Gebroeders van Eijk staat voor u klaar.",
+    ],
+    links: [
+      { label: "gebroedersvaneijk.nl", href: "http://www.gebroedersvaneijk.nl/" },
+      { label: "Facebook", href: "http://www.facebook.com/vaneijktransport" },
+    ],
+  },
+  {
+    id: "hevesh5",
+    name: "Hevesh5",
+    tagline: "De domino kunstenaar die de wereld veroverde!",
+    paragraphs: [
+      "Hevesh5, ook wel bekend als Lily Hevesh, is een ware sensatie in de wereld van domino. Ze heeft de harten van miljoenen mensen veroverd met haar indrukwekkende domino creaties die ze deelt op haar populaire YouTube kanaal.",
+      "Hevesh5 is meer dan alleen een artiest; ze is een ware inspiratiebron. Ze begon haar domino avontuur op jonge leeftijd en heeft sindsdien een indrukwekkende carrière opgebouwd. Ze heeft samengewerkt met grote namen en heeft deelgenomen aan talloze evenementen over de hele wereld.",
+      "We zijn ongelofelijk trots dat Hevesh5 zich in 2022 bij ons evenement heeft aangesloten. Haar ervaring en kennis zijn van onschatbare waarde voor ons team. Ook was ze jurylid in het televisieprogramma Domino Masters.",
+    ],
+    links: [
+      { label: "hevesh5.com", href: "https://www.hevesh5.com/" },
+      { label: "YouTube", href: "http://youtube.com/hevesh5" },
+      { label: "Instagram", href: "https://www.instagram.com/hevesh5/" },
+      { label: "Facebook", href: "https://www.facebook.com/Hevesh5/" },
     ],
   },
 ];
@@ -65,119 +95,71 @@ const Sponsoren = () => {
     <PageLayout>
       <PageHero
         eyebrow="Sponsoren"
-        title={<>Word <span className="text-gradient">partner</span> van WDC 2026</>}
-        subtitle="Verbind je merk met domino-kunst, ambacht en spektakel. Bereik duizenden bezoekers ter plaatse en miljoenen kijkers wereldwijd via onze livestreams en aftermovies."
+        title={<>WDC 2026 wordt mede mogelijk gemaakt door <span className="text-gradient">onze partners</span></>}
+        subtitle="Zonder de steun van deze geweldige bedrijven en partners zou WDC 2026 niet mogelijk zijn."
         image={sponsorsHero}
         crumbs={[{ label: "Home", href: "/" }, { label: "Sponsoren" }]}
       />
 
-      {/* Stats */}
-      <section className="py-16">
+      {/* Quick grid */}
+      <section className="py-12">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {[
-              { v: "5.000+", l: "Bezoekers ter plaatse" },
-              { v: "2M+", l: "Online kijkers" },
-              { v: "150+", l: "Pers vermeldingen" },
-              { v: "30+", l: "Landen bereikt" },
-            ].map((s) => (
-              <div key={s.l} className="text-center">
-                <div className="font-display text-3xl md:text-5xl font-bold text-gradient">{s.v}</div>
-                <div className="mt-2 text-xs text-muted-foreground tracking-wide uppercase">{s.l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tiers */}
-      <section className="py-20 lg:py-28 bg-surface">
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Pakketten</span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Kies jouw partnerlevel</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {tiers.map((t) => (
-              <div
-                key={t.name}
-                className={`magnetic-card relative rounded-3xl border p-8 bg-background flex flex-col ${
-                  t.featured ? "border-primary ring-2 ring-primary/30 lg:scale-[1.03]" : "border-border"
-                }`}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto">
+            {sponsors.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className="group p-5 rounded-2xl border border-border bg-surface text-center hover:border-primary/50 transition-colors"
               >
-                {t.featured && (
-                  <div className="absolute top-5 right-5 text-[10px] font-medium tracking-[0.2em] uppercase px-2.5 py-1 rounded-full bg-primary text-primary-foreground">
-                    Aanbevolen
-                  </div>
-                )}
-                <div className="h-12 w-12 rounded-xl bg-primary/15 grid place-items-center text-primary mb-6">
-                  <t.Icon className="h-5 w-5" />
-                </div>
-                <div className="font-display text-2xl font-bold mb-1">{t.name}</div>
-                <div className="font-display text-2xl font-semibold text-gradient mb-3">{t.price}</div>
-                <p className="text-sm text-muted-foreground mb-6">{t.description}</p>
-                <ul className="space-y-2.5 mb-8 flex-1">
-                  {t.perks.map((p) => (
-                    <li key={p} className="flex items-start gap-2 text-sm">
-                      <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                      <span className="text-foreground/85">{p}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild className={t.featured ? "bg-primary hover:bg-primary/90 rounded-full" : "rounded-full"} variant={t.featured ? "default" : "outline"}>
-                  <Link to="/contact">Informatie aanvragen</Link>
-                </Button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Current sponsors */}
-      <section className="py-20 lg:py-28">
-        <div className="container">
-          <div className="text-center mb-12">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Onze partners</span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
-              WDC 2026 wordt mede mogelijk gemaakt door:
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {currentSponsors.map((s) => (
-              <div key={s.name} className="magnetic-card group p-6 rounded-2xl border border-border bg-surface text-center">
-                <div className="h-16 w-full rounded-md bg-foreground/5 grid place-items-center mb-4 grayscale group-hover:grayscale-0 transition-all">
-                  <span className="font-display font-bold text-lg text-muted-foreground group-hover:text-primary transition-colors">
-                    {s.name.split(" ").map((w) => w[0]).join("")}
+                <div className="h-14 w-full rounded-md bg-foreground/5 grid place-items-center mb-3 grayscale group-hover:grayscale-0 transition-all">
+                  <span className="font-display font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                    {s.name.split(" ").map((w) => w[0]).join("").slice(0, 3)}
                   </span>
                 </div>
-                <div className="font-display font-semibold text-sm leading-tight">{s.name}</div>
-                <div className="text-[10px] tracking-[0.2em] uppercase text-primary mt-2">{s.tier}</div>
-                <p className="text-xs text-muted-foreground mt-1">{s.tagline}</p>
-              </div>
+                <div className="text-xs font-display font-semibold leading-tight">{s.name}</div>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Detailed sections */}
       <section className="pb-24">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center rounded-3xl border border-border bg-surface p-10 lg:p-16 relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full opacity-30" style={{ background: "var(--gradient-glow)" }} />
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-4 relative">
-              Klaar om <span className="text-gradient">partner</span> te worden?
-            </h2>
-            <p className="text-muted-foreground mb-8 relative">
-              Plan een vrijblijvend gesprek met ons sponsorteam.
-            </p>
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-7 h-12 group relative">
-              <Link to="/contact">
-                Plan een gesprek
-                <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
+        <div className="container max-w-4xl">
+          {sponsors.map((s, i) => (
+            <article
+              key={s.id}
+              id={s.id}
+              className={`scroll-mt-28 py-12 ${i > 0 ? "border-t border-border" : ""}`}
+            >
+              <div className="mb-6">
+                <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-3 block">Sponsor</span>
+                <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">{s.name}</h2>
+                <p className="font-display text-lg text-gradient mt-2">{s.tagline}</p>
+              </div>
+
+              <div className="space-y-4 mb-6">
+                {s.paragraphs.map((p, idx) => (
+                  <p key={idx} className="text-muted-foreground leading-relaxed">{p}</p>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                {s.links.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-full border border-border hover:border-primary hover:text-primary transition-colors"
+                  >
+                    {l.label}
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
     </PageLayout>
