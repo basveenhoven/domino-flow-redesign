@@ -63,26 +63,30 @@ export const SiteHeader = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1 text-xs font-medium tracking-wider">
+          <div className="flex items-center gap-0.5 text-xs font-medium tracking-wider">
             <button
               type="button"
               onClick={() => setLang("NL")}
               aria-pressed={lang === "NL"}
               className={cn(
-                "transition-colors",
-                lang === "NL" ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                "px-2.5 py-2 md:px-2 md:py-1 rounded-md transition-colors min-w-[36px]",
+                lang === "NL"
+                  ? "text-primary bg-primary/10 md:bg-transparent"
+                  : "text-muted-foreground hover:text-foreground"
               )}
             >
               NL
             </button>
-            <span className="text-muted-foreground">/</span>
+            <span className="text-muted-foreground hidden md:inline">/</span>
             <button
               type="button"
               onClick={() => setLang("EN")}
               aria-pressed={lang === "EN"}
               className={cn(
-                "transition-colors",
-                lang === "EN" ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                "px-2.5 py-2 md:px-2 md:py-1 rounded-md transition-colors min-w-[36px]",
+                lang === "EN"
+                  ? "text-primary bg-primary/10 md:bg-transparent"
+                  : "text-muted-foreground hover:text-foreground"
               )}
             >
               EN
