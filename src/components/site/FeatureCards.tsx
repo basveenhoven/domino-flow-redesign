@@ -47,12 +47,12 @@ export const FeatureCards = () => {
               Ontdek WDC
             </span>
             <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
-              Drie manieren om <br />
-              <span className="text-gradient">deel te nemen</span>
+              Maak kennis met <br />
+              <span className="text-gradient">het collectief</span>
             </h2>
           </div>
           <p className="md:max-w-sm text-muted-foreground">
-            Of je nu wilt leren, kijken of samenwerken — er is altijd een plek voor jou binnen het collectief.
+            Lees meer over ons team, ontdek alles over WDC 2026 of neem direct contact met ons op.
           </p>
         </div>
 
