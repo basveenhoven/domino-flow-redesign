@@ -11,7 +11,7 @@ const cards = [
     eyebrow: "Het collectief",
     title: "Over ons",
     body:
-      "World Domino Collective is een verzameling van Nederlandse domino-bouwers die samen grootse projecten realiseren. Leer onze leden, missie en geschiedenis kennen.",
+      "Dutch Domino Team (DDT) is van oorsprong een vriendengroep die door het delen van onze projecten via YouTube met elkaar in contact zijn gekomen.",
     cta: "Lees meer",
     href: "/over-ons",
   },
@@ -21,17 +21,17 @@ const cards = [
     eyebrow: "Hét evenement",
     title: "WDC 2026",
     body:
-      "Ons grootste evenement van het jaar: een spectaculaire opstelling met meer dan een miljoen stenen, live publiek en een onvergetelijke falldown.",
+      "Komende zomer zet het WDC team honderdduizenden dominostenen neer. Bekijk deze pagina voor meer informatie over het evenement.",
     cta: "Meer informatie",
     href: "/wdc-2026",
   },
   {
     id: "contact-card",
     image: contactImg,
-    eyebrow: "Werk met ons samen",
+    eyebrow: "Vragen of opmerkingen",
     title: "Contact",
     body:
-      "Heb je een vraag, een projectidee, of wil je ons inhuren voor een evenement? We horen graag van je.",
+      "Heeft u een vraag of een opmerking voor het WDC team? Neem vrijblijvend contact met ons op, wij staan graag voor u klaar.",
     cta: "Neem contact op",
     href: "/contact",
   },
