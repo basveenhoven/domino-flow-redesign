@@ -20,10 +20,9 @@ export const Hero = () => {
           aria-hidden="true"
           className="w-full h-full object-cover"
         />
-        {/* Dark, calm overlays so video doesn't feel busy */}
-        <div className="absolute inset-0 bg-background/55" />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/60" />
+        {/* Subtiele overlays: video blijft duidelijk zichtbaar, tekst leesbaar */}
+        <div className="absolute inset-0 bg-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       </div>
 
       <div className="container relative pt-32 pb-24 lg:pt-40 lg:pb-32">
