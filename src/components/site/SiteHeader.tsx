@@ -63,7 +63,7 @@ export const SiteHeader = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="hidden md:flex items-center gap-1 text-xs font-medium tracking-wider">
+          <div className="flex items-center gap-1 text-xs font-medium tracking-wider">
             <button
               type="button"
               onClick={() => setLang("NL")}
