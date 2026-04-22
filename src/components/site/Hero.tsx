@@ -7,8 +7,7 @@ import heroPoster from "@/assets/hero-dominoes.jpg";
 export const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background autoplay video */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         <video
           src={heroVideo.url}
           poster={heroPoster}
@@ -18,14 +17,14 @@ export const Hero = () => {
           playsInline
           preload="auto"
           aria-hidden="true"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
-        {/* Subtiele overlays: video blijft duidelijk zichtbaar, tekst leesbaar */}
+        {/* Subtiele overlays: video blijft zichtbaar, tekst leesbaar */}
         <div className="absolute inset-0 bg-background/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       </div>
 
-      <div className="container relative pt-32 pb-24 lg:pt-40 lg:pb-32">
+      <div className="container relative z-10 pt-32 pb-24 lg:pt-40 lg:pb-32">
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
