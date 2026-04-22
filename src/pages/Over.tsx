@@ -108,7 +108,7 @@ const Over = () => {
             <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-px bg-border lg:-translate-x-1/2" />
 
             <div className="space-y-16 lg:space-y-24">
-              {editions.map((m, i) => {
+              {[...editions].reverse().map((m, i) => {
                 const textOnLeft = i % 2 === 0;
                 const TextBlock = (
                   <div className={textOnLeft ? "lg:text-right" : "lg:text-left"}>
