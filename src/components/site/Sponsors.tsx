@@ -1,10 +1,16 @@
+import logoDonDomino from "@/assets/sponsors/don-domino.png";
+import logoSportservice from "@/assets/sponsors/sportservice-veenendaal.png";
+import logoHorecaDeVallei from "@/assets/sponsors/horeca-de-vallei.png";
+import logoGebroedersVanEijk from "@/assets/sponsors/gebroeders-van-eijk.png";
+import logoHevesh5 from "@/assets/sponsors/hevesh5.png";
+
 // Real WDC 2026 sponsors (from worlddominocollective.nl)
 const sponsors = [
-  { name: "Don Domino", tagline: "Eindeloos bouwplezier met domino!" },
-  { name: "Sport service Veenendaal", tagline: "Sport is meer dan bewegen!" },
-  { name: "Horeca de Vallei", tagline: "Een sportieve ontmoetingsplek!" },
-  { name: "Gebroeders van Eijk", tagline: "Service en Flexibiliteit!" },
-  { name: "Hevesh5", tagline: "De domino kunstenaar die de wereld veroverde!" },
+  { name: "Don Domino", tagline: "Eindeloos bouwplezier met domino!", logo: logoDonDomino },
+  { name: "Sport service Veenendaal", tagline: "Sport is meer dan bewegen!", logo: logoSportservice },
+  { name: "Horeca de Vallei", tagline: "Een sportieve ontmoetingsplek!", logo: logoHorecaDeVallei },
+  { name: "Gebroeders van Eijk", tagline: "Service en Flexibiliteit!", logo: logoGebroedersVanEijk },
+  { name: "Hevesh5", tagline: "De domino kunstenaar die de wereld veroverde!", logo: logoHevesh5 },
 ];
 
 export const Sponsors = () => {
@@ -25,11 +31,13 @@ export const Sponsors = () => {
               className="group flex flex-col items-center text-center p-8 rounded-2xl bg-background/5 border border-surface-light-foreground/10 hover:border-primary/40 hover:bg-background/10 transition-all duration-500 magnetic-card"
               style={{ animationDelay: `${i * 0.05}s` }}
             >
-              {/* TODO: replace placeholder logo block with actual sponsor logos */}
-              <div className="h-16 w-full rounded-md bg-surface-light-foreground/5 grid place-items-center mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">
-                <span className="font-display font-bold text-lg text-surface-light-foreground/50 group-hover:text-primary transition-colors">
-                  {s.name.split(" ").map((w) => w[0]).join("").slice(0, 3)}
-                </span>
+              <div className="h-20 w-full grid place-items-center mb-4">
+                <img
+                  src={s.logo}
+                  alt={`${s.name} logo`}
+                  loading="lazy"
+                  className="max-h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
               <h3 className="font-display font-semibold text-sm leading-tight">{s.name}</h3>
               <p className="text-xs text-surface-light-foreground/60 mt-1.5">{s.tagline}</p>
