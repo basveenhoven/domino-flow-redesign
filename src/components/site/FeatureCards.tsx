@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import aboutImg from "@/assets/about-team.jpg";
 import wdcImg from "@/assets/wdc-event.jpg";
@@ -12,7 +13,7 @@ const cards = [
     body:
       "World Domino Collective is een verzameling van Nederlandse domino-bouwers die samen grootse projecten realiseren. Leer onze leden, missie en geschiedenis kennen.",
     cta: "Lees meer",
-    href: "#over-ons",
+    href: "/over-ons",
   },
   {
     id: "wdc-2026",
@@ -22,7 +23,7 @@ const cards = [
     body:
       "Ons grootste evenement van het jaar: een spectaculaire opstelling met meer dan een miljoen stenen, live publiek en een onvergetelijke falldown.",
     cta: "Meer informatie",
-    href: "#wdc-2026",
+    href: "/wdc-2026",
   },
   {
     id: "contact-card",
@@ -32,7 +33,7 @@ const cards = [
     body:
       "Heb je een vraag, een projectidee, of wil je ons inhuren voor een evenement? We horen graag van je.",
     cta: "Neem contact op",
-    href: "#contact",
+    href: "/contact",
   },
 ];
 
