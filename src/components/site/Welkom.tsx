@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 1000000, suffix: "+", label: "Dominoes opgesteld" },
-  { value: 2025, suffix: "", label: "WDC Record Editie" },
-  { value: 25, suffix: "+", label: "Domino-bouwers" },
+  { value: 1000000, suffix: "+", label: "Gevallen dominostenen WDC 2025" },
+  { value: 15, suffix: " jaar", label: "Dutch Domino Team jubileum" },
+  { value: 30, suffix: "+", label: "Internationale bouwers" },
 ];
 
 const useCountUp = (target: number, active: boolean, duration = 2000) => {
@@ -56,13 +56,14 @@ export const Welkom = () => {
         <div className="max-w-3xl mx-auto text-center">
           <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-6 block">Welkom</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-8">
-            De thuisbasis van <br />
-            <span className="text-gradient">Nederlandse domino-kunst</span>
+            Welkom bij het <br />
+            <span className="text-gradient">World Domino Collective</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Welkom bij World Domino Collective! Wij zijn een team van gepassioneerde domino-bouwers die
-            spectaculaire kunstwerken creëren met duizenden — soms miljoenen — dominostenen. Van intieme
-            workshops tot grootschalige evenementen: wij brengen mensen samen rond de magie van de val.
+            Welkom bij het World Domino Collective, het grootste domino evenement van dit decennium,
+            georganiseerd door het Dutch Domino Team! Je staat op het punt om een duik te nemen in de
+            wereld van domino. Wil je meer weten over ons evenement, het thema, onze bouwers of de
+            geschiedenis van onze organisatie? Bezoek dan snel onze 'Over Ons' pagina.
           </p>
         </div>
 

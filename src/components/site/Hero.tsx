@@ -1,32 +1,36 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-dominoes.jpg";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import heroPoster from "@/assets/hero-dominoes.jpg";
 
 export const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image with Ken Burns */}
+      {/* Background autoplay video */}
       <div className="absolute inset-0 -z-10">
-        <img
-          src={heroImage}
-          alt="Spectaculaire domino-opstelling tijdens een falldown"
-          width={1920}
-          height={1280}
-          className="w-full h-full object-cover animate-ken-burns"
+        <video
+          src={heroVideo.url}
+          poster={heroPoster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          className="w-full h-full object-cover"
         />
+        {/* Dark, calm overlays so video doesn't feel busy */}
+        <div className="absolute inset-0 bg-background/55" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/60" />
       </div>
-
-      {/* Glow accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] -z-10 opacity-50 animate-glow-pulse" style={{ background: "var(--gradient-glow)" }} />
 
       <div className="container relative pt-32 pb-24 lg:pt-40 lg:pb-32">
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/90">WDC 2026</span>
+            <span className="text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/90">WDC 2026 — Bucketlist</span>
           </div>
 
           <h1
@@ -38,11 +42,12 @@ export const Hero = () => {
           </h1>
 
           <p
-            className="text-base sm:text-lg lg:text-xl text-foreground/75 max-w-2xl leading-relaxed mb-10 animate-fade-up"
+            className="text-base sm:text-lg lg:text-xl text-foreground/80 max-w-2xl leading-relaxed mb-10 animate-fade-up"
             style={{ animationDelay: "0.35s" }}
           >
-            World Domino Collective brengt de meest creatieve domino-kunstenaars samen. Ontdek spectaculaire
-            opstellingen, evenementen en workshops — een wereld waar duizenden stenen tot leven komen.
+            Welkom bij het World Domino Collective, het grootste domino evenement van dit decennium,
+            georganiseerd door het Dutch Domino Team. Maak kennis met onze bouwers, ons thema en de
+            geschiedenis van onze organisatie.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>

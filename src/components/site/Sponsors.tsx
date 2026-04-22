@@ -1,10 +1,10 @@
-// TODO: Replace placeholder sponsor logos with actual sponsor brand assets
+// Real WDC 2026 sponsors (from worlddominocollective.nl)
 const sponsors = [
-  { name: "Domino Day Productions", tagline: "Hoofdpartner WDC 2026" },
-  { name: "Bouwgroep Nederland", tagline: "Locatiepartner" },
-  { name: "Studio Aurora", tagline: "Media & broadcasting" },
-  { name: "Logistiek Plus", tagline: "Materialen & transport" },
-  { name: "Festival Catering Co.", tagline: "Hospitality partner" },
+  { name: "Don Domino", tagline: "Eindeloos bouwplezier met domino!" },
+  { name: "Sport service Veenendaal", tagline: "Sport is meer dan bewegen!" },
+  { name: "Horeca de Vallei", tagline: "Een sportieve ontmoetingsplek!" },
+  { name: "Gebroeders van Eijk", tagline: "Service en Flexibiliteit!" },
+  { name: "Hevesh5", tagline: "De domino kunstenaar die de wereld veroverde!" },
 ];
 
 export const Sponsors = () => {
@@ -25,10 +25,10 @@ export const Sponsors = () => {
               className="group flex flex-col items-center text-center p-8 rounded-2xl bg-background/5 border border-surface-light-foreground/10 hover:border-primary/40 hover:bg-background/10 transition-all duration-500 magnetic-card"
               style={{ animationDelay: `${i * 0.05}s` }}
             >
-              {/* Placeholder logo block */}
+              {/* TODO: replace placeholder logo block with actual sponsor logos */}
               <div className="h-16 w-full rounded-md bg-surface-light-foreground/5 grid place-items-center mb-4 grayscale group-hover:grayscale-0 transition-all duration-500">
                 <span className="font-display font-bold text-lg text-surface-light-foreground/50 group-hover:text-primary transition-colors">
-                  {s.name.split(" ").map((w) => w[0]).join("")}
+                  {s.name.split(" ").map((w) => w[0]).join("").slice(0, 3)}
                 </span>
               </div>
               <h3 className="font-display font-semibold text-sm leading-tight">{s.name}</h3>
