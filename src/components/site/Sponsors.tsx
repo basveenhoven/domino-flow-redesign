@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logoDonDomino from "@/assets/sponsors/don-domino.png";
 import logoSportservice from "@/assets/sponsors/sportservice-veenendaal.png";
 import logoHorecaDeVallei from "@/assets/sponsors/horeca-de-vallei.png";
@@ -6,11 +7,11 @@ import logoHevesh5 from "@/assets/sponsors/hevesh5.png";
 
 // Real WDC 2026 sponsors (from worlddominocollective.nl)
 const sponsors = [
-  { name: "Don Domino", tagline: "Eindeloos bouwplezier met domino!", logo: logoDonDomino },
-  { name: "Sport service Veenendaal", tagline: "Sport is meer dan bewegen!", logo: logoSportservice },
-  { name: "Horeca de Vallei", tagline: "Een sportieve ontmoetingsplek!", logo: logoHorecaDeVallei },
-  { name: "Gebroeders van Eijk", tagline: "Service en Flexibiliteit!", logo: logoGebroedersVanEijk },
-  { name: "Hevesh5", tagline: "De domino kunstenaar die de wereld veroverde!", logo: logoHevesh5 },
+  { id: "dondomino", name: "Don Domino", tagline: "Eindeloos bouwplezier met domino!", logo: logoDonDomino },
+  { id: "sportservice-veenendaal", name: "Sport service Veenendaal", tagline: "Sport is meer dan bewegen!", logo: logoSportservice },
+  { id: "horeca-de-vallei", name: "Horeca de Vallei", tagline: "Een sportieve ontmoetingsplek!", logo: logoHorecaDeVallei },
+  { id: "gebroeders-van-eijk", name: "Gebroeders van Eijk", tagline: "Service en Flexibiliteit!", logo: logoGebroedersVanEijk },
+  { id: "hevesh5", name: "Hevesh5", tagline: "De domino kunstenaar die de wereld veroverde!", logo: logoHevesh5 },
 ];
 
 export const Sponsors = () => {
@@ -26,8 +27,10 @@ export const Sponsors = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
           {sponsors.map((s, i) => (
-            <div
-              key={s.name}
+            <Link
+              key={s.id}
+              to={`/sponsoren#${s.id}`}
+              aria-label={`Bekijk ${s.name} op de sponsorenpagina`}
               className="group flex flex-col items-center text-center p-8 rounded-2xl bg-background/5 border border-surface-light-foreground/10 hover:border-primary/40 hover:bg-background/10 transition-all duration-500 magnetic-card"
               style={{ animationDelay: `${i * 0.05}s` }}
             >
@@ -39,9 +42,9 @@ export const Sponsors = () => {
                   className="max-h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <h3 className="font-display font-semibold text-sm leading-tight">{s.name}</h3>
+              <h3 className="font-display font-semibold text-sm leading-tight group-hover:text-primary transition-colors">{s.name}</h3>
               <p className="text-xs text-surface-light-foreground/60 mt-1.5">{s.tagline}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
