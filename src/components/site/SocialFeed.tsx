@@ -1,0 +1,74 @@
+import { Instagram } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import s1 from "@/assets/social-1.jpg";
+import s2 from "@/assets/social-2.jpg";
+import s3 from "@/assets/social-3.jpg";
+import s4 from "@/assets/social-4.jpg";
+
+const posts = [
+  { img: s1, caption: "De falldown van WDC 2025 — het moment waarop alles samenkomt." },
+  { img: s2, caption: "Een nieuw spiraal-design in voorbereiding. #dominoart" },
+  { img: s3, caption: "Detailwerk: elke steen telt." },
+  { img: s4, caption: "Het Dutch Domino Team voor de show." },
+];
+
+export const SocialFeed = () => {
+  return (
+    <section id="social" className="relative py-24 lg:py-32">
+      <div className="container">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div>
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Social</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
+              Volg ons op Facebook, Instagram en YouTube
+            </h2>
+          </div>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="rounded-full border-border hover:border-primary/60 self-start md:self-auto"
+          >
+            {/* TODO: link to actual Instagram */}
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <Instagram className="mr-2 h-4 w-4" />
+              Volgen op Instagram
+            </a>
+          </Button>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-5">
+          {posts.map((p, i) => (
+            <a
+              key={i}
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className={`group relative overflow-hidden rounded-2xl border border-border bg-surface ${
+                i === 0 ? "row-span-2 md:col-span-2 md:row-span-2 aspect-square md:aspect-auto" : "aspect-square"
+              }`}
+            >
+              <img
+                src={p.img}
+                alt={p.caption}
+                loading="lazy"
+                width={768}
+                height={768}
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <p className="text-sm text-foreground/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  {p.caption}
+                </p>
+              </div>
+              <div className="absolute top-3 right-3 h-8 w-8 grid place-items-center rounded-full bg-background/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                <Instagram className="h-4 w-4 text-foreground" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
