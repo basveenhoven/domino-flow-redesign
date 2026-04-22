@@ -6,10 +6,10 @@ import s3 from "@/assets/social-3.jpg";
 import s4 from "@/assets/social-4.jpg";
 
 const posts = [
-  { img: s1, caption: "De falldown van WDC 2025 — het moment waarop alles samenkomt." },
-  { img: s2, caption: "Een nieuw spiraal-design in voorbereiding. #dominoart" },
-  { img: s3, caption: "Detailwerk: elke steen telt." },
-  { img: s4, caption: "Het Dutch Domino Team voor de show." },
+  { img: s1, caption: "We're so back 🔥 The Dutch Domino Team association — speedbuild Duck Hunt 🦆 #dutchdominoteam #duckhunt #wdc" },
+  { img: s2, caption: "🎯 Half a year ago we made history: ONE MILLION dominoes toppled — a record no independent domino team has EVER achieved before 💪" },
+  { img: s3, caption: "𝐈𝐧𝐭𝐫𝐨𝐝𝐮𝐜𝐢𝐧𝐠 𝐭𝐡𝐞 𝐭𝐡𝐞𝐦𝐞 𝐟𝐨𝐫 𝐖𝐃𝐂 𝟐𝟎𝟐𝟔... ⏳🪣👀 #WDC #domino #announcement" },
+  { img: s4, caption: "WDC 2025 — 1 MILLION DOMINOES! Video is now live on YouTube 🔥🔥" },
 ];
 
 export const SocialFeed = () => {
@@ -30,7 +30,7 @@ export const SocialFeed = () => {
             className="rounded-full border-border hover:border-primary/60 self-start md:self-auto"
           >
             {/* TODO: link to actual Instagram */}
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/dutch_domino_team/" target="_blank" rel="noreferrer">
               <Instagram className="mr-2 h-4 w-4" />
               Volgen op Instagram
             </a>
@@ -41,7 +41,7 @@ export const SocialFeed = () => {
           {posts.map((p, i) => (
             <a
               key={i}
-              href="https://instagram.com"
+              href="https://www.instagram.com/dutch_domino_team/"
               target="_blank"
               rel="noreferrer"
               className={`group relative overflow-hidden rounded-2xl border border-border bg-surface ${

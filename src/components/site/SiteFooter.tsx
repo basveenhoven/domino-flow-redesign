@@ -11,9 +11,9 @@ const footerNav = [
 ];
 
 const socials = [
-  { Icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-  { Icon: Youtube, href: "https://youtube.com", label: "YouTube" },
-  { Icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { Icon: Facebook, href: "https://www.facebook.com/dutchdominoteam", label: "Facebook" },
+  { Icon: Youtube, href: "https://www.youtube.com/c/DutchDominoTeam", label: "YouTube" },
+  { Icon: Instagram, href: "https://www.instagram.com/dutch_domino_team/", label: "Instagram" },
 ];
 
 export const SiteFooter = () => {

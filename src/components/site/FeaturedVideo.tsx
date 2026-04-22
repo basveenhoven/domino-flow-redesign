@@ -9,6 +9,10 @@ export const FeaturedVideo = () => {
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight max-w-3xl">
             Bekijk hier de falldown van <span className="text-gradient">WDC 2025!</span>
           </h2>
+          <p className="text-muted-foreground mt-5 max-w-2xl">
+            1.000.000 DOMINOES — WDC 2025 — Milestones. Ter ere van ons 15-jarig jubileum doorbraken
+            we de grens van een miljoen gevallen dominostenen.
+          </p>
           <div className="hairline w-32 mt-8" />
         </div>
 
@@ -16,11 +20,10 @@ export const FeaturedVideo = () => {
           <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary/30 via-accent-blue/30 to-primary/30 opacity-60 blur-2xl group-hover:opacity-100 transition-opacity duration-700" />
 
           <div className="relative aspect-video rounded-2xl overflow-hidden border border-border/60 bg-surface">
-            {/* TODO: Replace with actual YouTube embed of WDC 2025 falldown */}
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="WDC 2025 Falldown"
+              src="https://www.youtube.com/embed/QV38Xlbl40k"
+              title="1.000.000 DOMINOES - WDC 2025 - MILESTONES"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
