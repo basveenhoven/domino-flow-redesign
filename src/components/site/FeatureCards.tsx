@@ -58,9 +58,9 @@ export const FeatureCards = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {cards.map((c) => (
-            <a
+            <Link
               key={c.id}
-              href={c.href}
+              to={c.href}
               className="group magnetic-card relative overflow-hidden rounded-2xl border border-border bg-surface flex flex-col"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -85,7 +85,7 @@ export const FeatureCards = () => {
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 text-primary" />
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
