@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 
 const footerNav = [
-  { label: "Home", href: "#home" },
-  { label: "Over ons", href: "#over-ons" },
-  { label: "WDC 2026", href: "#wdc-2026" },
-  { label: "Reserveren", href: "#reserveren" },
-  { label: "Sponsoren", href: "#sponsoren" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Over ons", href: "/over-ons" },
+  { label: "WDC 2026", href: "/wdc-2026" },
+  { label: "Reserveren", href: "/reserveren" },
+  { label: "Sponsoren", href: "/sponsoren" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const socials = [
@@ -21,7 +22,7 @@ export const SiteFooter = () => {
       <div className="container py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
-            <a href="#home" className="flex items-center gap-2.5 mb-4">
+            <Link to="/" className="flex items-center gap-2.5 mb-4">
               <div className="h-10 w-10 rounded-md bg-gradient-to-br from-primary to-accent-blue grid place-items-center">
                 <span className="font-display font-bold text-primary-foreground">W</span>
               </div>
@@ -29,7 +30,7 @@ export const SiteFooter = () => {
                 <div className="font-display font-bold tracking-tight">World Domino</div>
                 <div className="font-display text-[10px] tracking-[0.3em] text-muted-foreground uppercase">Collective</div>
               </div>
-            </a>
+            </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               Domino Art that Connects. De thuisbasis van het Nederlandse domino-collectief.
             </p>
@@ -40,9 +41,9 @@ export const SiteFooter = () => {
             <ul className="space-y-2.5">
               {footerNav.map((n) => (
                 <li key={n.href}>
-                  <a href={n.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link to={n.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {n.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Over ons", href: "#over-ons" },
-  { label: "WDC 2026", href: "#wdc-2026" },
-  { label: "Reserveren", href: "#reserveren" },
-  { label: "Sponsoren", href: "#sponsoren" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Over ons", href: "/over-ons" },
+  { label: "WDC 2026", href: "/wdc-2026" },
+  { label: "Reserveren", href: "/reserveren" },
+  { label: "Sponsoren", href: "/sponsoren" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const SiteHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [lang, setLang] = useState<"NL" | "EN">("NL");
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,11 +31,11 @@ export const SiteHeader = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled ? "glass py-3" : "py-5 bg-transparent",
+        scrolled || pathname !== "/" ? "glass py-3" : "py-5 bg-transparent",
       )}
     >
       <div className="container flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2.5 group">
+        <Link to="/" className="flex items-center gap-2.5 group">
           <div className="relative h-9 w-9 rounded-md bg-gradient-to-br from-primary to-accent-blue grid place-items-center overflow-hidden">
             <span className="font-display font-bold text-primary-foreground text-sm">W</span>
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -42,14 +44,21 @@ export const SiteHeader = () => {
             <div className="font-display font-bold text-sm tracking-tight">World Domino</div>
             <div className="font-display text-[10px] tracking-[0.3em] text-muted-foreground uppercase">Collective</div>
           </div>
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="nav-link">
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={cn("nav-link", active && "text-primary")}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -64,7 +73,7 @@ export const SiteHeader = () => {
           </button>
 
           <Button asChild size="sm" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-5">
-            <a href="#reserveren">Reserveren</a>
+            <Link to="/reserveren">Reserveren</Link>
           </Button>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -76,17 +85,17 @@ export const SiteHeader = () => {
             <SheetContent side="right" className="w-[300px] bg-surface border-border">
               <div className="flex flex-col gap-1 mt-8">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.href}
-                    href={item.href}
+                    to={item.href}
                     onClick={() => setOpen(false)}
                     className="py-3 px-2 text-lg font-display font-medium border-b border-border/40 hover:text-primary transition-colors"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
                 <Button asChild className="mt-6 bg-primary hover:bg-primary/90 rounded-full">
-                  <a href="#reserveren" onClick={() => setOpen(false)}>Reserveren</a>
+                  <Link to="/reserveren" onClick={() => setOpen(false)}>Reserveren</Link>
                 </Button>
               </div>
             </SheetContent>
