@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -5,10 +6,45 @@ import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import heroPoster from "@/assets/hero-dominoes.jpg";
 
 export const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const ensurePlayback = async () => {
+      try {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+        await video.play();
+      } catch {
+        // Silent fallback to poster when browser blocks autoplay
+      }
+    };
+
+    void ensurePlayback();
+
+    return () => {
+      video.pause();
+    };
+  }, []);
+
+  const handleVideoReady = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playbackRate = 0.9;
+    void video.play().catch(() => undefined);
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <video
+          ref={videoRef}
           src={heroVideo.url}
           poster={heroPoster}
           autoPlay
@@ -16,10 +52,11 @@ export const Hero = () => {
           loop
           playsInline
           preload="auto"
+          disablePictureInPicture
           aria-hidden="true"
+          onLoadedData={handleVideoReady}
           className="h-full w-full object-cover"
         />
-        {/* Subtiele overlays: video blijft zichtbaar, tekst leesbaar */}
         <div className="absolute inset-0 bg-background/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       </div>
@@ -70,8 +107,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-muted-foreground">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-muted-foreground z-10">
         <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
         <div className="relative h-10 w-px bg-border overflow-hidden">
           <div className="absolute top-0 left-0 h-3 w-px bg-primary animate-scroll-indicator" />
