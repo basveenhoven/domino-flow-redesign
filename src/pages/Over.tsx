@@ -103,15 +103,34 @@ const Over = () => {
             <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">{t("about.editions")}</span>
             <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">{t("about.editionsTitle")}</h2>
           </div>
-          <div className="max-w-3xl mx-auto relative">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
+          <div className="max-w-5xl mx-auto relative">
+            <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-px bg-border lg:-translate-x-1/2" />
             {editions.map((m, i) => (
-              <div key={m.year} className={`relative flex gap-6 md:gap-0 mb-12 last:mb-0 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                <div className="absolute left-4 md:left-1/2 top-2 h-3 w-3 rounded-full bg-primary md:-translate-x-1/2 ring-4 ring-surface" />
-                <div className="ml-12 md:ml-0 md:w-1/2 md:px-10">
-                  <div className="font-display text-3xl font-bold text-gradient mb-2">{m.year}</div>
-                  <h3 className="font-display text-xl font-semibold mb-3">{m.title}</h3>
+              <div
+                key={m.year}
+                className={`relative grid gap-8 lg:gap-0 lg:grid-cols-2 mb-16 last:mb-0 items-center ${
+                  i % 2 === 0 ? "" : "lg:[&>*:first-child]:order-2"
+                }`}
+              >
+                <div className="absolute left-4 lg:left-1/2 top-2 h-3 w-3 rounded-full bg-primary lg:-translate-x-1/2 ring-4 ring-surface z-10" />
+
+                <div className={`pl-12 lg:pl-0 ${i % 2 === 0 ? "lg:pr-12" : "lg:pl-12"}`}>
+                  <div className="font-display text-4xl font-bold text-gradient mb-2">{m.year}</div>
+                  <h3 className="font-display text-2xl font-semibold mb-4">{m.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{m.body}</p>
+                </div>
+
+                <div className={`pl-12 lg:pl-0 ${i % 2 === 0 ? "lg:pl-12" : "lg:pr-12"}`}>
+                  <div className="relative aspect-video rounded-2xl overflow-hidden border border-border bg-background shadow-lg">
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={`https://www.youtube.com/embed/${m.videoId}`}
+                      title={m.title}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
                 </div>
               </div>
             ))}
