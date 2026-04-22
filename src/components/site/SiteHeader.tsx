@@ -4,21 +4,22 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Over ons", href: "/over-ons" },
-  { label: "WDC 2026", href: "/wdc-2026" },
-  { label: "Reserveren", href: "/reserveren" },
-  { label: "Sponsoren", href: "/sponsoren" },
-  { label: "Contact", href: "/contact" },
-];
+import { useI18n } from "@/lib/i18n";
 
 export const SiteHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState<"NL" | "EN">("NL");
+  const { lang, setLang, t } = useI18n();
   const { pathname } = useLocation();
+
+  const navItems = [
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.about"), href: "/over-ons" },
+    { label: t("nav.wdc"), href: "/wdc-2026" },
+    { label: t("nav.tickets"), href: "/reserveren" },
+    { label: t("nav.sponsors"), href: "/sponsoren" },
+    { label: t("nav.contact"), href: "/contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -62,18 +63,41 @@ export const SiteHeader = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setLang(lang === "NL" ? "EN" : "NL")}
-            className="hidden md:flex items-center text-xs font-medium tracking-wider px-3 py-1.5 rounded-full border border-border hover:border-primary/60 transition-colors"
-            aria-label="Toggle language"
+          <div
+            role="group"
+            aria-label="Language switcher"
+            className="hidden md:flex items-center text-xs font-medium tracking-wider rounded-full border border-border overflow-hidden"
           >
-            <span className={cn("transition-colors", lang === "NL" ? "text-foreground" : "text-muted-foreground")}>NL</span>
-            <span className="mx-1.5 text-muted-foreground">/</span>
-            <span className={cn("transition-colors", lang === "EN" ? "text-foreground" : "text-muted-foreground")}>EN</span>
-          </button>
+            <button
+              type="button"
+              onClick={() => setLang("NL")}
+              aria-pressed={lang === "NL"}
+              className={cn(
+                "px-3 py-1.5 transition-colors",
+                lang === "NL"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              NL
+            </button>
+            <button
+              type="button"
+              onClick={() => setLang("EN")}
+              aria-pressed={lang === "EN"}
+              className={cn(
+                "px-3 py-1.5 transition-colors",
+                lang === "EN"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              EN
+            </button>
+          </div>
 
           <Button asChild size="sm" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-5">
-            <Link to="/reserveren">Reserveren</Link>
+            <Link to="/reserveren">{t("nav.cta")}</Link>
           </Button>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -94,8 +118,39 @@ export const SiteHeader = () => {
                     {item.label}
                   </Link>
                 ))}
+
+                <div className="flex items-center gap-2 mt-6 mb-2 px-2 text-xs uppercase tracking-wider text-muted-foreground">
+                  Language
+                </div>
+                <div className="flex items-center gap-2 px-2">
+                  <button
+                    type="button"
+                    onClick={() => setLang("NL")}
+                    className={cn(
+                      "flex-1 py-2 rounded-full text-sm font-medium border transition-colors",
+                      lang === "NL"
+                        ? "bg-primary text-primary-foreground border-primary"
+                        : "border-border text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    Nederlands
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setLang("EN")}
+                    className={cn(
+                      "flex-1 py-2 rounded-full text-sm font-medium border transition-colors",
+                      lang === "EN"
+                        ? "bg-primary text-primary-foreground border-primary"
+                        : "border-border text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    English
+                  </button>
+                </div>
+
                 <Button asChild className="mt-6 bg-primary hover:bg-primary/90 rounded-full">
-                  <Link to="/reserveren" onClick={() => setOpen(false)}>Reserveren</Link>
+                  <Link to="/reserveren" onClick={() => setOpen(false)}>{t("nav.cta")}</Link>
                 </Button>
               </div>
             </SheetContent>

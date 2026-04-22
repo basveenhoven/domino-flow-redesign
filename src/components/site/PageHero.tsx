@@ -16,17 +16,17 @@ interface PageHeroProps {
 
 export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroProps) => {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+    <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden min-h-[70vh] lg:min-h-[80vh] flex items-end">
       <div className="absolute inset-0 -z-10">
         <img
           src={image}
           alt=""
           width={1920}
-          height={1080}
-          className="w-full h-full object-cover opacity-50 animate-ken-burns"
+          height={1280}
+          className="w-full h-full object-cover opacity-70 animate-ken-burns"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/30 to-transparent" />
       </div>
 
       <div className="container relative">

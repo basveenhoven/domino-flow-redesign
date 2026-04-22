@@ -4,9 +4,11 @@ import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import heroPoster from "@/assets/hero-dominoes.jpg";
+import { useI18n } from "@/lib/i18n";
 
 export const Hero = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const { t } = useI18n();
 
   useEffect(() => {
     const video = videoRef.current;
@@ -65,30 +67,28 @@ export const Hero = () => {
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/90">WDC 2026 — Bucketlist</span>
+            <span className="text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/90">{t("hero.eyebrow")}</span>
           </div>
 
           <h1
             className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Domino Art<br />
-            <span className="text-gradient">that Connects</span>
+            {t("hero.titleA")}<br />
+            <span className="text-gradient">{t("hero.titleB")}</span>
           </h1>
 
           <p
             className="text-base sm:text-lg lg:text-xl text-foreground/80 max-w-2xl leading-relaxed mb-10 animate-fade-up"
             style={{ animationDelay: "0.35s" }}
           >
-            Welkom bij het World Domino Collective, het grootste domino evenement van dit decennium,
-            georganiseerd door het Dutch Domino Team. Maak kennis met onze bouwers, ons thema en de
-            geschiedenis van onze organisatie.
+            {t("hero.body")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-7 h-12 text-base group">
               <Link to="/wdc-2026">
-                Bekijk WDC 2026
+                {t("hero.ctaPrimary")}
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
@@ -100,7 +100,7 @@ export const Hero = () => {
             >
               <a href="#video">
                 <Play className="mr-1 h-4 w-4 fill-current" />
-                Watch the Falldown
+                {t("hero.ctaSecondary")}
               </a>
             </Button>
           </div>
@@ -108,7 +108,7 @@ export const Hero = () => {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-muted-foreground z-10">
-        <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+        <span className="text-[10px] tracking-[0.3em] uppercase">{t("hero.scroll")}</span>
         <div className="relative h-10 w-px bg-border overflow-hidden">
           <div className="absolute top-0 left-0 h-3 w-px bg-primary animate-scroll-indicator" />
         </div>
