@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Youtube } from "lucide-react";
-
-const footerNav = [
-  { label: "Home", href: "/" },
-  { label: "Over ons", href: "/over-ons" },
-  { label: "WDC 2026", href: "/wdc-2026" },
-  { label: "Reserveren", href: "/reserveren" },
-  { label: "Sponsoren", href: "/sponsoren" },
-  { label: "Contact", href: "/contact" },
-];
+import { useI18n } from "@/lib/i18n";
 
 const socials = [
   { Icon: Facebook, href: "https://www.facebook.com/dutchdominoteam", label: "Facebook" },
@@ -17,6 +9,16 @@ const socials = [
 ];
 
 export const SiteFooter = () => {
+  const { t } = useI18n();
+  const footerNav = [
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.about"), href: "/over-ons" },
+    { label: t("nav.wdc"), href: "/wdc-2026" },
+    { label: t("nav.tickets"), href: "/reserveren" },
+    { label: t("nav.sponsors"), href: "/sponsoren" },
+    { label: t("nav.contact"), href: "/contact" },
+  ];
+
   return (
     <footer className="relative bg-background border-t border-border">
       <div className="container py-16">
@@ -32,12 +34,12 @@ export const SiteFooter = () => {
               </div>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Domino Art that Connects. De thuisbasis van het Nederlandse domino-collectief.
+              {t("footer.tagline")}
             </p>
           </div>
 
           <div>
-            <h4 className="font-display font-semibold text-sm tracking-wider uppercase mb-4">Navigatie</h4>
+            <h4 className="font-display font-semibold text-sm tracking-wider uppercase mb-4">{t("footer.nav")}</h4>
             <ul className="space-y-2.5">
               {footerNav.map((n) => (
                 <li key={n.href}>
@@ -50,7 +52,7 @@ export const SiteFooter = () => {
           </div>
 
           <div>
-            <h4 className="font-display font-semibold text-sm tracking-wider uppercase mb-4">Volg ons op:</h4>
+            <h4 className="font-display font-semibold text-sm tracking-wider uppercase mb-4">{t("footer.follow")}</h4>
             <div className="flex items-center gap-3">
               {socials.map(({ Icon, href, label }) => (
                 <a
@@ -71,8 +73,8 @@ export const SiteFooter = () => {
         <div className="hairline mb-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} World Domino Collective. Alle rechten voorbehouden.</p>
-          <p className="font-display tracking-[0.2em] uppercase">Domino Art that Connects</p>
+          <p>© {new Date().getFullYear()} World Domino Collective. {t("footer.copyright")}</p>
+          <p className="font-display tracking-[0.2em] uppercase">{t("footer.slogan")}</p>
         </div>
       </div>
     </footer>

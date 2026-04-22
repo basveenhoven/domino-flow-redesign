@@ -1,22 +1,23 @@
 import { Play } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 export const FeaturedVideo = () => {
+  const { t } = useI18n();
   return (
     <section id="video" className="relative py-24 lg:py-32 bg-background">
       <div className="container">
         <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
-          <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4">Highlight</span>
+          <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4">{t("video.eyebrow")}</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight max-w-3xl">
-            Bekijk hier de falldown van <span className="text-gradient">WDC 2025!</span>
+            {t("video.titleA")} <span className="text-gradient">{t("video.titleB")}</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl">
-            1.000.000 DOMINOES — WDC 2025 — Milestones. Ter ere van ons 15-jarig jubileum doorbraken
-            we de grens van een miljoen gevallen dominostenen.
+            {t("video.body")}
           </p>
           <div className="hairline w-32 mt-8" />
         </div>
 
-        <div className="relative max-w-5xl mx-auto group">
+        <div className="relative max-w-6xl mx-auto group">
           <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary/30 via-accent-blue/30 to-primary/30 opacity-60 blur-2xl group-hover:opacity-100 transition-opacity duration-700" />
 
           <div className="relative aspect-video rounded-2xl overflow-hidden border border-border/60 bg-surface">

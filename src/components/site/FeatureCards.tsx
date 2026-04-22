@@ -3,56 +3,56 @@ import { ArrowUpRight } from "lucide-react";
 import aboutImg from "@/assets/about-team.jpg";
 import wdcImg from "@/assets/wdc-event.jpg";
 import contactImg from "@/assets/contact-dominoes.jpg";
-
-const cards = [
-  {
-    id: "over-ons",
-    image: aboutImg,
-    eyebrow: "Het collectief",
-    title: "Over ons",
-    body:
-      "Dutch Domino Team (DDT) is van oorsprong een vriendengroep die door het delen van onze projecten via YouTube met elkaar in contact zijn gekomen.",
-    cta: "Lees meer",
-    href: "/over-ons",
-  },
-  {
-    id: "wdc-2026",
-    image: wdcImg,
-    eyebrow: "Hét evenement",
-    title: "WDC 2026",
-    body:
-      "Komende zomer zet het WDC team honderdduizenden dominostenen neer. Bekijk deze pagina voor meer informatie over het evenement.",
-    cta: "Meer informatie",
-    href: "/wdc-2026",
-  },
-  {
-    id: "contact-card",
-    image: contactImg,
-    eyebrow: "Vragen of opmerkingen",
-    title: "Contact",
-    body:
-      "Heeft u een vraag of een opmerking voor het WDC team? Neem vrijblijvend contact met ons op, wij staan graag voor u klaar.",
-    cta: "Neem contact op",
-    href: "/contact",
-  },
-];
+import { useI18n } from "@/lib/i18n";
 
 export const FeatureCards = () => {
+  const { t } = useI18n();
+
+  const cards = [
+    {
+      id: "over-ons",
+      image: aboutImg,
+      eyebrow: t("card.about.eyebrow"),
+      title: t("card.about.title"),
+      body: t("card.about.body"),
+      cta: t("card.about.cta"),
+      href: "/over-ons",
+    },
+    {
+      id: "wdc-2026",
+      image: wdcImg,
+      eyebrow: t("card.wdc.eyebrow"),
+      title: t("card.wdc.title"),
+      body: t("card.wdc.body"),
+      cta: t("card.wdc.cta"),
+      href: "/wdc-2026",
+    },
+    {
+      id: "contact-card",
+      image: contactImg,
+      eyebrow: t("card.contact.eyebrow"),
+      title: t("card.contact.title"),
+      body: t("card.contact.body"),
+      cta: t("card.contact.cta"),
+      href: "/contact",
+    },
+  ];
+
   return (
     <section id="ontdek" className="relative py-24 lg:py-32 bg-background">
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
-              Ontdek WDC
+              {t("cards.eyebrow")}
             </span>
             <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
-              Maak kennis met <br />
-              <span className="text-gradient">het collectief</span>
+              {t("cards.titleA")} <br />
+              <span className="text-gradient">{t("cards.titleB")}</span>
             </h2>
           </div>
           <p className="md:max-w-sm text-muted-foreground">
-            Lees meer over ons team, ontdek alles over WDC 2026 of neem direct contact met ons op.
+            {t("cards.intro")}
           </p>
         </div>
 
@@ -69,10 +69,10 @@ export const FeatureCards = () => {
                   alt={c.title}
                   loading="lazy"
                   width={1280}
-                  height={896}
+                  height={960}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />
               </div>
               <div className="flex flex-col gap-3 p-7 flex-1">
                 <span className="text-[10px] font-medium tracking-[0.25em] uppercase text-primary">
