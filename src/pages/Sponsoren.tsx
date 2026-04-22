@@ -122,10 +122,13 @@ const Sponsoren = () => {
                 href={`#${s.id}`}
                 className="group p-5 rounded-2xl border border-border bg-surface text-center hover:border-primary/50 transition-colors"
               >
-                <div className="h-14 w-full rounded-md bg-foreground/5 grid place-items-center mb-3 grayscale group-hover:grayscale-0 transition-all">
-                  <span className="font-display font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                    {s.name.split(" ").map((w) => w[0]).join("").slice(0, 3)}
-                  </span>
+                <div className="h-16 w-full grid place-items-center mb-3">
+                  <img
+                    src={s.logo}
+                    alt={`${s.name} logo`}
+                    loading="lazy"
+                    className="max-h-14 w-auto object-contain"
+                  />
                 </div>
                 <div className="text-xs font-display font-semibold leading-tight">{s.name}</div>
               </a>
