@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-dominoes.jpg";
@@ -46,10 +47,10 @@ export const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-7 h-12 text-base group">
-              <a href="#wdc-2026">
+              <Link to="/wdc-2026">
                 Bekijk WDC 2026
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
