@@ -193,6 +193,14 @@
     color: hsl(var(--surface-light-foreground));
   }
 
+  .dark .nav-link {
+    color: hsl(var(--surface-light-foreground) / 0.8);
+  }
+
+  .dark .nav-link:hover {
+    color: hsl(var(--surface-light-foreground));
+  }
+
   .nav-link::after {
     content: '';
     @apply absolute left-0 -bottom-1 h-px w-full origin-right scale-x-0 bg-primary transition-transform duration-500;
