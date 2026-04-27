@@ -38,11 +38,12 @@ export const SiteHeader = () => {
         isHome && "dark text-foreground",
         scrolled || !isHome
           ? isHome
-            ? "py-3 border-b border-border/60 backdrop-blur-xl"
+            ? "py-3 border-b border-border/60 backdrop-blur-xl saturate-150"
             : "glass py-3"
-          : "bg-transparent py-5",
+          : "py-5",
+        !isHome && !scrolled && "bg-transparent",
       )}
-      style={isHome && (scrolled || !isHome) ? { backgroundColor: "rgba(14, 14, 17, 0.7)" } : isHome ? undefined : undefined}
+      style={isHome ? { backgroundColor: scrolled ? "rgba(14, 14, 17, 0.85)" : "rgb(14, 14, 17)" } : undefined}
     >
       <div className="container flex items-center justify-between">
         <Link to="/" className="font-display font-bold text-sm sm:text-base tracking-tight hover:text-primary transition-colors">
