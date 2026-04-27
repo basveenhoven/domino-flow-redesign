@@ -9,52 +9,52 @@
 
 @layer base {
   :root {
-    /* Brand surfaces */
-    --background: 230 45% 7%;
-    --foreground: 40 20% 96%;
+    /* Brand surfaces — deep charcoal base */
+    --background: 240 8% 6%;
+    --foreground: 40 25% 97%;
 
-    --surface: 230 40% 10%;
-    --surface-elevated: 230 35% 13%;
+    --surface: 240 7% 9%;
+    --surface-elevated: 240 6% 12%;
     --surface-light: 40 30% 97%;
-    --surface-light-foreground: 230 45% 9%;
+    --surface-light-foreground: 240 10% 8%;
 
-    --card: 230 40% 10%;
-    --card-foreground: 40 20% 96%;
+    --card: 240 7% 9%;
+    --card-foreground: 40 25% 97%;
 
-    --popover: 230 40% 10%;
-    --popover-foreground: 40 20% 96%;
+    --popover: 240 7% 9%;
+    --popover-foreground: 40 25% 97%;
 
-    /* Brand accents — domino colors */
-    --primary: 330 92% 58%;          /* magenta */
-    --primary-foreground: 40 30% 98%;
-    --primary-glow: 330 100% 70%;
+    /* Brand accents — bold & energetic */
+    --primary: 22 100% 55%;          /* neon orange */
+    --primary-foreground: 240 10% 6%;
+    --primary-glow: 28 100% 65%;
 
-    --accent-blue: 215 100% 62%;     /* electric blue */
-    --accent-lime: 80 90% 55%;       /* lime */
-    --accent-amber: 38 95% 60%;      /* amber */
+    --accent-blue: 195 100% 55%;     /* electric cyan */
+    --accent-lime: 55 100% 58%;      /* electric yellow */
+    --accent-amber: 22 100% 55%;     /* neon orange */
 
-    --secondary: 230 30% 18%;
-    --secondary-foreground: 40 20% 96%;
+    --secondary: 240 6% 16%;
+    --secondary-foreground: 40 25% 97%;
 
-    --muted: 230 25% 16%;
-    --muted-foreground: 230 15% 65%;
+    --muted: 240 5% 14%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 215 100% 62%;
-    --accent-foreground: 230 45% 9%;
+    --accent: 55 100% 58%;
+    --accent-foreground: 240 10% 6%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 40 30% 98%;
 
-    --border: 230 25% 20%;
-    --input: 230 25% 18%;
-    --ring: 330 92% 58%;
+    --border: 240 6% 18%;
+    --input: 240 6% 16%;
+    --ring: 22 100% 55%;
 
     --radius: 1rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(230 45% 7% / 0.95) 0%, hsl(230 50% 12% / 0.85) 50%, hsl(330 60% 20% / 0.7) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent-blue)) 100%);
-    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary) / 0.35), transparent 70%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 8% 6% / 0.95) 0%, hsl(240 10% 10% / 0.85) 50%, hsl(22 80% 18% / 0.75) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent-lime)) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary) / 0.4), transparent 70%);
     --gradient-surface: linear-gradient(180deg, hsl(var(--surface)) 0%, hsl(var(--background)) 100%);
 
     /* Shadows */
