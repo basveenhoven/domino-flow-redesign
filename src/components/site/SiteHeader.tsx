@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
+import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 export const SiteHeader = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -56,6 +57,7 @@ export const SiteHeader = () => {
         </nav>
 
         <div className="flex items-center gap-3">
+          <ThemeToggle className="hidden sm:inline-flex" />
           <div className="flex items-center gap-0.5 text-xs font-medium tracking-wider">
             <button
               type="button"
