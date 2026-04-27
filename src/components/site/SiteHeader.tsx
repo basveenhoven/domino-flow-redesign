@@ -36,7 +36,7 @@ export const SiteHeader = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isHome
-          ? "dark text-foreground py-3 border-b border-border/60"
+          ? "home-header dark text-foreground py-3 border-b border-border/60"
           : cn(scrolled ? "glass py-3" : "bg-transparent py-5"),
       )}
       style={isHome ? { backgroundColor: "rgb(14, 14, 17)" } : undefined}
@@ -59,7 +59,7 @@ export const SiteHeader = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={cn("nav-link", isHome && "text-white/80 hover:text-white", active && "text-primary hover:text-primary")}
+                className={cn("nav-link", active && "text-primary hover:text-primary")}
               >
                 {item.label}
               </Link>
