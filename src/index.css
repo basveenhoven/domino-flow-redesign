@@ -185,6 +185,14 @@
     @apply relative text-sm font-medium text-foreground/80 transition-colors hover:text-foreground;
   }
 
+  .home-header .nav-link {
+    color: hsl(var(--popover-foreground) / 0.8);
+  }
+
+  .home-header .nav-link:hover {
+    color: hsl(var(--popover-foreground));
+  }
+
   .nav-link::after {
     content: '';
     @apply absolute left-0 -bottom-1 h-px w-full origin-right scale-x-0 bg-primary transition-transform duration-500;
