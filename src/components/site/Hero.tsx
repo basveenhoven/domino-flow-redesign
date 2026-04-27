@@ -77,7 +77,7 @@ export const Hero = () => {
           </div>
 
           <h1
-            className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8 animate-fade-up"
+            className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8 animate-fade-up text-white"
             style={{ animationDelay: "0.2s" }}
           >
             {t("hero.titleA")}<br />
@@ -85,7 +85,7 @@ export const Hero = () => {
           </h1>
 
           <p
-            className="text-base sm:text-lg lg:text-xl text-foreground/80 max-w-2xl leading-relaxed mb-10 animate-fade-up"
+            className="text-base sm:text-lg lg:text-xl text-white/80 max-w-2xl leading-relaxed mb-10 animate-fade-up"
             style={{ animationDelay: "0.35s" }}
           >
             {t("hero.body")}
