@@ -29,11 +29,13 @@ export const SiteHeader = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isHome = pathname === "/";
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled || pathname !== "/" ? "glass py-3" : "py-5 bg-transparent",
+        scrolled || !isHome ? "glass py-3" : "dark bg-transparent text-foreground py-5",
       )}
     >
       <div className="container flex items-center justify-between">
