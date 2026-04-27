@@ -102,7 +102,7 @@ export const Hero = () => {
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full px-7 h-12 text-base border-foreground/20 bg-foreground/5 hover:bg-foreground/10 text-foreground backdrop-blur-sm"
+              className="rounded-full px-7 h-12 text-base border-white/20 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm"
             >
               <a href="#video">
                 <Play className="mr-1 h-4 w-4 fill-current" />
