@@ -49,7 +49,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
 
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm mb-6 animate-fade-up">
           <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-          <span className="text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/90">{eyebrow}</span>
+          <span className="text-xs font-medium tracking-[0.2em] uppercase text-primary">{eyebrow}</span>
         </div>
 
         <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight max-w-4xl animate-fade-up pb-2" style={{ animationDelay: "0.1s" }}>
