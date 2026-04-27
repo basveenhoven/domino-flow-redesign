@@ -24,14 +24,9 @@ export const SiteFooter = () => {
       <div className="container py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
-            <Link to="/" className="flex items-center gap-2.5 mb-4">
-              <div className="h-10 w-10 rounded-md bg-gradient-to-br from-primary to-accent-blue grid place-items-center">
-                <span className="font-display font-bold text-primary-foreground">W</span>
-              </div>
-              <div className="leading-tight">
-                <div className="font-display font-bold tracking-tight">World Domino</div>
-                <div className="font-display text-[10px] tracking-[0.3em] text-muted-foreground uppercase">Collective</div>
-              </div>
+            <Link to="/" className="leading-tight mb-4 inline-block">
+              <div className="font-display font-bold tracking-tight">World Domino</div>
+              <div className="font-display text-[10px] tracking-[0.3em] text-muted-foreground uppercase">Collective</div>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               {t("footer.tagline")}
