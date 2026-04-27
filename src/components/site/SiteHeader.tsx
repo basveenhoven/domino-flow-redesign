@@ -36,14 +36,11 @@ export const SiteHeader = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isHome && "dark text-foreground",
-        scrolled || !isHome
-          ? isHome
-            ? "py-3 border-b border-border/60 backdrop-blur-xl saturate-150"
-            : "glass py-3"
-          : "py-5",
-        !isHome && !scrolled && "bg-transparent",
+        scrolled || !isHome ? "py-3" : "py-5",
+        !isHome && (scrolled ? "glass" : "bg-transparent"),
+        isHome && scrolled && "border-b border-border/60",
       )}
-      style={isHome ? { backgroundColor: scrolled ? "rgba(14, 14, 17, 0.85)" : "rgb(14, 14, 17)" } : undefined}
+      style={isHome ? { backgroundColor: "rgb(14, 14, 17)" } : undefined}
     >
       <div className="container flex items-center justify-between">
         <Link to="/" className="font-display font-bold text-sm sm:text-base tracking-tight hover:text-primary transition-colors">
