@@ -23,10 +23,10 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
           alt=""
           width={1920}
           height={1280}
-          className="w-full h-full object-cover opacity-70 animate-ken-burns"
+          className="w-full h-full object-cover opacity-90 animate-ken-burns"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/20 to-transparent" />
       </div>
 
       <div className="container relative">
@@ -52,7 +52,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
           <span className="text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/90">{eyebrow}</span>
         </div>
 
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1] tracking-tight max-w-4xl animate-fade-up" style={{ animationDelay: "0.1s" }}>
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight max-w-4xl animate-fade-up pb-2" style={{ animationDelay: "0.1s" }}>
           {title}
         </h1>
 
