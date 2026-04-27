@@ -113,7 +113,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-muted-foreground z-10">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-white/60 z-10">
         <span className="text-[10px] tracking-[0.3em] uppercase">{t("hero.scroll")}</span>
         <div className="relative h-10 w-px bg-border overflow-hidden">
           <div className="absolute top-0 left-0 h-3 w-px bg-primary animate-scroll-indicator" />
