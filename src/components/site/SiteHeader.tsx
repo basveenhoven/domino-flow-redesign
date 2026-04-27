@@ -141,7 +141,12 @@ export const SiteHeader = () => {
                   </button>
                 </div>
 
-                <Button asChild className="mt-6 bg-primary hover:bg-primary/90 rounded-full">
+                <div className="flex items-center justify-between mt-6 px-2 py-3 border-t border-border/40">
+                  <span className="text-xs uppercase tracking-wider text-muted-foreground">Theme</span>
+                  <ThemeToggle />
+                </div>
+
+                <Button asChild className="mt-4 bg-primary hover:bg-primary/90 rounded-full">
                   <Link to="/reserveren" onClick={() => setOpen(false)}>{t("nav.cta")}</Link>
                 </Button>
               </div>
