@@ -35,9 +35,14 @@ export const SiteHeader = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isHome && "dark bg-background text-foreground",
-        scrolled || !isHome ? "glass py-3" : "bg-transparent py-5",
+        isHome && "dark text-foreground",
+        scrolled || !isHome
+          ? isHome
+            ? "py-3 border-b border-border/60 backdrop-blur-xl"
+            : "glass py-3"
+          : "bg-transparent py-5",
       )}
+      style={isHome && (scrolled || !isHome) ? { backgroundColor: "rgba(14, 14, 17, 0.7)" } : isHome ? undefined : undefined}
     >
       <div className="container flex items-center justify-between">
         <Link to="/" className="font-display font-bold text-sm sm:text-base tracking-tight hover:text-primary transition-colors">
