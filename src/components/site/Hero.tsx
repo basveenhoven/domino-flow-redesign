@@ -59,8 +59,14 @@ export const Hero = () => {
           onLoadedData={handleVideoReady}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-background/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+        <div className="absolute inset-0" style={{ backgroundColor: "hsl(240 8% 6% / 0.3)" }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(to top, hsl(240 8% 6%) 0%, hsl(240 8% 6% / 0.4) 50%, transparent 100%)",
+          }}
+        />
       </div>
 
       <div className="container relative z-10 pt-32 pb-24 lg:pt-40 lg:pb-32">
