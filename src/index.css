@@ -186,11 +186,11 @@
   }
 
   .home-header .nav-link {
-    color: hsl(var(--popover-foreground) / 0.8);
+    color: hsl(var(--surface-light-foreground) / 0.8);
   }
 
   .home-header .nav-link:hover {
-    color: hsl(var(--popover-foreground));
+    color: hsl(var(--surface-light-foreground));
   }
 
   .nav-link::after {
