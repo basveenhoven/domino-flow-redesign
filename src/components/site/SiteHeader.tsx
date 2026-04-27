@@ -59,7 +59,7 @@ export const SiteHeader = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className={cn("nav-link", active && "text-primary")}
+                className={cn("nav-link", isHome && "text-white/80 hover:text-white", active && "text-primary hover:text-primary")}
               >
                 {item.label}
               </Link>
