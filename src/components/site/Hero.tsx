@@ -92,7 +92,7 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-7 h-12 text-base group">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-7 h-12 text-base group">
               <Link to="/wdc-2026">
                 {t("hero.ctaPrimary")}
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
