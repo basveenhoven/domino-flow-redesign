@@ -36,15 +36,9 @@ export const SiteHeader = () => {
       )}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="relative h-9 w-9 rounded-md bg-gradient-to-br from-primary to-accent-blue grid place-items-center overflow-hidden">
-            <span className="font-display font-bold text-primary-foreground text-sm">W</span>
-            <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          </div>
-          <div className="leading-tight">
-            <div className="font-display font-bold text-sm tracking-tight">World Domino</div>
-            <div className="font-display text-[10px] tracking-[0.3em] text-muted-foreground uppercase">Collective</div>
-          </div>
+        <Link to="/" className="leading-tight group">
+          <div className="font-display font-bold text-sm tracking-tight group-hover:text-primary transition-colors">World Domino</div>
+          <div className="font-display text-[10px] tracking-[0.3em] text-muted-foreground uppercase">Collective</div>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
