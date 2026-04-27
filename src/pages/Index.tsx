@@ -9,15 +9,17 @@ import { ContactForm } from "@/components/site/ContactForm";
 
 const Index = () => {
   return (
-    <PageLayout>
-      <Hero />
-      <FeaturedVideo />
-      <Welkom />
-      <Sponsors />
-      <FeatureCards />
-      <SocialFeed />
-      <ContactForm />
-    </PageLayout>
+    <div className="dark bg-background text-foreground">
+      <PageLayout>
+        <Hero />
+        <FeaturedVideo />
+        <Welkom />
+        <Sponsors />
+        <FeatureCards />
+        <SocialFeed />
+        <ContactForm />
+      </PageLayout>
+    </div>
   );
 };
 

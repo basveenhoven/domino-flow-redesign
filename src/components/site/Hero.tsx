@@ -43,7 +43,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="dark bg-background text-foreground relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
