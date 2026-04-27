@@ -25,8 +25,8 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
           height={1280}
           className="w-full h-full object-cover opacity-70 animate-ken-burns"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/20 to-transparent" />
       </div>
 
       <div className="container relative">
