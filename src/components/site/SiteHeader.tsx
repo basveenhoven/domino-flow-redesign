@@ -36,14 +36,13 @@ export const SiteHeader = () => {
       )}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="group inline-flex">
-          <div className="font-display font-black uppercase leading-[0.95] tracking-tight text-[11px] sm:text-xs group-hover:text-primary transition-colors">
-            <div>World</div>
-            <div>Domino</div>
-            <div className="inline-flex items-baseline">
-              Collective<span className="text-primary">.</span>
-            </div>
-          </div>
+        <Link to="/" className="group inline-flex flex-col leading-none">
+          <span className="font-display font-black text-2xl sm:text-3xl tracking-tight text-primary group-hover:text-primary/80 transition-colors">
+            WDC
+          </span>
+          <span className="font-display font-semibold text-[9px] sm:text-[10px] tracking-[0.25em] uppercase text-foreground/90 mt-1">
+            World Domino Collective
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
