@@ -77,7 +77,7 @@ export const Hero = () => {
           </div>
 
           <h1
-            className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8 animate-fade-up"
+            className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8 animate-fade-up text-white"
             style={{ animationDelay: "0.2s" }}
           >
             {t("hero.titleA")}<br />
@@ -85,7 +85,7 @@ export const Hero = () => {
           </h1>
 
           <p
-            className="text-base sm:text-lg lg:text-xl text-foreground/80 max-w-2xl leading-relaxed mb-10 animate-fade-up"
+            className="text-base sm:text-lg lg:text-xl text-white/80 max-w-2xl leading-relaxed mb-10 animate-fade-up"
             style={{ animationDelay: "0.35s" }}
           >
             {t("hero.body")}
@@ -102,7 +102,7 @@ export const Hero = () => {
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full px-7 h-12 text-base border-foreground/20 bg-foreground/5 hover:bg-foreground/10 text-foreground backdrop-blur-sm"
+              className="rounded-full px-7 h-12 text-base border-white/20 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm"
             >
               <a href="#video">
                 <Play className="mr-1 h-4 w-4 fill-current" />
@@ -113,7 +113,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-muted-foreground z-10">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-white/60 z-10">
         <span className="text-[10px] tracking-[0.3em] uppercase">{t("hero.scroll")}</span>
         <div className="relative h-10 w-px bg-border overflow-hidden">
           <div className="absolute top-0 left-0 h-3 w-px bg-primary animate-scroll-indicator" />
