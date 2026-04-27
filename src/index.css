@@ -185,20 +185,14 @@
     @apply relative text-sm font-medium text-foreground/80 transition-colors hover:text-foreground;
   }
 
-  .home-header .nav-link {
-    color: hsl(var(--surface-light-foreground) / 0.8);
-  }
-
-  .home-header .nav-link:hover {
-    color: hsl(var(--surface-light-foreground));
-  }
-
+  .home-header .nav-link,
   .dark .nav-link {
-    color: hsl(var(--surface-light-foreground) / 0.8);
+    color: rgba(249, 248, 245, 0.8);
   }
 
+  .home-header .nav-link:hover,
   .dark .nav-link:hover {
-    color: hsl(var(--surface-light-foreground));
+    color: rgba(249, 248, 245, 1);
   }
 
   .nav-link::after {
