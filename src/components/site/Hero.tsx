@@ -67,7 +67,7 @@ export const Hero = () => {
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/90">{t("hero.eyebrow")}</span>
+            <span className="text-xs font-medium tracking-[0.2em] uppercase text-primary">{t("hero.eyebrow")}</span>
           </div>
 
           <h1
