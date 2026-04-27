@@ -42,7 +42,13 @@ export const SiteHeader = () => {
       style={isHome ? { backgroundColor: "rgb(14, 14, 17)" } : undefined}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="font-display font-bold text-sm sm:text-base tracking-tight hover:text-primary transition-colors">
+        <Link
+          to="/"
+          className={cn(
+            "font-display font-bold text-sm sm:text-base tracking-tight hover:text-primary transition-colors",
+            isHome && "text-white",
+          )}
+        >
           World Domino Collective
         </Link>
 
