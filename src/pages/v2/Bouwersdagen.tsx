@@ -85,6 +85,19 @@ const Bouwersdagen = () => {
         </div>
       </section>
 
+      {/* Photo strip */}
+      <section className="pb-20 lg:pb-28">
+        <div className="container max-w-5xl">
+          <div className="grid grid-cols-3 gap-3 md:gap-4">
+            {[scrapedImages.ddtBuild5, scrapedImages.ddtBuild7, scrapedImages.ddtBuild8].map((src, i) => (
+              <div key={i} className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border">
+                <img src={src} alt="Bouwers in actie" loading="lazy" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Hoe werkt een Bouwersdag */}
       <section className="py-20 lg:py-28 bg-surface">
         <div className="container max-w-4xl">
