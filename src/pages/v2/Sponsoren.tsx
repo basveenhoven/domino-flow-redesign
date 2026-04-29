@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
-import { PageLayout } from "@/components/site/PageLayout";
-import { PageHero } from "@/components/site/PageHero";
+import { PageLayout } from "@/components/site/v2/PageLayout";
+import { PageHero } from "@/components/site/v2/PageHero";
 import sponsorsHero from "@/assets/page-sponsors-hero.jpg";
 import logoDonDomino from "@/assets/sponsors/don-domino.png";
 import logoSportservice from "@/assets/sponsors/sportservice-veenendaal.png";

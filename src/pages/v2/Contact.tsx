@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone, Facebook, Instagram, Youtube } from "lucide-react";
-import { PageLayout } from "@/components/site/PageLayout";
-import { PageHero } from "@/components/site/PageHero";
-import { ContactForm } from "@/components/site/ContactForm";
+import { PageLayout } from "@/components/site/v2/PageLayout";
+import { PageHero } from "@/components/site/v2/PageHero";
+import { ContactForm } from "@/components/site/v2/ContactForm";
 import contactImg from "@/assets/contact-dominoes.jpg";
 import { useI18n } from "@/lib/i18n";
 

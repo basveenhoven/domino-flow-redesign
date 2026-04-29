@@ -2,8 +2,8 @@ import { Calendar, Clock, MapPin, Ticket, Camera, Volume2, ArrowRight, Car, Bus,
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { PageLayout } from "@/components/site/PageLayout";
-import { PageHero } from "@/components/site/PageHero";
+import { PageLayout } from "@/components/site/v2/PageLayout";
+import { PageHero } from "@/components/site/v2/PageHero";
 import wdcHero from "@/assets/page-wdc-hero.jpg";
 import wdcEvent from "@/assets/wdc-event.jpg";
 import { useI18n } from "@/lib/i18n";
