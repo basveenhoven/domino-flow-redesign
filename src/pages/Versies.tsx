@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Versies = () => {
   return (
-    <div className="dark min-h-screen bg-background text-foreground flex items-center justify-center px-6 py-16">
+    <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-6 py-16">
       <div className="w-full max-w-5xl">
         <div className="text-center mb-14">
           <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
