@@ -106,7 +106,7 @@ export const SiteHeader = () => {
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <button className={cn("lg:hidden p-2 -mr-2 text-foreground", isHome && "text-white")} aria-label="Open menu">
+              <button className="lg:hidden p-2 -mr-2 text-foreground" aria-label="Open menu">
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
