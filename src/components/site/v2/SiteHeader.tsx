@@ -41,20 +41,16 @@ export const SiteHeader = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isHome
-          ? "home-header dark text-foreground py-3 border-b border-border/60"
+          ? "home-header py-3 border-b border-border/60 bg-background/95 backdrop-blur"
           : cn(scrolled ? "glass py-3" : "bg-transparent py-5"),
       )}
-      style={isHome ? { backgroundColor: "rgb(14, 14, 17)" } : undefined}
     >
       <div className="container flex items-center justify-between">
         <Link
           to={homeHref}
-          className={cn(
-            "font-display font-bold text-sm sm:text-base tracking-tight hover:text-primary transition-colors",
-            isHome && "text-white",
-          )}
+          className="font-display font-bold text-sm sm:text-base tracking-tight text-foreground hover:text-primary transition-colors"
         >
-          World Domino Collective{isV2 && <span className="ml-2 text-primary">V2</span>}
+          World Domino Collective
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
