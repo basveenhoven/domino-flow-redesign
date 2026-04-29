@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { PageLayout } from "@/components/site/v2/PageLayout";
 import { PageHero } from "@/components/site/v2/PageHero";
-import ticketsHero from "@/assets/page-tickets-hero.jpg";
+import { scrapedImages } from "@/lib/scrapedImages";
+const ticketsHero = scrapedImages.wdcFalldown2;
 
 const Reserveren = () => {
   const [submitting, setSubmitting] = useState(false);

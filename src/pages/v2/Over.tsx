@@ -1,4 +1,5 @@
-import aboutHero from "@/assets/page-about-hero.jpg";
+import { scrapedImages } from "@/lib/scrapedImages";
+const aboutHero = scrapedImages.ddtTeam2019;
 import teamImage from "@/assets/about-team.jpg";
 import { PageLayout } from "@/components/site/v2/PageLayout";
 import { PageHero } from "@/components/site/v2/PageHero";

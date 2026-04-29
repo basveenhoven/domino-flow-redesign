@@ -1,6 +1,7 @@
 import { PageLayout } from "@/components/site/v2/PageLayout";
 import { PageHero } from "@/components/site/v2/PageHero";
-import projectsHero from "@/assets/page-wdc-hero.jpg";
+import { scrapedImages } from "@/lib/scrapedImages";
+const projectsHero = scrapedImages.ddtVexx1;
 
 interface Project {
   year: string;

@@ -2,7 +2,8 @@ import { Mail, MapPin, Building2, Facebook, Instagram, Youtube } from "lucide-re
 import { PageLayout } from "@/components/site/v2/PageLayout";
 import { PageHero } from "@/components/site/v2/PageHero";
 import { ContactForm } from "@/components/site/v2/ContactForm";
-import contactImg from "@/assets/contact-dominoes.jpg";
+import { scrapedImages } from "@/lib/scrapedImages";
+const contactImg = scrapedImages.wdcSlider7;
 
 const socials = [
   { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/dutchdominoteam" },
