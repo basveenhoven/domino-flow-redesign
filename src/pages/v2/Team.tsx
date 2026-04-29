@@ -1,7 +1,8 @@
 import { Globe2, Users2, Sparkles } from "lucide-react";
 import { PageLayout } from "@/components/site/v2/PageLayout";
 import { PageHero } from "@/components/site/v2/PageHero";
-import teamHero from "@/assets/about-team.jpg";
+import { scrapedImages } from "@/lib/scrapedImages";
+const teamHero = scrapedImages.ddtTeam2019;
 
 const highlights = [
   {

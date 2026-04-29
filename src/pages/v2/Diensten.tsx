@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { PageLayout } from "@/components/site/v2/PageLayout";
 import { PageHero } from "@/components/site/v2/PageHero";
-import dienstenHero from "@/assets/page-about-hero.jpg";
+import { scrapedImages } from "@/lib/scrapedImages";
+const dienstenHero = scrapedImages.ddtMakeAWish;
 
 const services = [
   {

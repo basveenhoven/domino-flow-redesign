@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { PageLayout } from "@/components/site/v2/PageLayout";
 import { PageHero } from "@/components/site/v2/PageHero";
-import bouwersHero from "@/assets/about-team.jpg";
+import { scrapedImages } from "@/lib/scrapedImages";
+const bouwersHero = scrapedImages.ddtBuild2;
 
 const stappen = [
   {
