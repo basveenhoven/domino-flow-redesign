@@ -20,6 +20,7 @@ import ReserverenV2 from "./pages/v2/Reserveren.tsx";
 import SponsorenV2 from "./pages/v2/Sponsoren.tsx";
 import ContactV2 from "./pages/v2/Contact.tsx";
 import DienstenV2 from "./pages/v2/Diensten.tsx";
+import DienstSingleV2 from "./pages/v2/DienstSingle.tsx";
 import ProjectenV2 from "./pages/v2/Projecten.tsx";
 import BouwersdagenV2 from "./pages/v2/Bouwersdagen.tsx";
 import TeamV2 from "./pages/v2/Team.tsx";
@@ -49,6 +50,7 @@ const App = () => (
             <Route path="/v2/sponsoren" element={<SponsorenV2 />} />
             <Route path="/v2/contact" element={<ContactV2 />} />
             <Route path="/v2/diensten" element={<DienstenV2 />} />
+            <Route path="/v2/diensten/:slug" element={<DienstSingleV2 />} />
             <Route path="/v2/projecten" element={<ProjectenV2 />} />
             <Route path="/v2/bouwersdagen" element={<BouwersdagenV2 />} />
             <Route path="/v2/team" element={<TeamV2 />} />
