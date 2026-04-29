@@ -6,47 +6,59 @@ import { PageLayout } from "@/components/site/v2/PageLayout";
 import { PageHero } from "@/components/site/v2/PageHero";
 import wdcHero from "@/assets/page-wdc-hero.jpg";
 import wdcEvent from "@/assets/wdc-event.jpg";
-import { useI18n } from "@/lib/i18n";
+
+const facts = [
+  { Icon: Calendar, label: "Periode", value: "7 — 23 augustus 2026" },
+  { Icon: Clock, label: "Falldown", value: "Vrijdag 21 augustus" },
+  { Icon: MapPin, label: "Locatie", value: "Sporthal de Vallei, Veenendaal" },
+  { Icon: Ticket, label: "Tickets", value: "€10 p.p. — bij ingang" },
+];
+
+const program = [
+  { time: "18:00", title: "Inloop", body: "Vanaf 18:00 zijn de deuren open. Reserveer een plek of betaal aan de deur." },
+  { time: "19:00", title: "Welkomstwoord & Q&A", body: "Het WDC team vertelt over het thema, de bouw en beantwoordt vragen." },
+  { time: "± 20:00", title: "De Falldown", body: "Het hoogtepunt: 750.000 dominostenen vallen om in subthema's vol persoonlijke bucketlist-dromen." },
+  { time: "21:00", title: "Meet & greet", body: "Bekijk het veld van dichtbij, maak foto's en ontmoet onze internationale bouwers." },
+];
+
+const huisregels = [
+  "Volg altijd de aanwijzingen van het WDC-team en de organisatie op.",
+  "Houd het rustig in de hal — geluid kan stenen vroegtijdig laten vallen.",
+  "Foto's en video's maken mag, maar gebruik geen flits richting de bouw.",
+  "Drones, ballonnen of losse confetti zijn niet toegestaan in de hal.",
+  "Roken, eten en drinken is alleen toegestaan in de daarvoor aangewezen ruimtes.",
+];
+
+const vervoer = [
+  {
+    Icon: Car,
+    title: "Met de auto",
+    body:
+      "Sporthal de Vallei beschikt over ruime parkeergelegenheid bij de hal en in de directe omgeving. Adres: Munnikenweg 11, Veenendaal.",
+  },
+  {
+    Icon: Bus,
+    title: "Met de bus",
+    body:
+      "Vanaf NS-station Veenendaal-Centrum rijden meerdere stadsbussen richting De Vallei. Plan je reis via 9292.nl voor actuele tijden.",
+  },
+  {
+    Icon: Train,
+    title: "Met de trein",
+    body:
+      "De dichtstbijzijnde stations zijn Veenendaal-Centrum en Veenendaal-De Klomp. Vanaf daar kort met bus of taxi naar de sporthal.",
+  },
+];
 
 const Wdc2026 = () => {
-  const { t } = useI18n();
-
-  const facts = [
-    { Icon: Calendar, label: t("wdc.fact.period"), value: t("wdc.fact.periodValue") },
-    { Icon: Clock, label: t("wdc.fact.falldown"), value: t("wdc.fact.falldownValue") },
-    { Icon: MapPin, label: t("wdc.fact.location"), value: t("wdc.fact.locationValue") },
-    { Icon: Ticket, label: t("wdc.fact.tickets"), value: t("wdc.fact.ticketsValue") },
-  ];
-
-  const program = [
-    { time: "18:00", title: t("wdc.program.1.title"), body: t("wdc.program.1.body") },
-    { time: "19:00", title: t("wdc.program.2.title"), body: t("wdc.program.2.body") },
-    { time: "± 20:00", title: t("wdc.program.3.title"), body: t("wdc.program.3.body") },
-    { time: "21:00", title: t("wdc.program.4.title"), body: t("wdc.program.4.body") },
-  ];
-
-  const huisregels = [
-    t("wdc.rule.1"),
-    t("wdc.rule.2"),
-    t("wdc.rule.3"),
-    t("wdc.rule.4"),
-    t("wdc.rule.5"),
-  ];
-
-  const vervoer = [
-    { Icon: Car, title: t("wdc.transport.car"), body: t("wdc.transport.carBody") },
-    { Icon: Bus, title: t("wdc.transport.bus"), body: t("wdc.transport.busBody") },
-    { Icon: Train, title: t("wdc.transport.train"), body: t("wdc.transport.trainBody") },
-  ];
-
   return (
     <PageLayout>
       <PageHero
-        eyebrow={t("wdc.eyebrow")}
-        title={<>{t("wdc.titleA")} <span className="text-gradient">{t("wdc.titleB")}</span></>}
-        subtitle={t("wdc.subtitle")}
+        eyebrow="WDC 2026"
+        title={<>Bucketlist — <span className="text-gradient">750.000 dominostenen</span></>}
+        subtitle="Dit jaar zet het Dutch Domino Team maar liefst 750.000 dominostenen op tijdens World Domino Collective 2026 onder het thema Bucketlist."
         image={wdcHero}
-        crumbs={[{ label: t("nav.home"), href: "/" }, { label: t("nav.wdc") }]}
+        crumbs={[{ label: "Home", href: "/v2" }, { label: "WDC 2026" }]}
       />
 
       {/* Quick facts */}
@@ -73,15 +85,18 @@ const Wdc2026 = () => {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">{t("wdc.editionEyebrow")}</span>
+              <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Over deze editie</span>
               <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6">
-                {t("wdc.editionTitleA")} <span className="text-gradient">{t("wdc.editionTitleB")}</span>
+                Persoonlijke dromen in <span className="text-gradient">domino</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                {t("wdc.editionP1")}
+                In de diverse subthema's staan persoonlijke dromen van onze bouwers centraal. Deze
+                bucketlist-items worden door middel van gedetailleerde designs omgezet naar een
+                dominovloer met meer dan 750.000 dominostenen.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                {t("wdc.editionP2")}
+                Volg ons op onze sociale media voor updates over de projecten, de voorbereiding en
+                sneak previews van de bouwperiode.
               </p>
               <div className="flex flex-wrap gap-3 mt-6">
                 <a href="https://www.youtube.com/dutchdominoteam" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">YouTube</a>
@@ -109,17 +124,17 @@ const Wdc2026 = () => {
             <div className="relative">
               <Ticket className="h-10 w-10 mx-auto text-primary mb-6" />
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4">
-                {t("wdc.reserveTitle")}
+                Reserveer je plek voor de falldown
               </h2>
               <p className="text-muted-foreground mb-2 max-w-xl mx-auto">
-                {t("wdc.reserveP1")}
+                De falldown vindt plaats op vrijdagavond 21 augustus 2026 in Sporthal de Vallei te Veenendaal.
               </p>
               <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                {t("wdc.reserveP2A")} <strong className="text-foreground">{t("wdc.reserveP2B")}</strong>.
+                Tickets zijn <strong className="text-foreground">€10 per persoon</strong> en worden bij de ingang afgerekend.
               </p>
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-8 h-12 group">
-                <Link to="/reserveren">
-                  {t("wdc.reserveCta")}
+                <Link to="/v2/reserveren">
+                  Plek reserveren
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -132,9 +147,9 @@ const Wdc2026 = () => {
       <section className="py-20 lg:py-28">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">{t("wdc.programEyebrow")}</span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">{t("wdc.programTitle")}</h2>
-            <p className="text-muted-foreground mt-4">{t("wdc.programDate")}</p>
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Programma</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Programma falldowndag</h2>
+            <p className="text-muted-foreground mt-4">Vrijdag 21 augustus 2026 — Sporthal de Vallei, Veenendaal</p>
           </div>
           <div className="max-w-3xl mx-auto space-y-3">
             {program.map((p) => (
@@ -154,10 +169,10 @@ const Wdc2026 = () => {
       <section className="py-20 lg:py-28 bg-surface">
         <div className="container max-w-3xl">
           <div className="text-center mb-12">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">{t("wdc.rulesEyebrow")}</span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">{t("wdc.rulesTitle")}</h2>
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Huisregels</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Tijdens de falldown</h2>
             <p className="text-muted-foreground mt-4">
-              {t("wdc.rulesIntro")}
+              Om iedereen een geweldige avond te bezorgen vragen we je rekening te houden met onderstaande huisregels.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -177,8 +192,8 @@ const Wdc2026 = () => {
       <section className="py-20 lg:py-28">
         <div className="container max-w-3xl">
           <div className="text-center mb-12">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">{t("wdc.transportEyebrow")}</span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">{t("wdc.transportTitle")}</h2>
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Bereikbaarheid</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Hoe kom je naar WDC 2026?</h2>
           </div>
           <Accordion type="single" collapsible className="space-y-3">
             {vervoer.map((v, i) => (

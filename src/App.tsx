@@ -19,6 +19,10 @@ import Wdc2026V2 from "./pages/v2/Wdc2026.tsx";
 import ReserverenV2 from "./pages/v2/Reserveren.tsx";
 import SponsorenV2 from "./pages/v2/Sponsoren.tsx";
 import ContactV2 from "./pages/v2/Contact.tsx";
+import DienstenV2 from "./pages/v2/Diensten.tsx";
+import ProjectenV2 from "./pages/v2/Projecten.tsx";
+import BouwersdagenV2 from "./pages/v2/Bouwersdagen.tsx";
+import TeamV2 from "./pages/v2/Team.tsx";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +48,10 @@ const App = () => (
             <Route path="/v2/reserveren" element={<ReserverenV2 />} />
             <Route path="/v2/sponsoren" element={<SponsorenV2 />} />
             <Route path="/v2/contact" element={<ContactV2 />} />
+            <Route path="/v2/diensten" element={<DienstenV2 />} />
+            <Route path="/v2/projecten" element={<ProjectenV2 />} />
+            <Route path="/v2/bouwersdagen" element={<BouwersdagenV2 />} />
+            <Route path="/v2/team" element={<TeamV2 />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

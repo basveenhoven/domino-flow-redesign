@@ -1,18 +1,17 @@
 import { Play } from "lucide-react";
-import { useI18n } from "@/lib/i18n";
 
 export const FeaturedVideo = () => {
-  const { t } = useI18n();
   return (
     <section id="video" className="relative py-24 lg:py-32 bg-background">
       <div className="container">
         <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
-          <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4">{t("video.eyebrow")}</span>
+          <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4">Falldown 2025</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight max-w-3xl">
-            {t("video.titleA")} <span className="text-gradient">{t("video.titleB")}</span>
+            Bekijk hier de falldown van <span className="text-gradient">WDC 2025 — Milestones</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl">
-            {t("video.body")}
+            Tijdens WDC 2025 brak het Dutch Domino Team de mijlpaal van 1.000.000 gevallen dominostenen,
+            ter ere van ons 15-jarig jubileum onder het thema Milestones.
           </p>
           <div className="hairline w-32 mt-8" />
         </div>
