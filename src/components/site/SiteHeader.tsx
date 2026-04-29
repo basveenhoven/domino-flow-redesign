@@ -13,13 +13,18 @@ export const SiteHeader = () => {
   const { lang, setLang, t } = useI18n();
   const { pathname } = useLocation();
 
+  const isV2 = pathname === "/v2" || pathname.startsWith("/v2/");
+  const prefix = isV2 ? "/v2" : "";
+  const homeHref = isV2 ? "/v2" : "/";
+  const ticketsHref = `${prefix}/reserveren`;
+
   const navItems = [
-    { label: t("nav.home"), href: "/" },
-    { label: t("nav.about"), href: "/over-ons" },
-    { label: t("nav.wdc"), href: "/wdc-2026" },
-    { label: t("nav.tickets"), href: "/reserveren" },
-    { label: t("nav.sponsors"), href: "/sponsoren" },
-    { label: t("nav.contact"), href: "/contact" },
+    { label: t("nav.home"), href: homeHref },
+    { label: t("nav.about"), href: `${prefix}/over-ons` },
+    { label: t("nav.wdc"), href: `${prefix}/wdc-2026` },
+    { label: t("nav.tickets"), href: ticketsHref },
+    { label: t("nav.sponsors"), href: `${prefix}/sponsoren` },
+    { label: t("nav.contact"), href: `${prefix}/contact` },
   ];
 
   useEffect(() => {
@@ -29,7 +34,7 @@ export const SiteHeader = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isHome = pathname === "/";
+  const isHome = pathname === "/" || pathname === "/v2";
 
   return (
     <header
@@ -43,13 +48,13 @@ export const SiteHeader = () => {
     >
       <div className="container flex items-center justify-between">
         <Link
-          to="/"
+          to={homeHref}
           className={cn(
             "font-display font-bold text-sm sm:text-base tracking-tight hover:text-primary transition-colors",
             isHome && "text-white",
           )}
         >
-          World Domino Collective
+          World Domino Collective{isV2 && <span className="ml-2 text-primary">V2</span>}
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
@@ -100,7 +105,7 @@ export const SiteHeader = () => {
           </div>
 
           <Button asChild size="sm" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-5">
-            <Link to="/reserveren">{t("nav.cta")}</Link>
+            <Link to={ticketsHref}>{t("nav.cta")}</Link>
           </Button>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -158,7 +163,7 @@ export const SiteHeader = () => {
                 </div>
 
                 <Button asChild className="mt-4 bg-primary hover:bg-primary/90 rounded-full">
-                  <Link to="/reserveren" onClick={() => setOpen(false)}>{t("nav.cta")}</Link>
+                  <Link to={ticketsHref} onClick={() => setOpen(false)}>{t("nav.cta")}</Link>
                 </Button>
               </div>
             </SheetContent>
