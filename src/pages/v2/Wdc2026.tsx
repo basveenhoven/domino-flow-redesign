@@ -61,7 +61,7 @@ const Wdc2026 = () => {
       />
 
       {/* Quick facts */}
-      <section className="-mt-8 relative z-10">
+      <section className="relative z-10">
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 rounded-3xl border border-border bg-surface p-6 lg:p-8">
             {facts.map(({ Icon, label, value }) => (
@@ -79,38 +79,30 @@ const Wdc2026 = () => {
         </div>
       </section>
 
-      {/* About edition */}
+      {/* About edition — text only */}
       <section className="py-20 lg:py-28">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Over deze editie</span>
-              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6">
-                Persoonlijke dromen in <span className="text-gradient">domino</span>
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                In de diverse subthema's staan persoonlijke dromen van onze bouwers centraal. Deze
-                bucketlist-items worden door middel van gedetailleerde designs omgezet naar een
-                dominovloer met meer dan 750.000 dominostenen.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Volg ons op onze sociale media voor updates over de projecten, de voorbereiding en
-                sneak previews van de bouwperiode.
-              </p>
-              <div className="flex flex-wrap gap-3 mt-6">
-                <a href="https://www.youtube.com/dutchdominoteam" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">YouTube</a>
-                <span className="text-muted-foreground">•</span>
-                <a href="https://www.facebook.com/dutchdominoteam/" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">Facebook</a>
-                <span className="text-muted-foreground">•</span>
-                <a href="https://www.instagram.com/dutch_domino_team/" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">Instagram</a>
-                <span className="text-muted-foreground">•</span>
-                <a href="https://www.dutchdominoteam.nl/" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">dutchdominoteam.nl</a>
-              </div>
-            </div>
-            <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-3xl overflow-hidden border border-border">
-              <img src={img.wdcEvent} alt="WDC 2025 — bouwers aan het werk" loading="lazy" width={1280} height={1700} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
-            </div>
+        <div className="container max-w-3xl">
+          <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Over deze editie</span>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6">
+            Persoonlijke dromen in <span className="text-gradient">domino</span>
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            In de diverse subthema's staan persoonlijke dromen van onze bouwers centraal. Deze
+            bucketlist-items worden door middel van gedetailleerde designs omgezet naar een
+            dominovloer met meer dan 750.000 dominostenen.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            Volg ons op onze sociale media voor updates over de projecten, de voorbereiding en
+            sneak previews van de bouwperiode.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <a href="https://www.youtube.com/dutchdominoteam" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">YouTube</a>
+            <span className="text-muted-foreground">•</span>
+            <a href="https://www.facebook.com/dutchdominoteam/" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">Facebook</a>
+            <span className="text-muted-foreground">•</span>
+            <a href="https://www.instagram.com/dutch_domino_team/" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">Instagram</a>
+            <span className="text-muted-foreground">•</span>
+            <a href="https://www.dutchdominoteam.nl/" target="_blank" rel="noreferrer" className="text-sm text-primary hover:underline">dutchdominoteam.nl</a>
           </div>
         </div>
       </section>
@@ -142,20 +134,15 @@ const Wdc2026 = () => {
         </div>
       </section>
 
-      {/* Program — header met foto */}
+      {/* Program */}
       <section className="py-20 lg:py-28">
-        <div className="container">
-          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-end mb-12">
-            <div>
-              <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Programma</span>
-              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Programma falldowndag</h2>
-              <p className="text-muted-foreground mt-4">Vrijdag 21 augustus 2026 — Sporthal de Vallei, Veenendaal. Hieronder vind je het programma per tijdsblok.</p>
-            </div>
-            <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-border">
-              <img src={img.wdcFalldown1} alt="WDC 2025 — falldown" loading="lazy" className="w-full h-full object-cover" />
-            </div>
+        <div className="container max-w-3xl">
+          <div className="text-center mb-12">
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Programma</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Programma falldowndag</h2>
+            <p className="text-muted-foreground mt-4">Vrijdag 21 augustus 2026 — Sporthal de Vallei, Veenendaal.</p>
           </div>
-          <div className="max-w-3xl mx-auto space-y-3">
+          <div className="space-y-3">
             {program.map((p) => (
               <div key={p.time} className="magnetic-card grid grid-cols-[110px_1fr] md:grid-cols-[160px_1fr] gap-4 md:gap-6 items-start p-6 rounded-2xl border border-border bg-surface">
                 <div className="font-display text-xl md:text-2xl font-bold text-gradient">{p.time}</div>
@@ -169,22 +156,17 @@ const Wdc2026 = () => {
         </div>
       </section>
 
-      {/* Huisregels — header met foto */}
+      {/* Huisregels */}
       <section className="py-20 lg:py-28 bg-surface">
-        <div className="container">
-          <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-end mb-12">
-            <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-border order-2 lg:order-1">
-              <img src={img.wdcCrowd} alt="Publiek tijdens de falldown" loading="lazy" className="w-full h-full object-cover" />
-            </div>
-            <div className="order-1 lg:order-2">
-              <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Huisregels</span>
-              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Tijdens de falldown</h2>
-              <p className="text-muted-foreground mt-4">
-                Om alles zo goed mogelijk te laten verlopen hebben wij een aantal huishoudelijke regels opgesteld.
-              </p>
-            </div>
+        <div className="container max-w-4xl">
+          <div className="text-center mb-12">
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Huisregels</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Tijdens de falldown</h2>
+            <p className="text-muted-foreground mt-4">
+              Om alles zo goed mogelijk te laten verlopen hebben wij een aantal huishoudelijke regels opgesteld.
+            </p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-4">
             {huisregels.map((r, i) => {
               const Icon = r.Icon as any;
               return (
@@ -200,36 +182,29 @@ const Wdc2026 = () => {
         </div>
       </section>
 
-      {/* Vervoer / FAQ — header met foto */}
+      {/* Vervoer / FAQ */}
       <section className="py-20 lg:py-28">
-        <div className="container">
-          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-end mb-12">
-            <div>
-              <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Bereikbaarheid</span>
-              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Hoe kom je naar WDC 2026?</h2>
-              <p className="text-muted-foreground mt-4">
-                Sporthal de Vallei ligt aan Sportlaan 3, 3905 AD Veenendaal. Hieronder vind je informatie per vervoersmiddel.
-              </p>
-            </div>
-            <div className="relative aspect-[16/10] rounded-3xl overflow-hidden border border-border">
-              <img src={img.wdcSlider10} alt="Sporthal de Vallei — locatie WDC 2026" loading="lazy" className="w-full h-full object-cover" />
-            </div>
+        <div className="container max-w-3xl">
+          <div className="text-center mb-12">
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Bereikbaarheid</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">Hoe kom je naar WDC 2026?</h2>
+            <p className="text-muted-foreground mt-4">
+              Sporthal de Vallei ligt aan Sportlaan 3, 3905 AD Veenendaal.
+            </p>
           </div>
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-3">
-              {vervoer.map((v, i) => (
-                <AccordionItem key={i} value={`v-${i}`} className="rounded-2xl border border-border bg-surface px-6">
-                  <AccordionTrigger className="font-display font-semibold text-left hover:no-underline">
-                    <span className="flex items-center gap-3">
-                      <v.Icon className="h-4 w-4 text-primary" />
-                      {v.title}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed">{v.body}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+          <Accordion type="single" collapsible className="space-y-3">
+            {vervoer.map((v, i) => (
+              <AccordionItem key={i} value={`v-${i}`} className="rounded-2xl border border-border bg-surface px-6">
+                <AccordionTrigger className="font-display font-semibold text-left hover:no-underline">
+                  <span className="flex items-center gap-3">
+                    <v.Icon className="h-4 w-4 text-primary" />
+                    {v.title}
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">{v.body}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
     </PageLayout>
