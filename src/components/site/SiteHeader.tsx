@@ -34,7 +34,7 @@ export const SiteHeader = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isHome = pathname === "/";
+  const isHome = pathname === "/" || pathname === "/v2";
 
   return (
     <header
@@ -48,13 +48,13 @@ export const SiteHeader = () => {
     >
       <div className="container flex items-center justify-between">
         <Link
-          to="/"
+          to={homeHref}
           className={cn(
             "font-display font-bold text-sm sm:text-base tracking-tight hover:text-primary transition-colors",
             isHome && "text-white",
           )}
         >
-          World Domino Collective
+          World Domino Collective{isV2 && <span className="ml-2 text-primary">V2</span>}
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
