@@ -13,13 +13,18 @@ export const SiteHeader = () => {
   const { lang, setLang, t } = useI18n();
   const { pathname } = useLocation();
 
+  const isV2 = pathname === "/v2" || pathname.startsWith("/v2/");
+  const prefix = isV2 ? "/v2" : "";
+  const homeHref = isV2 ? "/v2" : "/";
+  const ticketsHref = `${prefix}/reserveren`;
+
   const navItems = [
-    { label: t("nav.home"), href: "/" },
-    { label: t("nav.about"), href: "/over-ons" },
-    { label: t("nav.wdc"), href: "/wdc-2026" },
-    { label: t("nav.tickets"), href: "/reserveren" },
-    { label: t("nav.sponsors"), href: "/sponsoren" },
-    { label: t("nav.contact"), href: "/contact" },
+    { label: t("nav.home"), href: homeHref },
+    { label: t("nav.about"), href: `${prefix}/over-ons` },
+    { label: t("nav.wdc"), href: `${prefix}/wdc-2026` },
+    { label: t("nav.tickets"), href: ticketsHref },
+    { label: t("nav.sponsors"), href: `${prefix}/sponsoren` },
+    { label: t("nav.contact"), href: `${prefix}/contact` },
   ];
 
   useEffect(() => {
