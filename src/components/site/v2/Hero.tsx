@@ -59,12 +59,12 @@ export const Hero = () => {
           onLoadedData={handleVideoReady}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0" style={{ backgroundColor: "hsl(240 8% 6% / 0.3)" }} />
+        <div className="absolute inset-0" style={{ backgroundColor: "hsl(0 0% 100% / 0.35)" }} />
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(to top, hsl(240 8% 6%) 0%, hsl(240 8% 6% / 0.4) 50%, transparent 100%)",
+              "linear-gradient(to top, hsl(0 0% 100%) 0%, hsl(0 0% 100% / 0.7) 50%, hsl(0 0% 100% / 0.2) 100%)",
           }}
         />
       </div>
@@ -77,7 +77,7 @@ export const Hero = () => {
           </div>
 
           <h1
-            className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8 animate-fade-up text-white"
+            className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8 animate-fade-up text-foreground"
             style={{ animationDelay: "0.2s" }}
           >
             {t("hero.titleA")}<br />
@@ -85,15 +85,15 @@ export const Hero = () => {
           </h1>
 
           <p
-            className="text-base sm:text-lg lg:text-xl text-white/80 max-w-2xl leading-relaxed mb-10 animate-fade-up"
+            className="text-base sm:text-lg lg:text-xl text-foreground/75 max-w-2xl leading-relaxed mb-10 animate-fade-up"
             style={{ animationDelay: "0.35s" }}
           >
             {t("hero.body")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-7 h-12 text-base group">
-              <Link to="/wdc-2026">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-7 h-12 text-base group">
+              <Link to="/v2/wdc-2026">
                 {t("hero.ctaPrimary")}
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
@@ -102,7 +102,7 @@ export const Hero = () => {
               asChild
               size="lg"
               variant="outline"
-              className="rounded-full px-7 h-12 text-base border-white/20 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm"
+              className="rounded-full px-7 h-12 text-base border-foreground/20 bg-background/60 hover:bg-background/80 text-foreground backdrop-blur-sm"
             >
               <a href="#video">
                 <Play className="mr-1 h-4 w-4 fill-current" />
