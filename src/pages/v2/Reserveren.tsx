@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import { PageLayout } from "@/components/site/PageLayout";
-import { PageHero } from "@/components/site/PageHero";
+import { PageLayout } from "@/components/site/v2/PageLayout";
+import { PageHero } from "@/components/site/v2/PageHero";
 import ticketsHero from "@/assets/page-tickets-hero.jpg";
 import { useI18n } from "@/lib/i18n";
 
