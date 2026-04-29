@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { SiteHeader } from "@/components/site/SiteHeader";
-import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/v2/SiteHeader";
+import { SiteFooter } from "@/components/site/v2/SiteFooter";
 
 interface PageLayoutProps {
   children: React.ReactNode;
