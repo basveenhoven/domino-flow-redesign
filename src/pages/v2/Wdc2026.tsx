@@ -61,7 +61,7 @@ const Wdc2026 = () => {
       />
 
       {/* Quick facts */}
-      <section className="relative z-10">
+      <section className="relative z-10 -mt-4">
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 rounded-3xl border border-border bg-surface p-6 lg:p-8">
             {facts.map(({ Icon, label, value }) => (
