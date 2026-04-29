@@ -3,38 +3,38 @@ import { ArrowUpRight } from "lucide-react";
 import aboutImg from "@/assets/about-team.jpg";
 import wdcImg from "@/assets/wdc-event.jpg";
 import contactImg from "@/assets/contact-dominoes.jpg";
-import { useI18n } from "@/lib/i18n";
 
 export const FeatureCards = () => {
-  const { t } = useI18n();
-
   const cards = [
     {
       id: "over-ons",
       image: aboutImg,
-      eyebrow: t("card.about.eyebrow"),
-      title: t("card.about.title"),
-      body: t("card.about.body"),
-      cta: t("card.about.cta"),
-      href: "/over-ons",
+      eyebrow: "Over ons",
+      title: "Van vriendengroep naar wereldrecord",
+      body:
+        "Dutch Domino Team (DDT) is van oorsprong een vriendengroep die elkaar leerde kennen door projecten te delen via YouTube. Inmiddels uitgegroeid tot een internationaal team van meer dan 30 bouwers.",
+      cta: "Lees meer",
+      href: "/v2/over-ons",
     },
     {
       id: "wdc-2026",
       image: wdcImg,
-      eyebrow: t("card.wdc.eyebrow"),
-      title: t("card.wdc.title"),
-      body: t("card.wdc.body"),
-      cta: t("card.wdc.cta"),
-      href: "/wdc-2026",
+      eyebrow: "WDC 2026",
+      title: "Bucketlist — 750.000 stenen",
+      body:
+        "Komende zomer zet het WDC team honderdduizenden dominostenen neer onder het thema Bucketlist. Bekijk deze pagina voor meer informatie over het evenement.",
+      cta: "Meer informatie",
+      href: "/v2/wdc-2026",
     },
     {
       id: "contact-card",
       image: contactImg,
-      eyebrow: t("card.contact.eyebrow"),
-      title: t("card.contact.title"),
-      body: t("card.contact.body"),
-      cta: t("card.contact.cta"),
-      href: "/contact",
+      eyebrow: "Contact",
+      title: "Vraag of opmerking?",
+      body:
+        "Heeft u een vraag of een opmerking voor het WDC team? Neem vrijblijvend contact met ons op, wij staan graag voor u klaar.",
+      cta: "Neem contact op",
+      href: "/v2/contact",
     },
   ];
 
@@ -44,15 +44,15 @@ export const FeatureCards = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
-              {t("cards.eyebrow")}
+              Ontdek
             </span>
             <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
-              {t("cards.titleA")} <br />
-              <span className="text-gradient">{t("cards.titleB")}</span>
+              Een initiatief van het <br />
+              <span className="text-gradient">Dutch Domino Team</span>
             </h2>
           </div>
           <p className="md:max-w-sm text-muted-foreground">
-            {t("cards.intro")}
+            Lees meer over de organisatie achter het WDC, de aankomende editie en hoe je in contact komt met ons team.
           </p>
         </div>
 
