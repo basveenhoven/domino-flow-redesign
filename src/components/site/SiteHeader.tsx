@@ -105,7 +105,7 @@ export const SiteHeader = () => {
           </div>
 
           <Button asChild size="sm" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-5">
-            <Link to="/reserveren">{t("nav.cta")}</Link>
+            <Link to={ticketsHref}>{t("nav.cta")}</Link>
           </Button>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -163,7 +163,7 @@ export const SiteHeader = () => {
                 </div>
 
                 <Button asChild className="mt-4 bg-primary hover:bg-primary/90 rounded-full">
-                  <Link to="/reserveren" onClick={() => setOpen(false)}>{t("nav.cta")}</Link>
+                  <Link to={ticketsHref} onClick={() => setOpen(false)}>{t("nav.cta")}</Link>
                 </Button>
               </div>
             </SheetContent>
