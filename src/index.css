@@ -245,6 +245,16 @@
     color: rgba(249, 248, 245, 1);
   }
 
+  /* V2 overrides — donkere navlinks op licht thema, ook in home-header */
+  .theme-v2 .nav-link,
+  .theme-v2 .home-header .nav-link {
+    color: hsl(215 28% 17% / 0.8);
+  }
+  .theme-v2 .nav-link:hover,
+  .theme-v2 .home-header .nav-link:hover {
+    color: hsl(201 78% 44%);
+  }
+
   .nav-link::after {
     content: '';
     @apply absolute left-0 -bottom-1 h-px w-full origin-right scale-x-0 bg-primary transition-transform duration-500;
