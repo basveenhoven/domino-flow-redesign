@@ -161,6 +161,16 @@ const categoryColor: Record<Project["category"], string> = {
   Easter: "bg-secondary text-secondary-foreground",
 };
 
+const projectImages = [
+  scrapedImages.ddtBuild1, scrapedImages.ddtBuild2, scrapedImages.ddtBuild3,
+  scrapedImages.ddtBuild4, scrapedImages.ddtBuild5, scrapedImages.ddtBuild6,
+  scrapedImages.ddtBuild7, scrapedImages.ddtBuild8, scrapedImages.ddtBuild9,
+  scrapedImages.ddtVexx1, scrapedImages.ddtVexx2, scrapedImages.ddtMakeAWish,
+  scrapedImages.ddtArchive1, scrapedImages.ddtArchive2, scrapedImages.wdcSlider1,
+  scrapedImages.wdcSlider2, scrapedImages.wdcSlider6, scrapedImages.wdcSlider10,
+  scrapedImages.wdcSealife, scrapedImages.ddtTeam2011,
+];
+
 const Projecten = () => {
   return (
     <PageLayout>
@@ -172,22 +182,30 @@ const Projecten = () => {
         crumbs={[{ label: "Home", href: "/v2" }, { label: "Projecten" }]}
       />
 
-      <section className="py-20 lg:py-28">
+      <section className="py-16 lg:py-24">
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-            {projects.map((p) => (
+            {projects.map((p, i) => (
               <article
                 key={`${p.year}-${p.title}`}
-                className="magnetic-card p-7 rounded-2xl border border-border bg-surface flex flex-col"
+                className="magnetic-card rounded-2xl border border-border bg-surface flex flex-col overflow-hidden"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-display text-2xl font-bold text-gradient">{p.year}</span>
-                  <span className={`text-[10px] font-medium tracking-[0.2em] uppercase px-2.5 py-1 rounded-full ${categoryColor[p.category]}`}>
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={projectImages[i % projectImages.length]}
+                    alt={p.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <span className={`absolute top-3 left-3 text-[10px] font-medium tracking-[0.2em] uppercase px-2.5 py-1 rounded-full backdrop-blur ${categoryColor[p.category]}`}>
                     {p.category}
                   </span>
                 </div>
-                <h3 className="font-display text-lg font-semibold mb-3">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{p.body}</p>
+                <div className="p-6 flex flex-col flex-1">
+                  <span className="font-display text-2xl font-bold text-gradient mb-1">{p.year}</span>
+                  <h3 className="font-display text-lg font-semibold mb-3">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{p.body}</p>
+                </div>
               </article>
             ))}
           </div>
