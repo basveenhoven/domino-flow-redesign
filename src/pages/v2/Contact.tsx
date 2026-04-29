@@ -1,9 +1,8 @@
-import { Mail, MapPin, Phone, Facebook, Instagram, Youtube } from "lucide-react";
+import { Mail, MapPin, Building2, Facebook, Instagram, Youtube } from "lucide-react";
 import { PageLayout } from "@/components/site/v2/PageLayout";
 import { PageHero } from "@/components/site/v2/PageHero";
 import { ContactForm } from "@/components/site/v2/ContactForm";
 import contactImg from "@/assets/contact-dominoes.jpg";
-import { useI18n } from "@/lib/i18n";
 
 const socials = [
   { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/dutchdominoteam" },
@@ -11,28 +10,21 @@ const socials = [
   { Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/c/DutchDominoTeam" },
 ];
 
+const channels = [
+  { Icon: Mail, label: "E-mail", value: "info@dutchdominoteam.nl", href: "mailto:info@dutchdominoteam.nl" },
+  { Icon: MapPin, label: "Locatie", value: "Violenstraat 3, 5721 EP Asten" },
+  { Icon: Building2, label: "KvK / IBAN", value: "60890657 · NL54 RABO 0184 8471 33" },
+];
+
 const Contact = () => {
-  const { t, pick } = useI18n();
-
-  const channels = [
-    { Icon: Mail, label: t("contactPage.email"), value: "info@dutchdominoteam.nl", href: "mailto:info@dutchdominoteam.nl" },
-    { Icon: MapPin, label: t("contactPage.location"), value: "Violenstraat 3, 5721 EP Asten" },
-    { Icon: Phone, label: pick({ NL: "KVK", EN: "Chamber of Commerce" }), value: "60890657" },
-  ];
-
   return (
     <PageLayout>
       <PageHero
-        eyebrow={t("contactPage.eyebrow")}
-        title={
-          <>
-            {t("contactPage.titleA")} <span className="text-gradient">{t("contactPage.titleB")}</span>
-            {t("contactPage.titleC") && ` ${t("contactPage.titleC")}`}
-          </>
-        }
-        subtitle={t("contactPage.subtitle")}
+        eyebrow="Contact"
+        title={<>Neem contact op met het <span className="text-gradient">WDC team</span></>}
+        subtitle="Wilt u contact met het Dutch Domino Team? Laat het ons weten via onderstaand formulier of via een van de andere kanalen. Uw gegevens zullen met zorg behandeld worden en niet worden verspreid."
         image={contactImg}
-        crumbs={[{ label: t("nav.home"), href: "/" }, { label: t("nav.contact") }]}
+        crumbs={[{ label: "Home", href: "/v2" }, { label: "Contact" }]}
       />
 
       {/* Contact channels */}
@@ -69,9 +61,9 @@ const Contact = () => {
       <section className="py-20 bg-surface">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">{t("contactPage.followEyebrow")}</span>
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">Volg ons</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-8">
-              {t("contactPage.followTitle")}
+              Blijf op de hoogte via onze socials
             </h2>
             <div className="flex items-center justify-center gap-3">
               {socials.map(({ Icon, label, href }) => (
