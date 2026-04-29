@@ -16,7 +16,7 @@ export const PageLayout = ({ children }: PageLayoutProps) => {
   }, [pathname, hash]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="theme-v2 min-h-screen bg-background text-foreground flex flex-col">
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />
