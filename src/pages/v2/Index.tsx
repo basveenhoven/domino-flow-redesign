@@ -12,9 +12,9 @@ const Index = () => {
   return (
     <PageLayout>
       <Hero />
-      <FeaturedVideo />
       <Welkom />
       <FeatureCards />
+      <FeaturedVideo />
       <DDTServices />
       <Sponsors />
       <SocialFeed />
