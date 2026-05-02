@@ -56,12 +56,22 @@ export const Hero = () => {
           onLoadedData={handleVideoReady}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0" style={{ backgroundColor: "hsl(0 0% 100% / 0.35)" }} />
+        {/* Light mode overlay (wit) */}
+        <div className="absolute inset-0 dark:hidden" style={{ backgroundColor: "hsl(0 0% 100% / 0.35)" }} />
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 dark:hidden"
           style={{
             backgroundImage:
               "linear-gradient(to top, hsl(0 0% 100%) 0%, hsl(0 0% 100% / 0.7) 50%, hsl(0 0% 100% / 0.2) 100%)",
+          }}
+        />
+        {/* Dark mode overlay (zoals V1, donker) */}
+        <div className="absolute inset-0 hidden dark:block" style={{ backgroundColor: "hsl(240 8% 6% / 0.35)" }} />
+        <div
+          className="absolute inset-0 hidden dark:block"
+          style={{
+            backgroundImage:
+              "linear-gradient(to top, hsl(240 8% 6%) 0%, hsl(240 8% 6% / 0.4) 50%, transparent 100%)",
           }}
         />
       </div>
