@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageLayout } from "@/components/site/v2/PageLayout";
@@ -8,7 +8,20 @@ import { scrapedImages } from "@/lib/scrapedImages";
 import { categoryColor, services, serviceCategories, type ServiceCategory } from "@/lib/services";
 
 const Diensten = () => {
-  const [active, setActive] = useState<ServiceCategory | "Alle">("Alle");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initial = searchParams.get("categorie");
+  const validInitial = (serviceCategories as string[]).includes(initial ?? "")
+    ? (initial as ServiceCategory)
+    : "Alle";
+  const [active, setActive] = useState<ServiceCategory | "Alle">(validInitial);
+
+  useEffect(() => {
+    const next = new URLSearchParams(searchParams);
+    if (active === "Alle") next.delete("categorie");
+    else next.set("categorie", active);
+    setSearchParams(next, { replace: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [active]);
 
   const filtered = useMemo(
     () => (active === "Alle" ? services : services.filter((s) => s.category === active)),
