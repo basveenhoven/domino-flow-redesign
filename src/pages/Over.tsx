@@ -96,72 +96,73 @@ const Over = () => {
         </div>
       </section>
 
-      {/* Editions timeline */}
+      {/* Pillars — wat DDT doet */}
       <section className="py-20 lg:py-28 bg-surface">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">{t("about.editions")}</span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">{t("about.editionsTitle")}</h2>
-          </div>
-          <div className="max-w-6xl mx-auto relative">
-            {/* Mobile line on the left, desktop line in the center */}
-            <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-px bg-border lg:-translate-x-1/2" />
-
-            <div className="space-y-16 lg:space-y-24">
-              {[...editions].reverse().map((m, i) => {
-                const textOnLeft = i % 2 === 0;
-                const TextBlock = (
-                  <div className={textOnLeft ? "lg:text-right" : "lg:text-left"}>
-                    <div className="font-display text-4xl font-bold text-gradient mb-2">{m.year}</div>
-                    <h3 className="font-display text-2xl font-semibold mb-4">{m.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{m.body}</p>
-                  </div>
-                );
-                const VideoBlock = (
-                  <div className="relative aspect-video rounded-2xl overflow-hidden border border-border bg-background shadow-lg">
-                    <iframe
-                      className="absolute inset-0 w-full h-full"
-                      src={`https://www.youtube.com/embed/${m.videoId}`}
-                      title={m.title}
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                );
-
-                return (
-                  <div key={m.year} className="relative">
-                    {/* Center dot */}
-                    <div className="absolute left-4 lg:left-1/2 top-3 h-3 w-3 rounded-full bg-primary lg:-translate-x-1/2 ring-4 ring-surface z-10" />
-
-                    {/* Mobile: stacked, all to the right of the line */}
-                    <div className="lg:hidden pl-12 space-y-5">
-                      {TextBlock}
-                      {VideoBlock}
-                    </div>
-
-                    {/* Desktop: 2-column grid, alternating sides */}
-                    <div className="hidden lg:grid grid-cols-2 gap-16 items-center">
-                      {textOnLeft ? (
-                        <>
-                          <div className="pr-4">{TextBlock}</div>
-                          <div className="pl-4">{VideoBlock}</div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="pr-4">{VideoBlock}</div>
-                          <div className="pl-4">{TextBlock}</div>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                );
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
+              {pick({ NL: "Wat we doen", EN: "What we do" })}
+            </span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
+              {pick({
+                NL: <>Het Dutch Domino Team, <span className="text-gradient">het hele jaar door</span></>,
+                EN: <>The Dutch Domino Team, <span className="text-gradient">year-round</span></>,
               })}
-            </div>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mt-6">
+              {pick({
+                NL: "Wij zijn een collectief van bouwers, makers en verhalenvertellers. Domino is ons gereedschap, maar ons werk gaat over timing, vakmanschap en het moment waarop alles samenvalt.",
+                EN: "We are a collective of builders, makers and storytellers. Dominoes are our tool, but our work is about timing, craft and the moment everything comes together.",
+              })}
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {pillars.map((p) => (
+              <div key={p.title} className="rounded-2xl border border-border bg-background p-8 hover:border-primary/40 transition-colors">
+                <h3 className="font-display text-xl font-semibold mb-3">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mt-16 pt-12 border-t border-border">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="font-display text-4xl md:text-5xl font-bold text-gradient mb-2">{s.value}</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{s.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* WDC — jaarlijks hoogtepunt, kort */}
+      <section className="py-20 lg:py-28">
+        <div className="container">
+          <div className="max-w-4xl mx-auto rounded-3xl border border-border bg-surface p-10 lg:p-14 text-center">
+            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
+              {pick({ NL: "Jaarlijks hoogtepunt", EN: "Annual highlight" })}
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              {pick({
+                NL: <>World Domino Collective — <span className="text-gradient">onze eigen productie</span></>,
+                EN: <>World Domino Collective — <span className="text-gradient">our own production</span></>,
+              })}
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              {pick({
+                NL: "Elke zomer organiseren we onze eigen meerdaagse build met internationale bouwers. In 2025 doorbraken we de grens van 1.000.000 gevallen stenen. WDC is waar onze ambitie, ons netwerk en ons vakmanschap samenkomen.",
+                EN: "Every summer we run our own multi-day build with international builders. In 2025 we broke the 1,000,000 toppled stones barrier. WDC is where our ambition, network and craft come together.",
+              })}
+            </p>
+            <Link to="/bouwersdagen" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
+              {pick({ NL: "Meer over Bouwersdagen", EN: "More about Builder days" })} →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Team */}
       <section id="team" className="py-20 lg:py-28">
         <div className="container">
