@@ -5,6 +5,7 @@ import { PageLayout } from "@/components/site/PageLayout";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Hero } from "@/components/site/Hero";
 import { heroImages, projects, services, team } from "@/data/ddt";
+import ctaParallax from "@/assets/cta-parallax.jpg";
 
 
 const slugify = (name: string) =>
@@ -322,15 +323,21 @@ const TeamStrip = () => (
 
 /* ---------------- CTA ---------------- */
 const Cta = () => (
-  <section className="py-24 lg:py-32 bg-surface border-t border-border">
-    <div className="container text-center max-w-3xl">
+  <section className="relative py-32 lg:py-48 border-t border-border overflow-hidden">
+    <div
+      className="absolute inset-0 bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: `url(${ctaParallax})` }}
+      aria-hidden
+    />
+    <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/70 to-background/90" aria-hidden />
+    <div className="container relative text-center max-w-3xl">
       <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
         Klaar om te bouwen?
       </span>
       <h2 className="font-display text-3xl md:text-6xl font-bold tracking-tight mb-6">
         Laten we jouw <span className="text-gradient">kettingreactie</span> starten.
       </h2>
-      <p className="text-muted-foreground mb-10">
+      <p className="text-foreground/80 mb-10">
         Of het nu een workshop, een merkcampagne of een wild idee is — we denken graag mee.
       </p>
       <div className="flex flex-wrap gap-3 justify-center">
@@ -339,7 +346,7 @@ const Cta = () => (
             Neem contact op <ArrowRight className="ml-1 h-4 w-4" />
           </Link>
         </Button>
-        <Button asChild size="lg" variant="outline" className="rounded-full px-7 h-12">
+        <Button asChild size="lg" variant="outline" className="rounded-full px-7 h-12 bg-background/40 backdrop-blur">
           <Link to="/bouwersdagen">Word bouwer</Link>
         </Button>
       </div>
