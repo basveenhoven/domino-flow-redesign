@@ -40,14 +40,15 @@ const Diensten = () => {
                   </p>
                 ))}
                 <Button asChild className="bg-primary hover:bg-primary/90 rounded-full mt-4">
-                  <Link to="/contact">
-                    Aanvragen <ArrowRight className="ml-1 h-4 w-4" />
+                  <Link to={`/diensten/${s.slug}`}>
+                    Meer over {s.title.toLowerCase()} <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
               </div>
             </article>
           ))}
         </div>
+
       </section>
     </PageLayout>
   );
