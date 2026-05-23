@@ -1,6 +1,15 @@
+import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/site/PageLayout";
 import { PageHero } from "@/components/site/PageHero";
 import { heroImages, team } from "@/data/ddt";
+
+const slugify = (name: string) =>
+  name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
 const Team = () => {
   return (
@@ -17,18 +26,21 @@ const Team = () => {
         <div className="container">
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {team.map((m) => (
-              <article
+              <Link
                 key={m.name}
-                className="rounded-2xl border border-border bg-surface p-6 text-center hover:border-primary/40 transition-colors"
+                to={`/team/${slugify(m.name)}`}
+                className="group rounded-2xl border border-border bg-surface p-6 text-center hover:border-primary/40 transition-colors"
               >
-                <div className="aspect-square rounded-xl bg-primary/10 border border-primary/20 grid place-items-center font-display text-3xl font-bold text-primary mb-4 mx-auto">
+                <div className="aspect-square rounded-xl bg-primary/10 border border-primary/20 grid place-items-center font-display text-3xl font-bold text-primary mb-4 mx-auto group-hover:scale-105 transition-transform">
                   {m.initials}
                 </div>
-                <h3 className="font-display text-lg font-semibold">{m.name}</h3>
+                <h3 className="font-display text-lg font-semibold group-hover:text-primary transition-colors">
+                  {m.name}
+                </h3>
                 <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mt-1">
                   {m.role}
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
