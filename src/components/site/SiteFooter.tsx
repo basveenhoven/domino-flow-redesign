@@ -69,7 +69,7 @@ export const SiteFooter = () => {
         <div className="hairline mb-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} World Domino Collective. {t("footer.copyright")}</p>
+          <p>© {new Date().getFullYear()} Dutch Domino Team. {t("footer.copyright")}</p>
           <p className="font-display tracking-[0.2em] uppercase">{t("footer.slogan")}</p>
         </div>
       </div>
