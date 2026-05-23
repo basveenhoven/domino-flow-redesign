@@ -13,10 +13,10 @@ export const SiteHeader = () => {
   const { lang, setLang, t } = useI18n();
   const { pathname } = useLocation();
 
-  const isV2 = pathname === "/v2" || pathname.startsWith("/v2/");
-  const prefix = isV2 ? "/v2" : "";
-  const homeHref = isV2 ? "/v2" : "/";
+  const prefix = "";
+  const homeHref = "/";
   const ticketsHref = `${prefix}/reserveren`;
+
 
   const navItems = [
     { label: t("nav.home"), href: homeHref },
