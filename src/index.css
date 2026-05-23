@@ -133,11 +133,10 @@
     --shadow-elevated: 0 30px 80px -20px hsl(240 30% 40% / 0.18);
     --shadow-card: 0 10px 40px -10px hsl(240 30% 40% / 0.12);
   }
-
-
-
+}
 
 @layer base {
+
   * {
     @apply border-border;
   }
