@@ -31,6 +31,7 @@ const Over = () => {
         NL: "Van pop-up showcases tot dagenlange installaties — we bouwen waar ons publiek is: in winkels, op festivals, in tv-studio's en op evenementen.",
         EN: "From pop-up showcases to multi-day installations — we build where our audience is: in stores, at festivals, in TV studios and at events.",
       }),
+      image: socialImg1,
     },
     {
       title: pick({ NL: "Merkcampagnes", EN: "Brand campaigns" }),
@@ -38,6 +39,7 @@ const Over = () => {
         NL: "We vertalen merken naar een kettingreactie. Strakke choreografie, herkenbare kleuren en een eindbeeld dat blijft hangen — op camera én live.",
         EN: "We translate brands into a chain reaction. Tight choreography, recognisable colours and a final image that sticks — on camera and live.",
       }),
+      image: socialImg2,
     },
     {
       title: pick({ NL: "Workshops & teambuilding", EN: "Workshops & team building" }),
@@ -45,6 +47,7 @@ const Over = () => {
         NL: "Samen bouwen leert geduld, samenwerking en precisie. Onze bouwers begeleiden teams van scholen tot directies door een eigen kettingreactie.",
         EN: "Building together teaches patience, collaboration and precision. Our builders guide teams from schools to executives through their own chain reaction.",
       }),
+      image: socialImg3,
     },
     {
       title: pick({ NL: "Content & video", EN: "Content & video" }),
@@ -52,6 +55,7 @@ const Over = () => {
         NL: "Elke build wordt vastgelegd met meerdere camera's, slow-motion en drone. Klaar voor social, broadcast of een eigen aftermovie.",
         EN: "Every build is captured with multiple cameras, slow-motion and drone. Ready for social, broadcast or a dedicated aftermovie.",
       }),
+      image: socialImg4,
     },
   ];
 
