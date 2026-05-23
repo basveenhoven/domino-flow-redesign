@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import aboutHero from "@/assets/page-about-hero.jpg";
 import teamImage from "@/assets/about-team.jpg";
+import aboutCraft from "@/assets/about-craft.jpg";
+import aboutWdc from "@/assets/about-wdc.jpg";
+import aboutFalldown from "@/assets/about-falldown.jpg";
+import socialImg1 from "@/assets/social-1.jpg";
+import socialImg2 from "@/assets/social-2.jpg";
+import socialImg3 from "@/assets/social-3.jpg";
+import socialImg4 from "@/assets/social-4.jpg";
 import { PageLayout } from "@/components/site/PageLayout";
 import { PageHero } from "@/components/site/PageHero";
 import { useI18n } from "@/lib/i18n";
@@ -24,6 +31,7 @@ const Over = () => {
         NL: "Van pop-up showcases tot dagenlange installaties — we bouwen waar ons publiek is: in winkels, op festivals, in tv-studio's en op evenementen.",
         EN: "From pop-up showcases to multi-day installations — we build where our audience is: in stores, at festivals, in TV studios and at events.",
       }),
+      image: socialImg1,
     },
     {
       title: pick({ NL: "Merkcampagnes", EN: "Brand campaigns" }),
@@ -31,6 +39,7 @@ const Over = () => {
         NL: "We vertalen merken naar een kettingreactie. Strakke choreografie, herkenbare kleuren en een eindbeeld dat blijft hangen — op camera én live.",
         EN: "We translate brands into a chain reaction. Tight choreography, recognisable colours and a final image that sticks — on camera and live.",
       }),
+      image: socialImg2,
     },
     {
       title: pick({ NL: "Workshops & teambuilding", EN: "Workshops & team building" }),
@@ -38,6 +47,7 @@ const Over = () => {
         NL: "Samen bouwen leert geduld, samenwerking en precisie. Onze bouwers begeleiden teams van scholen tot directies door een eigen kettingreactie.",
         EN: "Building together teaches patience, collaboration and precision. Our builders guide teams from schools to executives through their own chain reaction.",
       }),
+      image: socialImg3,
     },
     {
       title: pick({ NL: "Content & video", EN: "Content & video" }),
@@ -45,6 +55,7 @@ const Over = () => {
         NL: "Elke build wordt vastgelegd met meerdere camera's, slow-motion en drone. Klaar voor social, broadcast of een eigen aftermovie.",
         EN: "Every build is captured with multiple cameras, slow-motion and drone. Ready for social, broadcast or a dedicated aftermovie.",
       }),
+      image: socialImg4,
     },
   ];
 
@@ -96,6 +107,27 @@ const Over = () => {
         </div>
       </section>
 
+      {/* Image break — craft */}
+      <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
+        <img
+          src={aboutCraft}
+          alt={pick({ NL: "Bouwer plaatst een rij dominostenen", EN: "Builder placing a row of dominoes" })}
+          loading="lazy"
+          width={1280}
+          height={1280}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
+        <div className="container relative h-full flex items-end pb-12">
+          <blockquote className="max-w-2xl font-display text-2xl md:text-4xl font-semibold leading-tight">
+            {pick({
+              NL: <>"Een goede bouw begint met <span className="text-gradient">één steen op de juiste plek</span>."</>,
+              EN: <>"A great build starts with <span className="text-gradient">one stone in the right place</span>."</>,
+            })}
+          </blockquote>
+        </div>
+      </section>
+
       {/* Pillars — wat DDT doet */}
       <section className="py-20 lg:py-28 bg-surface">
         <div className="container">
@@ -119,9 +151,22 @@ const Over = () => {
 
           <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {pillars.map((p) => (
-              <div key={p.title} className="rounded-2xl border border-border bg-background p-8 hover:border-primary/40 transition-colors">
-                <h3 className="font-display text-xl font-semibold mb-3">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+              <div key={p.title} className="group rounded-2xl border border-border bg-background overflow-hidden hover:border-primary/40 transition-colors">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    loading="lazy"
+                    width={800}
+                    height={500}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-display text-xl font-semibold mb-3">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -137,29 +182,59 @@ const Over = () => {
         </div>
       </section>
 
-      {/* WDC — jaarlijks hoogtepunt, kort */}
+      {/* WDC — jaarlijks hoogtepunt, met beeld */}
       <section className="py-20 lg:py-28">
         <div className="container">
-          <div className="max-w-4xl mx-auto rounded-3xl border border-border bg-surface p-10 lg:p-14 text-center">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
-              {pick({ NL: "Jaarlijks hoogtepunt", EN: "Annual highlight" })}
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              {pick({
-                NL: <>World Domino Collective — <span className="text-gradient">onze eigen productie</span></>,
-                EN: <>World Domino Collective — <span className="text-gradient">our own production</span></>,
-              })}
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              {pick({
-                NL: "Elke zomer organiseren we onze eigen meerdaagse build met internationale bouwers. In 2025 doorbraken we de grens van 1.000.000 gevallen stenen. WDC is waar onze ambitie, ons netwerk en ons vakmanschap samenkomen.",
-                EN: "Every summer we run our own multi-day build with international builders. In 2025 we broke the 1,000,000 toppled stones barrier. WDC is where our ambition, network and craft come together.",
-              })}
-            </p>
-            <Link to="/bouwersdagen" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
-              {pick({ NL: "Meer over Bouwersdagen", EN: "More about Builder days" })} →
-            </Link>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-border order-2 lg:order-1">
+              <img
+                src={aboutWdc}
+                alt={pick({ NL: "WDC bouwhal vol dominostructuren", EN: "WDC build hall full of domino structures" })}
+                loading="lazy"
+                width={1600}
+                height={1000}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
+                {pick({ NL: "Jaarlijks hoogtepunt", EN: "Annual highlight" })}
+              </span>
+              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6">
+                {pick({
+                  NL: <>World Domino Collective — <span className="text-gradient">onze eigen productie</span></>,
+                  EN: <>World Domino Collective — <span className="text-gradient">our own production</span></>,
+                })}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                {pick({
+                  NL: "Elke zomer organiseren we onze eigen meerdaagse build met internationale bouwers. In 2025 doorbraken we de grens van 1.000.000 gevallen stenen. WDC is waar onze ambitie, ons netwerk en ons vakmanschap samenkomen.",
+                  EN: "Every summer we run our own multi-day build with international builders. In 2025 we broke the 1,000,000 toppled stones barrier. WDC is where our ambition, network and craft come together.",
+                })}
+              </p>
+              <Link to="/bouwersdagen" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
+                {pick({ NL: "Meer over Bouwersdagen", EN: "More about Builder days" })} →
+              </Link>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Parallax break — falldown */}
+      <section className="relative h-[50vh] min-h-[360px] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: `url(${aboutFalldown})` }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background/80" />
+        <div className="container relative h-full flex items-center justify-center text-center">
+          <p className="font-display text-2xl md:text-4xl font-semibold max-w-3xl">
+            {pick({
+              NL: <>Weken bouwen voor <span className="text-gradient">één perfect moment</span>.</>,
+              EN: <>Weeks of building for <span className="text-gradient">one perfect moment</span>.</>,
+            })}
+          </p>
         </div>
       </section>
 
