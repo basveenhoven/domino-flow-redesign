@@ -118,7 +118,7 @@ const Wdc2026 = () => {
                 {t("wdc.reserveP2A")} <strong className="text-foreground">{t("wdc.reserveP2B")}</strong>.
               </p>
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-8 h-12 group">
-                <Link to="/reserveren">
+                <Link to="/wdc/reserveren">
                   {t("wdc.reserveCta")}
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>

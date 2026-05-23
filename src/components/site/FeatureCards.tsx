@@ -25,7 +25,7 @@ export const FeatureCards = () => {
       title: t("card.wdc.title"),
       body: t("card.wdc.body"),
       cta: t("card.wdc.cta"),
-      href: "/wdc-2026",
+      href: "/wdc/2026",
     },
     {
       id: "contact-card",
