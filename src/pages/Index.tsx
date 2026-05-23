@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
 import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageLayout } from "@/components/site/PageLayout";
 import { ContactForm } from "@/components/site/ContactForm";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import heroPoster from "@/assets/hero-dominoes.jpg";
+import { Hero } from "@/components/site/Hero";
 import { heroImages, projects, services, team } from "@/data/ddt";
+
 
 const slugify = (name: string) =>
   name
