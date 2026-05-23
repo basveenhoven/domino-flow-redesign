@@ -12,7 +12,6 @@ const ddtNav = [
   { label: "Over ons", href: "/over-ons" },
   { label: "Diensten", href: "/diensten" },
   { label: "Projecten", href: "/projecten" },
-  { label: "Team", href: "/team" },
   { label: "Bouwersdagen", href: "/bouwersdagen" },
 ];
 
