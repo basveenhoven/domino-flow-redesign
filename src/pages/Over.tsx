@@ -182,29 +182,59 @@ const Over = () => {
         </div>
       </section>
 
-      {/* WDC — jaarlijks hoogtepunt, kort */}
+      {/* WDC — jaarlijks hoogtepunt, met beeld */}
       <section className="py-20 lg:py-28">
         <div className="container">
-          <div className="max-w-4xl mx-auto rounded-3xl border border-border bg-surface p-10 lg:p-14 text-center">
-            <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
-              {pick({ NL: "Jaarlijks hoogtepunt", EN: "Annual highlight" })}
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              {pick({
-                NL: <>World Domino Collective — <span className="text-gradient">onze eigen productie</span></>,
-                EN: <>World Domino Collective — <span className="text-gradient">our own production</span></>,
-              })}
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              {pick({
-                NL: "Elke zomer organiseren we onze eigen meerdaagse build met internationale bouwers. In 2025 doorbraken we de grens van 1.000.000 gevallen stenen. WDC is waar onze ambitie, ons netwerk en ons vakmanschap samenkomen.",
-                EN: "Every summer we run our own multi-day build with international builders. In 2025 we broke the 1,000,000 toppled stones barrier. WDC is where our ambition, network and craft come together.",
-              })}
-            </p>
-            <Link to="/bouwersdagen" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
-              {pick({ NL: "Meer over Bouwersdagen", EN: "More about Builder days" })} →
-            </Link>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-border order-2 lg:order-1">
+              <img
+                src={aboutWdc}
+                alt={pick({ NL: "WDC bouwhal vol dominostructuren", EN: "WDC build hall full of domino structures" })}
+                loading="lazy"
+                width={1600}
+                height={1000}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <span className="text-xs font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
+                {pick({ NL: "Jaarlijks hoogtepunt", EN: "Annual highlight" })}
+              </span>
+              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-6">
+                {pick({
+                  NL: <>World Domino Collective — <span className="text-gradient">onze eigen productie</span></>,
+                  EN: <>World Domino Collective — <span className="text-gradient">our own production</span></>,
+                })}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                {pick({
+                  NL: "Elke zomer organiseren we onze eigen meerdaagse build met internationale bouwers. In 2025 doorbraken we de grens van 1.000.000 gevallen stenen. WDC is waar onze ambitie, ons netwerk en ons vakmanschap samenkomen.",
+                  EN: "Every summer we run our own multi-day build with international builders. In 2025 we broke the 1,000,000 toppled stones barrier. WDC is where our ambition, network and craft come together.",
+                })}
+              </p>
+              <Link to="/bouwersdagen" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
+                {pick({ NL: "Meer over Bouwersdagen", EN: "More about Builder days" })} →
+              </Link>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Parallax break — falldown */}
+      <section className="relative h-[50vh] min-h-[360px] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: `url(${aboutFalldown})` }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background/80" />
+        <div className="container relative h-full flex items-center justify-center text-center">
+          <p className="font-display text-2xl md:text-4xl font-semibold max-w-3xl">
+            {pick({
+              NL: <>Weken bouwen voor <span className="text-gradient">één perfect moment</span>.</>,
+              EN: <>Weeks of building for <span className="text-gradient">one perfect moment</span>.</>,
+            })}
+          </p>
         </div>
       </section>
 
