@@ -11,12 +11,13 @@ const socials = [
 export const SiteFooter = () => {
   const { t } = useI18n();
   const footerNav = [
-    { label: t("nav.home"), href: "/" },
-    { label: t("nav.about"), href: "/over-ons" },
-    { label: t("nav.wdc"), href: "/wdc-2026" },
-    { label: t("nav.tickets"), href: "/reserveren" },
-    { label: t("nav.sponsors"), href: "/sponsoren" },
-    { label: t("nav.contact"), href: "/contact" },
+    { label: "Home", href: "/" },
+    { label: "Over ons", href: "/over-ons" },
+    { label: "Diensten", href: "/diensten" },
+    { label: "Projecten", href: "/projecten" },
+    { label: "Team", href: "/team" },
+    { label: "WDC 2026", href: "/wdc/2026" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -25,8 +26,9 @@ export const SiteFooter = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
             <Link to="/" className="font-display font-bold text-lg tracking-tight hover:text-primary transition-colors mb-4 inline-block">
-              World Domino Collective
+              Dutch Domino Team
             </Link>
+
             <p className="text-sm text-muted-foreground max-w-xs">
               {t("footer.tagline")}
             </p>
