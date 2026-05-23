@@ -224,7 +224,7 @@ const Bouwersdagen = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-full border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10"
+                className="rounded-full border-2 border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary"
               >
                 <Link to="/contact">
                   Contactformulier <ArrowRight className="ml-1 h-4 w-4" />
