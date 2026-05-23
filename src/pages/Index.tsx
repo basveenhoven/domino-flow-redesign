@@ -5,6 +5,7 @@ import { PageLayout } from "@/components/site/PageLayout";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Hero } from "@/components/site/Hero";
 import { heroImages, projects, services, team } from "@/data/ddt";
+import ctaParallax from "@/assets/cta-parallax.jpg";
 
 
 const slugify = (name: string) =>
