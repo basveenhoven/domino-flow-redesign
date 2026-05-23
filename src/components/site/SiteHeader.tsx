@@ -54,7 +54,8 @@ export const SiteHeader = () => {
             isHome && "text-white",
           )}
         >
-          World Domino Collective{isV2 && <span className="ml-2 text-primary">V2</span>}
+          World Domino Collective
+
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
