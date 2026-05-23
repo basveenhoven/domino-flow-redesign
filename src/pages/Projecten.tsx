@@ -45,9 +45,10 @@ const Projecten = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((p) => (
-              <div
+              <Link
                 key={p.slug}
-                className="group rounded-2xl overflow-hidden border border-border bg-surface"
+                to={`/projecten/${p.slug}`}
+                className="group rounded-2xl overflow-hidden border border-border bg-surface hover:border-primary/40 transition-colors"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -61,10 +62,13 @@ const Projecten = () => {
                   <div className="text-[10px] tracking-[0.25em] uppercase text-primary mb-1">
                     {p.category} · {p.year}
                   </div>
-                  <h3 className="font-display text-base font-semibold">{p.title}</h3>
+                  <h3 className="font-display text-base font-semibold group-hover:text-primary transition-colors">
+                    {p.title}
+                  </h3>
                 </div>
-              </div>
+              </Link>
             ))}
+
           </div>
         </div>
       </section>
