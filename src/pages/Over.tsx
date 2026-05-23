@@ -151,9 +151,22 @@ const Over = () => {
 
           <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {pillars.map((p) => (
-              <div key={p.title} className="rounded-2xl border border-border bg-background p-8 hover:border-primary/40 transition-colors">
-                <h3 className="font-display text-xl font-semibold mb-3">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+              <div key={p.title} className="group rounded-2xl border border-border bg-background overflow-hidden hover:border-primary/40 transition-colors">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    loading="lazy"
+                    width={800}
+                    height={500}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-display text-xl font-semibold mb-3">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+                </div>
               </div>
             ))}
           </div>
