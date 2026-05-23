@@ -126,7 +126,9 @@ export default {
         "glow-pulse": "glow-pulse 4s ease-in-out infinite",
         "ken-burns": "ken-burns 20s ease-out infinite alternate",
         "scroll-indicator": "scroll-indicator 2s ease-in-out infinite",
+        marquee: "marquee 40s linear infinite",
       },
+
     },
   },
   plugins: [require("tailwindcss-animate")],
