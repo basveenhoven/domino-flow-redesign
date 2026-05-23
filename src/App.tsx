@@ -12,18 +12,6 @@ import Wdc2026 from "./pages/Wdc2026.tsx";
 import Reserveren from "./pages/Reserveren.tsx";
 import Sponsoren from "./pages/Sponsoren.tsx";
 import Contact from "./pages/Contact.tsx";
-import Versies from "./pages/Versies.tsx";
-import IndexV2 from "./pages/v2/Index.tsx";
-import OverV2 from "./pages/v2/Over.tsx";
-import Wdc2026V2 from "./pages/v2/Wdc2026.tsx";
-import ReserverenV2 from "./pages/v2/Reserveren.tsx";
-import SponsorenV2 from "./pages/v2/Sponsoren.tsx";
-import ContactV2 from "./pages/v2/Contact.tsx";
-import DienstenV2 from "./pages/v2/Diensten.tsx";
-import DienstSingleV2 from "./pages/v2/DienstSingle.tsx";
-import ProjectenV2 from "./pages/v2/Projecten.tsx";
-import BouwersdagenV2 from "./pages/v2/Bouwersdagen.tsx";
-import TeamV2 from "./pages/v2/Team.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,32 +20,20 @@ const App = () => (
     <ThemeProvider>
       <I18nProvider>
         <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/versies" element={<Versies />} />
-            <Route path="/" element={<Index />} />
-            <Route path="/over-ons" element={<Over />} />
-            <Route path="/wdc-2026" element={<Wdc2026 />} />
-            <Route path="/reserveren" element={<Reserveren />} />
-            <Route path="/sponsoren" element={<Sponsoren />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/v2" element={<IndexV2 />} />
-            <Route path="/v2/over-ons" element={<OverV2 />} />
-            <Route path="/v2/wdc-2026" element={<Wdc2026V2 />} />
-            <Route path="/v2/reserveren" element={<ReserverenV2 />} />
-            <Route path="/v2/sponsoren" element={<SponsorenV2 />} />
-            <Route path="/v2/contact" element={<ContactV2 />} />
-            <Route path="/v2/diensten" element={<DienstenV2 />} />
-            <Route path="/v2/diensten/:slug" element={<DienstSingleV2 />} />
-            <Route path="/v2/projecten" element={<ProjectenV2 />} />
-            <Route path="/v2/bouwersdagen" element={<BouwersdagenV2 />} />
-            <Route path="/v2/team" element={<TeamV2 />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/over-ons" element={<Over />} />
+              <Route path="/wdc-2026" element={<Wdc2026 />} />
+              <Route path="/reserveren" element={<Reserveren />} />
+              <Route path="/sponsoren" element={<Sponsoren />} />
+              <Route path="/contact" element={<Contact />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
         </TooltipProvider>
       </I18nProvider>
     </ThemeProvider>

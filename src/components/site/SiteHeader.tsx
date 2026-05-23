@@ -13,10 +13,10 @@ export const SiteHeader = () => {
   const { lang, setLang, t } = useI18n();
   const { pathname } = useLocation();
 
-  const isV2 = pathname === "/v2" || pathname.startsWith("/v2/");
-  const prefix = isV2 ? "/v2" : "";
-  const homeHref = isV2 ? "/v2" : "/";
+  const prefix = "";
+  const homeHref = "/";
   const ticketsHref = `${prefix}/reserveren`;
+
 
   const navItems = [
     { label: t("nav.home"), href: homeHref },
@@ -54,7 +54,8 @@ export const SiteHeader = () => {
             isHome && "text-white",
           )}
         >
-          World Domino Collective{isV2 && <span className="ml-2 text-primary">V2</span>}
+          World Domino Collective
+
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
