@@ -10,8 +10,12 @@ import NotFound from "./pages/NotFound.tsx";
 import Over from "./pages/Over.tsx";
 import Contact from "./pages/Contact.tsx";
 import Diensten from "./pages/Diensten.tsx";
+import DienstSingle from "./pages/DienstSingle.tsx";
 import Projecten from "./pages/Projecten.tsx";
+import ProjectSingle from "./pages/ProjectSingle.tsx";
 import Team from "./pages/Team.tsx";
+import TeamSingle from "./pages/TeamSingle.tsx";
+
 import Bouwersdagen from "./pages/Bouwersdagen.tsx";
 import WdcHome from "./pages/wdc/Home.tsx";
 import Wdc2026 from "./pages/Wdc2026.tsx";
@@ -33,8 +37,12 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/over-ons" element={<Over />} />
               <Route path="/diensten" element={<Diensten />} />
+              <Route path="/diensten/:slug" element={<DienstSingle />} />
               <Route path="/projecten" element={<Projecten />} />
+              <Route path="/projecten/:slug" element={<ProjectSingle />} />
               <Route path="/team" element={<Team />} />
+              <Route path="/team/:slug" element={<TeamSingle />} />
+
               <Route path="/bouwersdagen" element={<Bouwersdagen />} />
               <Route path="/contact" element={<Contact />} />
 
