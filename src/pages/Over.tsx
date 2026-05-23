@@ -107,6 +107,27 @@ const Over = () => {
         </div>
       </section>
 
+      {/* Image break — craft */}
+      <section className="relative h-[60vh] min-h-[420px] overflow-hidden">
+        <img
+          src={aboutCraft}
+          alt={pick({ NL: "Bouwer plaatst een rij dominostenen", EN: "Builder placing a row of dominoes" })}
+          loading="lazy"
+          width={1280}
+          height={1280}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
+        <div className="container relative h-full flex items-end pb-12">
+          <blockquote className="max-w-2xl font-display text-2xl md:text-4xl font-semibold leading-tight">
+            {pick({
+              NL: <>"Een goede bouw begint met <span className="text-gradient">één steen op de juiste plek</span>."</>,
+              EN: <>"A great build starts with <span className="text-gradient">one stone in the right place</span>."</>,
+            })}
+          </blockquote>
+        </div>
+      </section>
+
       {/* Pillars — wat DDT doet */}
       <section className="py-20 lg:py-28 bg-surface">
         <div className="container">
