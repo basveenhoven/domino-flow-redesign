@@ -1,8 +1,18 @@
+import { Link } from "react-router-dom";
 import aboutHero from "@/assets/page-about-hero.jpg";
 import teamImage from "@/assets/about-team.jpg";
 import { PageLayout } from "@/components/site/PageLayout";
 import { PageHero } from "@/components/site/PageHero";
 import { useI18n } from "@/lib/i18n";
+import { team } from "@/data/ddt";
+
+const slugify = (name: string) =>
+  name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
 const Over = () => {
   const { t, pick } = useI18n();
