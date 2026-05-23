@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import aboutHero from "@/assets/page-about-hero.jpg";
 import teamImage from "@/assets/about-team.jpg";
+import aboutCraft from "@/assets/about-craft.jpg";
+import aboutWdc from "@/assets/about-wdc.jpg";
+import aboutFalldown from "@/assets/about-falldown.jpg";
+import socialImg1 from "@/assets/social-1.jpg";
+import socialImg2 from "@/assets/social-2.jpg";
+import socialImg3 from "@/assets/social-3.jpg";
+import socialImg4 from "@/assets/social-4.jpg";
 import { PageLayout } from "@/components/site/PageLayout";
 import { PageHero } from "@/components/site/PageHero";
 import { useI18n } from "@/lib/i18n";
