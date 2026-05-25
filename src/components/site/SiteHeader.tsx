@@ -93,18 +93,25 @@ export const SiteHeader = () => {
               <ChevronDown className="h-3.5 w-3.5" />
             </button>
             {wdcOpen && (
-              <div className="absolute right-0 top-full pt-3 w-72">
+              <div className="absolute right-0 top-full pt-3 w-56">
                 <div className="rounded-2xl border border-border bg-background shadow-xl p-2">
-                  {wdcNav.map((d) => (
-                    <Link
-                      key={d.href}
-                      to={d.href}
-                      className="block px-4 py-3 rounded-xl hover:bg-surface transition-colors"
-                    >
-                      <div className="font-display text-sm font-semibold">{pick(d.label)}</div>
-                      <div className="text-xs text-muted-foreground">{pick(d.desc)}</div>
-                    </Link>
-                  ))}
+                  {wdcNav.map((d) => {
+                    const active = pathname === d.href;
+                    return (
+                      <Link
+                        key={d.href}
+                        to={d.href}
+                        className={cn(
+                          "block px-4 py-2.5 rounded-xl text-sm font-display font-medium transition-colors",
+                          active
+                            ? "text-primary bg-primary/10"
+                            : "text-foreground hover:bg-surface hover:text-primary",
+                        )}
+                      >
+                        {pick(d.label)}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             )}
