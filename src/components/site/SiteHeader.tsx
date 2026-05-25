@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, ChevronDown, ChevronRight, ChevronLeft } from "lucide-react";
+import { Menu, ChevronDown, ChevronRight, ChevronLeft, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
@@ -165,100 +165,162 @@ export const SiteHeader = () => {
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] bg-surface border-border overflow-hidden p-0">
-              <div className="relative h-full overflow-hidden">
+            <SheetContent
+              side="right"
+              className="dark w-[320px] border-l border-white/5 overflow-hidden p-0 [&>button]:hidden"
+              style={{ backgroundColor: "#121214" }}
+            >
+              <div className="relative h-full overflow-hidden text-neutral-300">
                 {/* Level 1 */}
                 <div
                   className={cn(
-                    "absolute inset-0 p-6 overflow-y-auto transition-transform duration-300 ease-out",
+                    "absolute inset-0 flex flex-col transition-transform duration-300 ease-out",
                     wdcOpen ? "-translate-x-full" : "translate-x-0",
                   )}
                 >
-                  <div className="flex flex-col gap-1 mt-8">
-                    {ddtNav.map((item) => (
-                      <Link
-                        key={item.href}
-                        to={item.href}
-                        onClick={() => setOpen(false)}
-                        className={cn(
-                          "py-3 px-2 text-lg font-display font-medium border-b border-border/40 hover:text-primary transition-colors",
-                          pathname === item.href && "text-primary",
-                        )}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-
+                  {/* Header */}
+                  <div className="p-6 flex justify-between items-center">
+                    <span className="text-primary font-display text-xl font-bold tracking-tight">
+                      DDT
+                    </span>
                     <button
-                      type="button"
-                      onClick={() => setWdcOpen(true)}
-                      className={cn(
-                        "py-3 px-2 text-lg font-display font-medium border-b border-border/40 hover:text-primary transition-colors flex items-center justify-between text-left",
-                        pathname.startsWith("/wdc") && "text-primary",
-                      )}
-                    >
-                      <span>WDC</span>
-                      <ChevronRight className="h-5 w-5 text-muted-foreground" />
-                    </button>
-
-                    <Link
-                      to="/contact"
                       onClick={() => setOpen(false)}
-                      className={cn(
-                        "py-3 px-2 text-lg font-display font-medium border-b border-border/40 hover:text-primary transition-colors",
-                        pathname === "/contact" && "text-primary",
-                      )}
+                      className="text-neutral-400 hover:text-white transition-colors"
+                      aria-label="Sluit menu"
                     >
-                      Contact
-                    </Link>
+                      <X className="h-6 w-6" />
+                    </button>
+                  </div>
 
-                    <div className="flex items-center justify-between mt-6 px-2 py-3 border-t border-border/40">
-                      <span className="text-xs uppercase tracking-wider text-muted-foreground">Theme</span>
-                      <ThemeToggle />
+                  {/* Nav */}
+                  <nav className="flex-1 px-4 mt-4 overflow-y-auto">
+                    <ul className="space-y-1">
+                      {ddtNav.map((item) => {
+                        const active = pathname === item.href;
+                        return (
+                          <li key={item.href}>
+                            {active ? (
+                              <Link
+                                to={item.href}
+                                onClick={() => setOpen(false)}
+                                className="flex items-center px-4 py-4 text-primary font-display font-semibold text-lg transition-colors"
+                              >
+                                <span className="mr-3 w-1 h-5 bg-primary rounded-full" />
+                                {item.label}
+                              </Link>
+                            ) : (
+                              <Link
+                                to={item.href}
+                                onClick={() => setOpen(false)}
+                                className="block px-4 py-4 text-neutral-300 hover:text-white font-display font-medium text-lg border-b border-neutral-800/50 transition-colors"
+                              >
+                                {item.label}
+                              </Link>
+                            )}
+                          </li>
+                        );
+                      })}
+
+                      <li>
+                        <button
+                          type="button"
+                          onClick={() => setWdcOpen(true)}
+                          className={cn(
+                            "w-full flex items-center justify-between px-4 py-4 font-display font-medium text-lg border-b border-neutral-800/50 group transition-colors text-left",
+                            pathname.startsWith("/wdc")
+                              ? "text-primary"
+                              : "text-neutral-300 hover:text-white",
+                          )}
+                        >
+                          <span>WDC</span>
+                          <ChevronRight className="h-5 w-5 text-neutral-500 group-hover:text-primary transition-transform group-hover:translate-x-1" />
+                        </button>
+                      </li>
+
+                      <li>
+                        <Link
+                          to="/contact"
+                          onClick={() => setOpen(false)}
+                          className={cn(
+                            "block px-4 py-4 font-display font-medium text-lg transition-colors",
+                            pathname === "/contact"
+                              ? "text-primary"
+                              : "text-neutral-300 hover:text-white",
+                          )}
+                        >
+                          Contact
+                        </Link>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  {/* Footer */}
+                  <div className="mt-auto p-6 border-t border-neutral-800 flex items-center justify-between">
+                    <div className="flex flex-col">
+                      <span className="text-[10px] uppercase tracking-widest text-neutral-500 font-bold mb-1">
+                        Appearance
+                      </span>
+                      <span className="text-sm text-neutral-300">Theme</span>
                     </div>
+                    <ThemeToggle className="rounded-xl bg-neutral-800/50 border border-neutral-700/50 text-neutral-300 hover:bg-neutral-800 hover:text-primary" />
                   </div>
                 </div>
 
                 {/* Level 2 — WDC submenu */}
                 <div
                   className={cn(
-                    "absolute inset-0 p-6 overflow-y-auto bg-surface transition-transform duration-300 ease-out",
+                    "absolute inset-0 flex flex-col transition-transform duration-300 ease-out",
                     wdcOpen ? "translate-x-0" : "translate-x-full",
                   )}
+                  style={{ backgroundColor: "#121214" }}
                   aria-hidden={!wdcOpen}
                 >
-                  <button
-                    type="button"
-                    onClick={() => setWdcOpen(false)}
-                    className="mt-8 mb-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors px-2"
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                    Terug
-                  </button>
+                  <div className="p-6 flex justify-between items-center">
+                    <button
+                      type="button"
+                      onClick={() => setWdcOpen(false)}
+                      className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                      Terug
+                    </button>
+                    <button
+                      onClick={() => setOpen(false)}
+                      className="text-neutral-400 hover:text-white transition-colors"
+                      aria-label="Sluit menu"
+                    >
+                      <X className="h-6 w-6" />
+                    </button>
+                  </div>
 
-                  <div className="px-2 mb-4">
-                    <div className="text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
+                  <div className="px-6 mt-2 mb-4">
+                    <div className="text-[10px] uppercase tracking-[0.25em] text-primary font-bold mb-1">
                       World Domino Collective
                     </div>
-                    <div className="font-display text-2xl font-semibold">WDC 2026</div>
+                    <div className="font-display text-2xl font-semibold text-white">WDC 2026</div>
                   </div>
 
-                  <div className="flex flex-col gap-1">
-                    {wdcNav.map((item) => (
-                      <Link
-                        key={item.href}
-                        to={item.href}
-                        onClick={() => setOpen(false)}
-                        className={cn(
-                          "block py-3 px-2 border-b border-border/40 hover:text-primary transition-colors",
-                          pathname === item.href && "text-primary",
-                        )}
-                      >
-                        <div className="font-display text-base font-semibold">{item.label}</div>
-                        <div className="text-xs text-muted-foreground mt-0.5">{item.desc}</div>
-                      </Link>
-                    ))}
-                  </div>
+                  <nav className="flex-1 px-4 overflow-y-auto">
+                    <ul className="space-y-1">
+                      {wdcNav.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            to={item.href}
+                            onClick={() => setOpen(false)}
+                            className={cn(
+                              "block px-4 py-4 border-b border-neutral-800/50 transition-colors",
+                              pathname === item.href
+                                ? "text-primary"
+                                : "text-neutral-300 hover:text-white",
+                            )}
+                          >
+                            <div className="font-display text-base font-semibold">{item.label}</div>
+                            <div className="text-xs text-neutral-500 mt-0.5">{item.desc}</div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
                 </div>
               </div>
             </SheetContent>
