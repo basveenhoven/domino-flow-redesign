@@ -72,7 +72,7 @@ export const SiteHeader = () => {
                 to={item.href}
                 className={cn("nav-link", active && "text-primary hover:text-primary")}
               >
-                {item.label}
+                {pick(item.label)}
               </Link>
             );
           })}
@@ -101,8 +101,8 @@ export const SiteHeader = () => {
                       to={d.href}
                       className="block px-4 py-3 rounded-xl hover:bg-surface transition-colors"
                     >
-                      <div className="font-display text-sm font-semibold">{d.label}</div>
-                      <div className="text-xs text-muted-foreground">{d.desc}</div>
+                      <div className="font-display text-sm font-semibold">{pick(d.label)}</div>
+                      <div className="text-xs text-muted-foreground">{pick(d.desc)}</div>
                     </Link>
                   ))}
                 </div>
@@ -208,7 +208,7 @@ export const SiteHeader = () => {
                                 className="flex items-center px-4 py-4 text-primary font-display font-semibold text-lg transition-colors"
                               >
                                 <span className="mr-3 w-1 h-5 bg-primary rounded-full" />
-                                {item.label}
+                                {pick(item.label)}
                               </Link>
                             ) : (
                               <Link
@@ -216,7 +216,7 @@ export const SiteHeader = () => {
                                 onClick={() => setOpen(false)}
                                 className="block px-4 py-4 text-neutral-300 hover:text-white font-display font-medium text-lg border-b border-neutral-800/50 transition-colors"
                               >
-                                {item.label}
+                                {pick(item.label)}
                               </Link>
                             )}
                           </li>
@@ -332,7 +332,7 @@ export const SiteHeader = () => {
                                 className="flex items-center px-4 py-4 text-primary font-display font-semibold text-lg transition-colors"
                               >
                                 <span className="mr-3 w-1 h-5 bg-primary rounded-full" />
-                                {item.label}
+                                {pick(item.label)}
                               </Link>
                             ) : (
                               <Link
@@ -340,7 +340,7 @@ export const SiteHeader = () => {
                                 onClick={() => setOpen(false)}
                                 className="block px-4 py-4 text-neutral-300 hover:text-white font-display font-medium text-lg border-b border-neutral-800/50 transition-colors"
                               >
-                                {item.label}
+                                {pick(item.label)}
                               </Link>
                             )}
                           </li>
