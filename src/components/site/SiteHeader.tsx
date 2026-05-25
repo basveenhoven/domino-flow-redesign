@@ -156,162 +156,113 @@ export const SiteHeader = () => {
             <Link to="/contact">Contact</Link>
           </Button>
 
-          <button
-            onClick={() => setOpen(true)}
-            className={cn("lg:hidden p-2 -mr-2 text-foreground", isHomeStyle && "text-white")}
-            aria-label="Open menu"
-          >
-            <Menu className="h-6 w-6" />
-          </button>
-        </div>
-      </div>
-
-      {/* Full-screen mobile menu */}
-      <div
-        className={cn(
-          "lg:hidden fixed inset-0 z-[60] transition-all duration-500",
-          open ? "pointer-events-auto" : "pointer-events-none",
-        )}
-        aria-hidden={!open}
-      >
-        {/* Backdrop */}
-        <div
-          onClick={() => setOpen(false)}
-          className={cn(
-            "absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-500",
-            open ? "opacity-100" : "opacity-0",
-          )}
-        />
-
-        {/* Panel */}
-        <div
-          className={cn(
-            "absolute inset-x-3 top-3 bottom-3 rounded-3xl overflow-hidden shadow-2xl",
-            "bg-[rgb(14,14,17)] text-white",
-            "transition-all duration-500 ease-out origin-top",
-            open ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-4 scale-95",
-          )}
-        >
-          {/* Decorative gradient blob */}
-          <div className="pointer-events-none absolute -top-32 -right-32 h-80 w-80 rounded-full bg-primary/30 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-40 -left-20 h-80 w-80 rounded-full bg-primary/20 blur-3xl" />
-
-          {/* Header bar */}
-          <div className="relative flex items-center justify-between px-6 pt-6">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-white/50">Menu</span>
-            <button
-              onClick={() => setOpen(false)}
-              className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-              aria-label="Sluit menu"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-
-          {/* Body */}
-          <div className="relative h-[calc(100%-72px)] overflow-y-auto px-6 pb-8 pt-6">
-            <nav className="flex flex-col">
-              {ddtNav.map((item, i) => {
-                const active = pathname === item.href;
-                return (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    onClick={() => setOpen(false)}
-                    className={cn(
-                      "group flex items-baseline gap-4 py-3 border-b border-white/10 transition-colors",
-                      active ? "text-primary" : "text-white hover:text-primary",
-                    )}
-                  >
-                    <span className="text-[10px] font-mono tabular-nums text-white/40 w-6">
-                      0{i + 1}
-                    </span>
-                    <span className="font-display font-semibold text-3xl tracking-tight flex-1">
-                      {item.label}
-                    </span>
-                    <ArrowUpRight className="h-5 w-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  </Link>
-                );
-              })}
-              <Link
-                to="/contact"
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "group flex items-baseline gap-4 py-3 border-b border-white/10 transition-colors",
-                  pathname === "/contact" ? "text-primary" : "text-white hover:text-primary",
-                )}
+          <Sheet open={open} onOpenChange={(o) => { setOpen(o); if (!o) setWdcOpen(false); }}>
+            <SheetTrigger asChild>
+              <button
+                className={cn("lg:hidden p-2 -mr-2 text-foreground", isHomeStyle && "text-white")}
+                aria-label="Open menu"
               >
-                <span className="text-[10px] font-mono tabular-nums text-white/40 w-6">
-                  0{ddtNav.length + 1}
-                </span>
-                <span className="font-display font-semibold text-3xl tracking-tight flex-1">
-                  Contact
-                </span>
-                <ArrowUpRight className="h-5 w-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-              </Link>
-            </nav>
+                <Menu className="h-6 w-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] bg-surface border-border overflow-hidden p-0">
+              <div className="relative h-full overflow-hidden">
+                {/* Level 1 */}
+                <div
+                  className={cn(
+                    "absolute inset-0 p-6 overflow-y-auto transition-transform duration-300 ease-out",
+                    wdcOpen ? "-translate-x-full" : "translate-x-0",
+                  )}
+                >
+                  <div className="flex flex-col gap-1 mt-8">
+                    {ddtNav.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        onClick={() => setOpen(false)}
+                        className={cn(
+                          "py-3 px-2 text-lg font-display font-medium border-b border-border/40 hover:text-primary transition-colors",
+                          pathname === item.href && "text-primary",
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
 
-            {/* WDC card */}
-            <div className="mt-8 rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent p-5">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-primary">
-                  World Domino Collective
-                </span>
-                <span className="text-[10px] font-mono text-white/40">2026</span>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                {wdcNav.map((item) => (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    onClick={() => setOpen(false)}
-                    className="rounded-xl bg-white/5 hover:bg-white/10 px-3 py-3 transition-colors"
+                    <button
+                      type="button"
+                      onClick={() => setWdcOpen(true)}
+                      className={cn(
+                        "py-3 px-2 text-lg font-display font-medium border-b border-border/40 hover:text-primary transition-colors flex items-center justify-between text-left",
+                        pathname.startsWith("/wdc") && "text-primary",
+                      )}
+                    >
+                      <span>WDC</span>
+                      <ChevronRight className="h-5 w-5 text-muted-foreground" />
+                    </button>
+
+                    <Link
+                      to="/contact"
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        "py-3 px-2 text-lg font-display font-medium border-b border-border/40 hover:text-primary transition-colors",
+                        pathname === "/contact" && "text-primary",
+                      )}
+                    >
+                      Contact
+                    </Link>
+
+                    <div className="flex items-center justify-between mt-6 px-2 py-3 border-t border-border/40">
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground">Theme</span>
+                      <ThemeToggle />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Level 2 — WDC submenu */}
+                <div
+                  className={cn(
+                    "absolute inset-0 p-6 overflow-y-auto bg-surface transition-transform duration-300 ease-out",
+                    wdcOpen ? "translate-x-0" : "translate-x-full",
+                  )}
+                  aria-hidden={!wdcOpen}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setWdcOpen(false)}
+                    className="mt-8 mb-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors px-2"
                   >
-                    <div className="font-display text-sm font-semibold">{item.label}</div>
-                    <div className="text-[10px] text-white/50 mt-0.5 line-clamp-1">{item.desc}</div>
-                  </Link>
-                ))}
-              </div>
-            </div>
+                    <ChevronLeft className="h-4 w-4" />
+                    Terug
+                  </button>
 
-            {/* Footer */}
-            <div className="mt-8 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <a
-                  href="mailto:info@dutchdominoteam.nl"
-                  className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                  aria-label="Email"
-                >
-                  <Mail className="h-4 w-4" />
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-4 w-4" />
-                </a>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="h-4 w-4" />
-                </a>
-              </div>
-              <div className="dark">
-                <ThemeToggle />
-              </div>
-            </div>
+                  <div className="px-2 mb-4">
+                    <div className="text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
+                      World Domino Collective
+                    </div>
+                    <div className="font-display text-2xl font-semibold">WDC 2026</div>
+                  </div>
 
-            <div className="mt-6 text-[10px] uppercase tracking-[0.25em] text-white/30 text-center">
-              Dutch Domino Team — sinds 2012
-            </div>
-          </div>
+                  <div className="flex flex-col gap-1">
+                    {wdcNav.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        onClick={() => setOpen(false)}
+                        className={cn(
+                          "block py-3 px-2 border-b border-border/40 hover:text-primary transition-colors",
+                          pathname === item.href && "text-primary",
+                        )}
+                      >
+                        <div className="font-display text-base font-semibold">{item.label}</div>
+                        <div className="text-xs text-muted-foreground mt-0.5">{item.desc}</div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
