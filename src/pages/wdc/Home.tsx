@@ -54,15 +54,15 @@ const WdcHome = () => {
           eyebrow={pick({ NL: "World Domino Collective", EN: "World Domino Collective" })}
           title={
             <>
-              {pick({ NL: "Het middelpunt van", EN: "The heart of" })}{" "}
+              {pick({ NL: "Ons jaarlijkse", EN: "Our annual" })}{" "}
               <span className="text-primary">
-                {pick({ NL: "domino innovatie.", EN: "domino innovation." })}
+                {pick({ NL: "domino-evenement.", EN: "domino event." })}
               </span>
             </>
           }
           subtitle={pick({
-            NL: "Welkom bij de centrale hub van het World Domino Collective. Ontdek de komende editie, reserveer je tickets of verken de mogelijkheden voor partnerships.",
-            EN: "Welcome to the central hub of the World Domino Collective. Discover the upcoming edition, reserve your tickets or explore partnership opportunities.",
+            NL: "Eén keer per jaar organiseert het Dutch Domino Team het World Domino Collective: een groot evenement waar bouwers, publiek en partners samenkomen rond de kunst van domino.",
+            EN: "Once a year, the Dutch Domino Team organises the World Domino Collective: a large-scale event where builders, audience and partners come together around the art of domino.",
           })}
           image={heroImg}
           crumbs={[
