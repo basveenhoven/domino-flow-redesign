@@ -27,7 +27,8 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
       frame = requestAnimationFrame(() => {
         const y = window.scrollY;
         // Move image at ~40% of scroll speed for a subtle parallax
-        el.style.transform = `translate3d(0, ${y * 0.4}px, 0) scale(1.15)`;
+        el.style.transform = `translate3d(0, ${y * 0.4}px, 0)`;
+
         frame = 0;
       });
     };
