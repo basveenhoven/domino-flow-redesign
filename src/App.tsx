@@ -19,6 +19,8 @@ import TeamSingle from "./pages/TeamSingle.tsx";
 import Bouwersdagen from "./pages/Bouwersdagen.tsx";
 import WdcHome from "./pages/wdc/Home.tsx";
 import Wdc2026 from "./pages/Wdc2026.tsx";
+import WdcEdities from "./pages/wdc/Edities.tsx";
+import WdcEdition from "./pages/wdc/Editie.tsx";
 import Reserveren from "./pages/Reserveren.tsx";
 import Sponsoren from "./pages/Sponsoren.tsx";
 
@@ -49,6 +51,8 @@ const App = () => (
               {/* WDC sub-site */}
               <Route path="/wdc" element={<WdcHome />} />
               <Route path="/wdc/2026" element={<Wdc2026 />} />
+              <Route path="/wdc/edities" element={<WdcEdities />} />
+              <Route path="/wdc/edities/:year" element={<WdcEdition />} />
               <Route path="/wdc/reserveren" element={<Reserveren />} />
               <Route path="/wdc/sponsoren" element={<Sponsoren />} />
 
