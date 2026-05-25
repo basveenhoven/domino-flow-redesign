@@ -255,12 +255,34 @@ export const SiteHeader = () => {
                   </nav>
 
                   {/* Footer */}
-                  <div className="mt-auto p-6 border-t border-neutral-800 flex items-center justify-between">
-                    <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-widest text-neutral-500 font-bold mb-1">
-                        Appearance
-                      </span>
-                      <span className="text-sm text-neutral-300">Theme</span>
+                  <div className="mt-auto p-6 border-t border-neutral-800 flex items-center justify-between gap-4">
+                    <div className="inline-flex items-center rounded-xl bg-neutral-800/50 border border-neutral-700/50 p-1 text-xs font-semibold tracking-wider">
+                      <button
+                        type="button"
+                        onClick={() => setLang("NL")}
+                        aria-pressed={lang === "NL"}
+                        className={cn(
+                          "px-3 py-1.5 rounded-lg transition-colors",
+                          lang === "NL"
+                            ? "bg-primary text-primary-foreground"
+                            : "text-neutral-400 hover:text-white",
+                        )}
+                      >
+                        NL
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setLang("EN")}
+                        aria-pressed={lang === "EN"}
+                        className={cn(
+                          "px-3 py-1.5 rounded-lg transition-colors",
+                          lang === "EN"
+                            ? "bg-primary text-primary-foreground"
+                            : "text-neutral-400 hover:text-white",
+                        )}
+                      >
+                        EN
+                      </button>
                     </div>
                     <ThemeToggle className="rounded-xl bg-neutral-800/50 border border-neutral-700/50 text-neutral-300 hover:bg-neutral-800 hover:text-primary" />
                   </div>
