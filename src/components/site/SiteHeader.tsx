@@ -94,24 +94,38 @@ export const SiteHeader = () => {
             </button>
             {wdcOpen && (
               <div className="absolute right-0 top-full pt-3 w-56">
-                <div className="rounded-2xl border border-border bg-background shadow-xl p-2">
-                  {wdcNav.map((d) => {
-                    const active = pathname === d.href;
-                    return (
-                      <Link
-                        key={d.href}
-                        to={d.href}
-                        className={cn(
-                          "block px-4 py-2.5 rounded-xl text-sm font-display font-medium transition-colors",
-                          active
-                            ? "text-primary bg-primary/10"
-                            : "text-foreground hover:bg-surface hover:text-primary",
-                        )}
-                      >
-                        {pick(d.label)}
-                      </Link>
-                    );
-                  })}
+                <div className="relative">
+                  <div className="absolute -top-1 right-8 w-3 h-3 bg-primary rotate-45" />
+                  <div className="relative rounded-xl border border-border bg-background shadow-2xl shadow-primary/10 overflow-hidden">
+                    <div className="h-1 w-full bg-primary" />
+                    <div className="py-2">
+                      {wdcNav.map((d) => {
+                        const active = pathname === d.href;
+                        return (
+                          <Link
+                            key={d.href}
+                            to={d.href}
+                            className={cn(
+                              "group flex items-center px-4 py-3 text-sm font-display font-medium transition-all duration-200",
+                              active
+                                ? "bg-foreground/5 text-primary"
+                                : "text-foreground/80 hover:bg-foreground/5 hover:text-foreground",
+                            )}
+                          >
+                            <span
+                              className={cn(
+                                "mr-3 h-1.5 w-1.5 rounded-full transition-all duration-200",
+                                active
+                                  ? "bg-primary shadow-[0_0_8px_hsl(var(--primary))]"
+                                  : "bg-transparent group-hover:bg-foreground/20",
+                              )}
+                            />
+                            {pick(d.label)}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
