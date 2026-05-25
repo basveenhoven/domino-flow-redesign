@@ -64,7 +64,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
         {crumbs && crumbs.length > 0 && (
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/40 mb-10"
+            className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/40 mb-6"
           >
             {crumbs.map((c, i) => (
               <span key={i} className="flex items-center gap-2">
