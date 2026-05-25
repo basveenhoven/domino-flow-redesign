@@ -51,6 +51,8 @@ const App = () => (
               {/* WDC sub-site */}
               <Route path="/wdc" element={<WdcHome />} />
               <Route path="/wdc/2026" element={<Wdc2026 />} />
+              <Route path="/wdc/edities" element={<WdcEdities />} />
+              <Route path="/wdc/edities/:year" element={<WdcEdition />} />
               <Route path="/wdc/reserveren" element={<Reserveren />} />
               <Route path="/wdc/sponsoren" element={<Sponsoren />} />
 
