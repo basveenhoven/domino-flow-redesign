@@ -81,7 +81,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
           </nav>
         )}
 
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-10 animate-fade-up">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-6 animate-fade-up">
           <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
           <span className="text-xs font-black tracking-[0.2em] uppercase text-primary">
             {eyebrow}
