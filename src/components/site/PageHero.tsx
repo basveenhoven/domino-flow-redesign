@@ -97,7 +97,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
 
         {subtitle && (
           <p
-            className="mt-8 max-w-2xl text-lg lg:text-2xl text-foreground/70 leading-relaxed font-light animate-fade-up"
+            className="mt-6 max-w-2xl text-lg lg:text-xl text-foreground/70 leading-relaxed font-light animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
             {subtitle}
