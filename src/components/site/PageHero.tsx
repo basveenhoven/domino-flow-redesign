@@ -42,9 +42,10 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
   }, []);
 
   return (
-    <section className="dark relative flex items-center overflow-hidden bg-background text-foreground min-h-[640px] lg:min-h-[760px] pt-28 pb-20 lg:pt-36 lg:pb-28">
+    <section className="dark relative flex items-center overflow-hidden text-foreground min-h-[640px] lg:min-h-[760px] pt-28 pb-20 lg:pt-36 lg:pb-28">
       {/* Full-bleed parallax image */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
+
         <img
           ref={imageRef}
           src={image}
