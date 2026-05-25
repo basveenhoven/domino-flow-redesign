@@ -18,6 +18,7 @@ const ddtNav: { label: { NL: string; EN: string }; href: string }[] = [
 const wdcNav: { label: { NL: string; EN: string }; href: string; desc: { NL: string; EN: string } }[] = [
   { label: { NL: "WDC Home", EN: "WDC Home" }, href: "/wdc", desc: { NL: "Overzicht van het evenement", EN: "Event overview" } },
   { label: { NL: "WDC 2026", EN: "WDC 2026" }, href: "/wdc/2026", desc: { NL: "Bucketlist — programma & info", EN: "Bucketlist — program & info" } },
+  { label: { NL: "Vorige edities", EN: "Past editions" }, href: "/wdc/edities", desc: { NL: "Terugblik 2021 — 2025", EN: "Look back 2021 — 2025" } },
   { label: { NL: "Reserveren", EN: "Tickets" }, href: "/wdc/reserveren", desc: { NL: "Tickets voor de falldown", EN: "Tickets for the falldown" } },
   { label: { NL: "Sponsoren", EN: "Sponsors" }, href: "/wdc/sponsoren", desc: { NL: "Partners van WDC 2026", EN: "Partners of WDC 2026" } },
 ];
