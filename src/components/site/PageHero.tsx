@@ -42,7 +42,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
   }, []);
 
   return (
-    <section className="dark relative flex items-center overflow-hidden text-foreground min-h-[640px] lg:min-h-[760px] pt-28 pb-20 lg:pt-36 lg:pb-28">
+    <section className="dark relative flex items-center overflow-hidden text-foreground min-h-[400px] lg:min-h-[480px] pt-24 pb-16 lg:pt-32 lg:pb-20">
       {/* Full-bleed parallax image */}
       <div className="absolute inset-0 overflow-hidden">
 
@@ -64,7 +64,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
         {crumbs && crumbs.length > 0 && (
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/40 mb-10"
+            className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/40 mb-6"
           >
             {crumbs.map((c, i) => (
               <span key={i} className="flex items-center gap-2">
@@ -81,7 +81,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
           </nav>
         )}
 
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-10 animate-fade-up">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-6 animate-fade-up">
           <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
           <span className="text-xs font-black tracking-[0.2em] uppercase text-primary">
             {eyebrow}
@@ -97,7 +97,7 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
 
         {subtitle && (
           <p
-            className="mt-8 max-w-2xl text-lg lg:text-2xl text-foreground/70 leading-relaxed font-light animate-fade-up"
+            className="mt-6 max-w-2xl text-lg lg:text-xl text-foreground/70 leading-relaxed font-light animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
             {subtitle}
