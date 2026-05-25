@@ -54,9 +54,9 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
           height={1280}
           className="absolute inset-0 w-full h-[120%] object-cover will-change-transform"
         />
-        {/* Vignette + subtle bottom fade — image stays clearly visible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-background/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+        {/* Vignette overlays — dark in both themes so text stays legible on the image */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40" />
       </div>
 
 
