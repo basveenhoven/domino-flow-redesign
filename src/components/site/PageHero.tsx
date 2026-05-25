@@ -51,12 +51,12 @@ export const PageHero = ({ eyebrow, title, subtitle, image, crumbs }: PageHeroPr
           width={1920}
           height={1280}
           className="absolute inset-0 w-full h-[120%] object-cover will-change-transform"
-          style={{ transform: "translate3d(0,0,0) scale(1.15)" }}
         />
-        {/* Softer gradient so the image stays visible while text remains legible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+        {/* Vignette + subtle bottom fade — image stays clearly visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-background/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
       </div>
+
 
       <div className="container relative">
         {crumbs && crumbs.length > 0 && (
