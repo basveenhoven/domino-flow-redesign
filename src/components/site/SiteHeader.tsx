@@ -7,26 +7,28 @@ import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
 
-const ddtNav = [
-  { label: "Home", href: "/" },
-  { label: "Over ons", href: "/over-ons" },
-  { label: "Diensten", href: "/diensten" },
-  { label: "Projecten", href: "/projecten" },
-  { label: "Bouwersdagen", href: "/bouwersdagen" },
+const ddtNav: { label: { NL: string; EN: string }; href: string }[] = [
+  { label: { NL: "Home", EN: "Home" }, href: "/" },
+  { label: { NL: "Over ons", EN: "About us" }, href: "/over-ons" },
+  { label: { NL: "Diensten", EN: "Services" }, href: "/diensten" },
+  { label: { NL: "Projecten", EN: "Projects" }, href: "/projecten" },
+  { label: { NL: "Bouwersdagen", EN: "Builder days" }, href: "/bouwersdagen" },
 ];
 
-const wdcNav = [
-  { label: "WDC Home", href: "/wdc", desc: "Overzicht van het evenement" },
-  { label: "WDC 2026", href: "/wdc/2026", desc: "Bucketlist — programma & info" },
-  { label: "Reserveren", href: "/wdc/reserveren", desc: "Tickets voor de falldown" },
-  { label: "Sponsoren", href: "/wdc/sponsoren", desc: "Partners van WDC 2026" },
+const wdcNav: { label: { NL: string; EN: string }; href: string; desc: { NL: string; EN: string } }[] = [
+  { label: { NL: "WDC Home", EN: "WDC Home" }, href: "/wdc", desc: { NL: "Overzicht van het evenement", EN: "Event overview" } },
+  { label: { NL: "WDC 2026", EN: "WDC 2026" }, href: "/wdc/2026", desc: { NL: "Bucketlist — programma & info", EN: "Bucketlist — program & info" } },
+  { label: { NL: "Reserveren", EN: "Tickets" }, href: "/wdc/reserveren", desc: { NL: "Tickets voor de falldown", EN: "Tickets for the falldown" } },
+  { label: { NL: "Sponsoren", EN: "Sponsors" }, href: "/wdc/sponsoren", desc: { NL: "Partners van WDC 2026", EN: "Partners of WDC 2026" } },
 ];
+
+const contactLabel = { NL: "Contact", EN: "Contact" };
 
 export const SiteHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [wdcOpen, setWdcOpen] = useState(false);
-  const { lang, setLang } = useI18n();
+  const { lang, setLang, pick } = useI18n();
   const { pathname } = useLocation();
 
   useEffect(() => {
