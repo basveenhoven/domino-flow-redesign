@@ -275,14 +275,15 @@ export const SiteHeader = () => {
                   style={{ backgroundColor: "#121214" }}
                   aria-hidden={!wdcOpen}
                 >
+                  {/* Header */}
                   <div className="p-6 flex justify-between items-center">
                     <button
                       type="button"
                       onClick={() => setWdcOpen(false)}
-                      className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
+                      className="inline-flex items-center gap-2 text-primary font-display text-xl font-bold tracking-tight hover:text-primary/80 transition-colors"
                     >
-                      <ChevronLeft className="h-4 w-4" />
-                      Terug
+                      <ChevronLeft className="h-5 w-5" />
+                      WDC
                     </button>
                     <button
                       onClick={() => setOpen(false)}
@@ -293,32 +294,34 @@ export const SiteHeader = () => {
                     </button>
                   </div>
 
-                  <div className="px-6 mt-2 mb-4">
-                    <div className="text-[10px] uppercase tracking-[0.25em] text-primary font-bold mb-1">
-                      World Domino Collective
-                    </div>
-                    <div className="font-display text-2xl font-semibold text-white">WDC 2026</div>
-                  </div>
-
-                  <nav className="flex-1 px-4 overflow-y-auto">
+                  {/* Nav */}
+                  <nav className="flex-1 px-4 mt-4 overflow-y-auto">
                     <ul className="space-y-1">
-                      {wdcNav.map((item) => (
-                        <li key={item.href}>
-                          <Link
-                            to={item.href}
-                            onClick={() => setOpen(false)}
-                            className={cn(
-                              "block px-4 py-4 border-b border-neutral-800/50 transition-colors",
-                              pathname === item.href
-                                ? "text-primary"
-                                : "text-neutral-300 hover:text-white",
+                      {wdcNav.map((item) => {
+                        const active = pathname === item.href;
+                        return (
+                          <li key={item.href}>
+                            {active ? (
+                              <Link
+                                to={item.href}
+                                onClick={() => setOpen(false)}
+                                className="flex items-center px-4 py-4 text-primary font-display font-semibold text-lg transition-colors"
+                              >
+                                <span className="mr-3 w-1 h-5 bg-primary rounded-full" />
+                                {item.label}
+                              </Link>
+                            ) : (
+                              <Link
+                                to={item.href}
+                                onClick={() => setOpen(false)}
+                                className="block px-4 py-4 text-neutral-300 hover:text-white font-display font-medium text-lg border-b border-neutral-800/50 transition-colors"
+                              >
+                                {item.label}
+                              </Link>
                             )}
-                          >
-                            <div className="font-display text-base font-semibold">{item.label}</div>
-                            <div className="text-xs text-neutral-500 mt-0.5">{item.desc}</div>
-                          </Link>
-                        </li>
-                      ))}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </nav>
                 </div>
