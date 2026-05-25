@@ -81,6 +81,27 @@
     --sidebar-ring: 330 92% 58%;
   }
 
+  /* Allow `.dark` to force the dark token palette on any subtree
+     (e.g. a hero section over a dark image while the rest of the page is light) */
+  .dark {
+    --background: 240 8% 6%;
+    --foreground: 40 25% 97%;
+    --surface: 240 7% 9%;
+    --surface-elevated: 240 6% 12%;
+    --card: 240 7% 9%;
+    --card-foreground: 40 25% 97%;
+    --popover: 240 7% 9%;
+    --popover-foreground: 40 25% 97%;
+    --primary-foreground: 240 10% 6%;
+    --secondary: 240 6% 16%;
+    --secondary-foreground: 40 25% 97%;
+    --muted: 240 5% 14%;
+    --muted-foreground: 240 5% 65%;
+    --accent-foreground: 240 10% 6%;
+    --border: 240 6% 18%;
+    --input: 240 6% 16%;
+  }
+
   .light {
     /* Brand surfaces — warm off-white base */
     --background: 40 30% 97%;
