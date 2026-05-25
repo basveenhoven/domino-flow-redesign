@@ -212,9 +212,19 @@
     color: rgba(249, 248, 245, 0.8);
   }
 
+  .home-header .nav-link.text-primary,
+  .dark .nav-link.text-primary {
+    color: hsl(var(--primary));
+  }
+
   .home-header .nav-link:hover,
   .dark .nav-link:hover {
     color: rgba(249, 248, 245, 1);
+  }
+
+  .home-header .nav-link.text-primary:hover,
+  .dark .nav-link.text-primary:hover {
+    color: hsl(var(--primary));
   }
 
 
