@@ -25,13 +25,13 @@
     --popover-foreground: 40 25% 97%;
 
     /* Brand accents — bold & energetic */
-    --primary: 22 100% 55%;          /* neon orange */
-    --primary-foreground: 240 10% 6%;
-    --primary-glow: 28 100% 65%;
+    --primary: 208 92% 30%;          /* deep brand blue #065494 */
+    --primary-foreground: 40 30% 98%;
+    --primary-glow: 208 80% 45%;
 
     --accent-blue: 195 100% 55%;     /* electric cyan */
     --accent-lime: 55 100% 58%;      /* electric yellow */
-    --accent-amber: 22 100% 55%;     /* neon orange */
+    --accent-amber: 208 92% 30%;     /* deep brand blue */
 
     --secondary: 240 6% 16%;
     --secondary-foreground: 40 25% 97%;
@@ -47,12 +47,12 @@
 
     --border: 240 6% 18%;
     --input: 240 6% 16%;
-    --ring: 22 100% 55%;
+    --ring: 208 92% 30%;
 
     --radius: 1rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(240 8% 6% / 0.95) 0%, hsl(240 10% 10% / 0.85) 50%, hsl(22 80% 18% / 0.75) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 8% 6% / 0.95) 0%, hsl(240 10% 10% / 0.85) 50%, hsl(208 80% 18% / 0.75) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent-lime)) 100%);
     --gradient-glow: radial-gradient(circle at center, hsl(var(--primary) / 0.4), transparent 70%);
     --gradient-surface: linear-gradient(180deg, hsl(var(--surface)) 0%, hsl(var(--background)) 100%);
@@ -118,14 +118,14 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 8%;
 
-    /* Brand accents — keep neon orange identity */
-    --primary: 22 100% 50%;
+    /* Brand accents — keep deep blue identity */
+    --primary: 208 92% 30%;
     --primary-foreground: 40 30% 98%;
-    --primary-glow: 28 100% 60%;
+    --primary-glow: 208 80% 45%;
 
     --accent-blue: 195 90% 45%;
     --accent-lime: 55 90% 50%;
-    --accent-amber: 22 100% 50%;
+    --accent-amber: 208 92% 30%;
 
     --secondary: 240 6% 92%;
     --secondary-foreground: 240 10% 8%;
@@ -141,10 +141,10 @@
 
     --border: 240 6% 86%;
     --input: 240 6% 90%;
-    --ring: 22 100% 50%;
+    --ring: 208 92% 30%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(40 30% 97% / 0.95) 0%, hsl(40 25% 92% / 0.85) 50%, hsl(22 80% 88% / 0.75) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(40 30% 97% / 0.95) 0%, hsl(40 25% 92% / 0.85) 50%, hsl(208 80% 88% / 0.75) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent-lime)) 100%);
     --gradient-glow: radial-gradient(circle at center, hsl(var(--primary) / 0.25), transparent 70%);
     --gradient-surface: linear-gradient(180deg, hsl(var(--surface)) 0%, hsl(var(--background)) 100%);
