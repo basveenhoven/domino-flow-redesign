@@ -67,8 +67,8 @@
     --transition-smooth: all 0.6s var(--ease-out-expo);
 
     /* Typography */
-    --font-display: 'Roboto', system-ui, sans-serif;
-    --font-body: 'Open Sans', system-ui, sans-serif;
+    --font-display: Roboto, sans-serif;
+    --font-body: 'Open Sans', sans-serif;
 
     /* Sidebar (unused but kept for shadcn) */
     --sidebar-background: 230 40% 10%;
