@@ -1,64 +1,27 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import heroPoster from "@/assets/hero-dominoes.jpg";
 import { useI18n } from "@/lib/i18n";
 
+const YOUTUBE_ID = "-YMnZdORE24";
+
 export const Hero = () => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   const { t } = useI18n();
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const ensurePlayback = async () => {
-      try {
-        video.muted = true;
-        video.defaultMuted = true;
-        video.playsInline = true;
-        await video.play();
-      } catch {
-        // Silent fallback to poster when browser blocks autoplay
-      }
-    };
-
-    void ensurePlayback();
-
-    return () => {
-      video.pause();
-    };
-  }, []);
-
-  const handleVideoReady = () => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = true;
-    video.defaultMuted = true;
-    video.playbackRate = 0.9;
-    void video.play().catch(() => undefined);
-  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          src={heroVideo.url}
-          poster={heroPoster}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          disablePictureInPicture
-          aria-hidden="true"
-          onLoadedData={handleVideoReady}
-          className="h-full w-full object-cover"
-        />
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* YouTube background — sized larger than viewport to hide controls and letterboxing */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[177.78vh] h-[56.25vw] min-w-full min-h-full pointer-events-none">
+          <iframe
+            className="w-full h-full"
+            src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&disablekb=1&playlist=${YOUTUBE_ID}`}
+            title="Hero background video"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            aria-hidden="true"
+          />
+        </div>
         <div className="absolute inset-0" style={{ backgroundColor: "hsl(240 8% 6% / 0.3)" }} />
         <div
           className="absolute inset-0"
