@@ -23,8 +23,8 @@ export const FeaturedVideo = () => {
           <div className="relative aspect-video rounded-2xl overflow-hidden border border-border/60 bg-surface">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/QV38Xlbl40k"
-              title="1.000.000 DOMINOES - WDC 2025 - MILESTONES"
+              src="https://www.youtube.com/embed/-YMnZdORE24"
+              title="WDC 2025 - Domino Falldown"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
